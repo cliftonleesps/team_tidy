@@ -5,6 +5,7 @@ date: "10/12/2021"
 output: html_document
 ---
 
+# Import
 ```{r}
 library(dplyr)
 library(rvest)
@@ -13,11 +14,16 @@ library(XML)
 library(RSelenium)
 ```
 
+
+
 # Start server
 ```{r}
-driver <- rsDriver(browser = "firefox", port = 4568L)
-remDr <- driver$client
+#####Used selenium  to ensure page load, consistency, and to view and understand the process
+#driver <- rsDriver(browser = "firefox", port = 4568L)
+#remDr <- driver$client
 ```
+
+
 
 # Form search URL
 ```{r}
@@ -36,6 +42,8 @@ searchUrl <- baseUrl %>%
   paste(keywordsKeyValue, sep = "")
 ```
 
+
+
 # Find job redirect links
 ```{r}
 liElement <- "li"
@@ -53,9 +61,11 @@ urls <- searchUrl %>%
 urls <- urls[grepl(jobsRouteRegex, urls)]
 ```
 
+
+
 # Scrape web pages
+## Setup
 ```{r}
-#Setup
 sectionElement <- "section"
 ulElement <- "ul"
 skillsKeywords <- c(
@@ -81,24 +91,27 @@ companyXPath <- "/html/body/main/section[1]/div/section[2]/div/div[1]/div/h4/div
 positionXPath <- "/html/body/main/section[1]/div/section[2]/div/div[1]/div/h1"
 
 max <- length(urls)
+```
 
 
 
-#Scrape
+## Scrape
+```{r}
 for (i in 1:1) {
-  Sys.sleep(1)
+  #Sys.sleep(1)
   
   url <- "https://www.linkedin.com/jobs/view/data-applied-scientist-at-microsoft-2728708352?refId=0mjCey64wlPBGB7jUV4Q5A%3D%3D&trackingId=7mAT8GpiogFqF4OWvOMwpA%3D%3D&position=1&pageNum=0&trk=public_jobs_jserp-result_search-card" #$urls[i]
-  scrape <- list()
+
+  #remDr$navigate(url)
   
-  remDr$navigate(url)
-  
-  #Get description
-  jobDescription <- remDr$getPageSource()[[1]] %>%
-    read_html %>%
+  #####Get description
+  loadedUrl <- url %>% #remDr$getPageSource()[[1]] %>%
+    read_html
+    
+  jobDescription <- loadedUrl %>%
     html_elements(sectionElement)
   
-  #Get bullet pointed skills
+  #####Get bullet pointed skills
   listSkills <- jobDescription %>%
     html_elements(ulElement) %>%
     html_elements(liElement) %>%
@@ -107,7 +120,7 @@ for (i in 1:1) {
   listSkills <- listSkills[grepl(notBeginsWithNewlineRegex, listSkills)] %>%
     str_squish
   
-  #Get loose skills in description
+  #####Get loose skills in description
   jobDescriptionText <- jobDescription %>%
     html_text
   jobDescriptionText <- jobDescriptionText[grepl(skillsRegex, jobDescriptionText, ignore.case = TRUE)][1] %>%
@@ -118,15 +131,27 @@ for (i in 1:1) {
     unique
   
   
+  #####Aggregate
+  #position <- remDr$findElements(using = 'xpath', positionXPath)[[1]]$getElementText()[[1]]
+  position <- (jobDescription %>%
+    html_nodes(xpath = positionXPath))[[1]] %>%
+    html_text %>%
+    str_squish
   
-  scrape <- append(scrape, url)
-  scrape <- append(scrape, remDr$findElements(using = 'xpath', positionXPath)[[1]]$getElementText()[[1]])
-  scrape <- append(scrape, remDr$findElements(using = 'xpath', companyXPath)[[1]]$getElementText()[[1]])
-  scrape <- append(scrape, list(listSkills))
-  scrape <- append(scrape, list(looseSkills))
-  
-  
-  
+  #company <- remDr$findElements(using = 'xpath', companyXPath)[[1]]$getElementText()[[1]]
+  company <- (jobDescription %>%
+      html_nodes(xpath = companyXPath))[[1]] %>%
+      html_text %>%
+      str_squish
+
+  scrape <- c(
+    url,
+    company,
+    position,
+    list(listSkills),
+    list(looseSkills)
+  )
+
   print(jobDescriptionText)
   print(scrape)
 }
