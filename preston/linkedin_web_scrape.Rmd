@@ -1,0 +1,133 @@
+---
+title: "Most Valuable Data Science Skills"
+author: "Preston Peck"
+date: "10/12/2021"
+output: html_document
+---
+
+```{r}
+library(dplyr)
+library(rvest)
+library(stringr)
+library(XML)
+library(RSelenium)
+```
+
+# Start server
+```{r}
+driver <- rsDriver(browser = "firefox", port = 4568L)
+remDr <- driver$client
+```
+
+# Form search URL
+```{r}
+baseUrl <- "https://www.linkedin.com/jobs/search/?"
+
+spaceCharacter <- "%20"
+
+keywordsKey <- "keywords="
+keywordsValue <- c("data", "science") %>%
+  paste(collapse = spaceCharacter)
+
+keywordsKeyValue <- keywordsKey %>%
+  paste(keywordsValue, sep = "")
+
+searchUrl <- baseUrl %>% 
+  paste(keywordsKeyValue, sep = "")
+```
+
+# Find job redirect links
+```{r}
+liElement <- "li"
+aElement <- "a"
+hrefAttribute <- "href"
+
+jobsRouteRegex = "\\/jobs\\/"
+
+urls <- searchUrl %>%
+  read_html %>%
+  html_elements(liElement) %>%
+  html_elements(aElement) %>%
+  html_attr(hrefAttribute)
+
+urls <- urls[grepl(jobsRouteRegex, urls)]
+```
+
+# Scrape web pages
+```{r}
+#Setup
+sectionElement <- "section"
+ulElement <- "ul"
+skillsKeywords <- c(
+  "Qualification",
+  "Soft Skills",
+  "Hard Skills",
+  "Requirement",
+  "Education",
+  "What You'll Need",
+  "What You Need",
+  "What It Takes"
+)
+
+skillsRegex <- skillsKeywords %>%
+  paste(collapse = "|")
+
+#Lazy operator matches soonest instead of latest
+skillsRegex <- paste("(", skillsRegex, ").*?", sep = "")
+parseSkillsRegex <- paste(skillsRegex, "(\\1|\\.)", sep = "")
+notBeginsWithNewlineRegex <- "^[^\\\n]"
+
+companyXPath <- "/html/body/main/section[1]/div/section[2]/div/div[1]/div/h4/div[1]/span[1]/a"
+positionXPath <- "/html/body/main/section[1]/div/section[2]/div/div[1]/div/h1"
+
+max <- length(urls)
+
+
+
+#Scrape
+for (i in 1:1) {
+  Sys.sleep(1)
+  
+  url <- "https://www.linkedin.com/jobs/view/data-applied-scientist-at-microsoft-2728708352?refId=0mjCey64wlPBGB7jUV4Q5A%3D%3D&trackingId=7mAT8GpiogFqF4OWvOMwpA%3D%3D&position=1&pageNum=0&trk=public_jobs_jserp-result_search-card" #$urls[i]
+  scrape <- list()
+  
+  remDr$navigate(url)
+  
+  #Get description
+  jobDescription <- remDr$getPageSource()[[1]] %>%
+    read_html %>%
+    html_elements(sectionElement)
+  
+  #Get bullet pointed skills
+  listSkills <- jobDescription %>%
+    html_elements(ulElement) %>%
+    html_elements(liElement) %>%
+    html_text
+  
+  listSkills <- listSkills[grepl(notBeginsWithNewlineRegex, listSkills)] %>%
+    str_squish
+  
+  #Get loose skills in description
+  jobDescriptionText <- jobDescription %>%
+    html_text
+  jobDescriptionText <- jobDescriptionText[grepl(skillsRegex, jobDescriptionText, ignore.case = TRUE)][1] %>%
+    str_squish
+    
+  looseSkills <- jobDescriptionText %>%
+    str_extract_all(regex(parseSkillsRegex, ignore_case = TRUE)) %>%
+    unique
+  
+  
+  
+  scrape <- append(scrape, url)
+  scrape <- append(scrape, remDr$findElements(using = 'xpath', positionXPath)[[1]]$getElementText()[[1]])
+  scrape <- append(scrape, remDr$findElements(using = 'xpath', companyXPath)[[1]]$getElementText()[[1]])
+  scrape <- append(scrape, list(listSkills))
+  scrape <- append(scrape, list(looseSkills))
+  
+  
+  
+  print(jobDescriptionText)
+  print(scrape)
+}
+```
