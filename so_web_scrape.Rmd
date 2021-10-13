@@ -1,0 +1,55 @@
+---
+title: "so_web_scrape"
+author: "Santiago Torres"
+date: "10/12/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(rvest)
+```
+
+# PoC
+
+```{r}
+job_titles <- c()
+skills <- c()
+```
+
+
+```{r}
+so_df<- read_html("https://stackoverflow.com/jobs/552731/data-scientist-jpmorgan-chase-bank-na")
+
+job_title <- so_df %>% html_elements("title") %>% html_text()
+
+job_titles <- c(job_titles, job_title)
+
+so_df %>% html_elements(".fw-wrap")
+
+so_df %>% html_elements(".no-tag-menu")
+
+skill_list <- so_df %>% html_elements(".mb32")
+
+skill_list <- skill_list[2] %>% html_elements(".fw-wrap") %>% html_text()
+
+skills <- c(skills, skill_list)
+```
+
+
+```{r}
+so_df <- read_html("https://stackoverflow.com/jobs/537934/data-scientist-performance-media-horizon-media")
+job_title <- so_df %>% html_elements("title") %>% html_text()
+
+job_titles <- c(job_titles, job_title)
+
+so_df %>% html_elements(".fw-wrap")
+
+so_df %>% html_elements(".no-tag-menu")
+
+skill_list <- so_df %>% html_elements(".mb32")
+
+skill_list <- skill_list[2] %>% html_elements(".fw-wrap") %>% html_text()
+
+skills <- c(skills, skill_list)
+```
