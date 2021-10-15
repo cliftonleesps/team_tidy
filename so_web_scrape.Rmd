@@ -8,48 +8,32 @@ output: html_document
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 library(rvest)
+library(jsonlite)
 ```
 
 # PoC
 
-```{r}
-job_titles <- c()
-skills <- c()
-```
 
+```{r one-page-to-skills}
+json_path <- str_c(getwd(), "/job_info.json")
 
-```{r}
-so_df<- read_html("https://stackoverflow.com/jobs/552731/data-scientist-jpmorgan-chase-bank-na")
-
-job_title <- so_df %>% html_elements("title") %>% html_text()
-
-job_titles <- c(job_titles, job_title)
-
-so_df %>% html_elements(".fw-wrap")
-
-so_df %>% html_elements(".no-tag-menu")
-
-skill_list <- so_df %>% html_elements(".mb32")
-
-skill_list <- skill_list[2] %>% html_elements(".fw-wrap") %>% html_text()
-
-skills <- c(skills, skill_list)
-```
-
-
-```{r}
 so_df <- read_html("https://stackoverflow.com/jobs/537934/data-scientist-performance-media-horizon-media")
-job_title <- so_df %>% html_elements("title") %>% html_text()
+scripts <- so_df %>% html_elements("script")
+job <- scripts[5]
 
-job_titles <- c(job_titles, job_title)
+job_info <- job %>% html_text2() %>% parse_json()
 
-so_df %>% html_elements(".fw-wrap")
+title <- job_info$title
+skills <- unlist(job_info$skills)
+description <- job_details$description
+state <- job_details$jobLocation %>% .[[1]] %>% .$address %>% .$addressRegion
+employment_type <- job_details$employmentType
+company_name <-job_details$hiringOrganization$name
+company_url <- job_details$hiringOrganization$sameAs
+min_salary <- job_details$baseSalary$value$maxValue
 
-so_df %>% html_elements(".no-tag-menu")
-
-skill_list <- so_df %>% html_elements(".mb32")
-
-skill_list <- skill_list[2] %>% html_elements(".fw-wrap") %>% html_text()
-
-skills <- c(skills, skill_list)
+paste(title, state, employment_type, company_name, company_url, min_salary)
+paste(skills)
+paste(description)
+write_json(job_info, json_path)
 ```
