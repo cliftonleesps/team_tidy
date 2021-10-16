@@ -66,17 +66,95 @@ get_skills <- function(job_description, confidence_string, access_token){
   
   response_json <- fromJSON(response_text)
   
-  skills <- response_json[["data"]][["skill"]][["name"]]
+  skill_type <- skills_json$data$skill$type$name
+  skill_name <- skills_json$data$skill$name
   
-  return(skills)
+  skill_df <- as_tibble(skill_name)
+  colnames(skill_df) <- c("skill")
+  
+  skill_df <- skill_df %>%
+    mutate(
+      type = skill_type
+    )
+  
+  
+  return(skill_df)
 }
 
 test_job <- data$description[10]
 
-skills <- get_skills(test_job, "0.6", access_token)
+skills_df <- get_skills(test_job, "0.9", access_token)
 
-skills
+create_skills_df <- function(job_title, company_name, state, description, confidence_threshold, access_token){
+  skills_df <- get_skills(description, confidence_threshold, access_token)
+  
+  skills_df <- skills_df %>%
+                  mutate(
+                    job_title = job_title,
+                    company_name = company_name,
+                    state = state,
+                    description = description
+                  ) %>%
+                  select(job_title, company_name, state, 
+                         description, skill, type)
+  
+  return(skills_df)
+}
+
+job_title = data[1,"job_title"][[1]]
+company_name = data[1,"company_name"][[1]]
+state = data[1,"state"][[1]]
+description = data[1,"description"][[1]]
+
+test_df <- create_skills_df(job_title, 
+                            company_name, 
+                            state, 
+                            description, 
+                            "0.6",
+                            access_token)
 
 
 
 
+get_dataset_skills <- function(data, confidence_threshold, access_token){
+  base_df <- tibble(
+    job_title = character(),
+    company_name = character(),
+    state = character(),
+    description = character(),
+    skill = character(),
+    type = character()
+  )
+  
+  for (row in 1:nrow(data)){
+    job_title = data[row,"job_title"][[1]]
+    company_name = data[row,"company_name"][[1]]
+    state = data[row,"state"][[1]]
+    description = data[row,"description"][[1]]
+    
+    print(c(job_title, company_name, state))
+    
+    skills_df = create_skills_df(job_title, 
+                                 company_name, 
+                                 state, 
+                                 description, 
+                                 confidence_threshold, 
+                                 access_token)
+    
+    base_df <- bind_rows(base_df, skills_df)
+  }
+  
+  return(base_df)
+}
+
+all_skills_df <- get_dataset_skills(data, "0.7",access_token)
+
+
+write.csv(all_skills_df, file = "indeed_skills_df.csv",
+          row.names = FALSE)
+
+test_read <- read_csv("indeed_skills_df.csv")
+
+test_read %>%
+  ggplot() +
+  geom_bar(aes(x=type))
