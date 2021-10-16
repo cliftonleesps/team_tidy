@@ -10,23 +10,14 @@ knitr::opts_chunk$set(echo = TRUE)
 library(rvest)
 library(jsonlite)
 library(tidyverse)
+source(str_c(getwd(),"/alec/skills_extraction.R"))
 ```
 
 # PoC
 
 
-```{r one-page-to-skills}
+```{r parse-jobs}
 so_urls <- read_csv("so_urls.csv")
-
-
-
-
-
-read_job_html <- function(url) {
-  return(so_html)
-}
-# reduces how often i'm reading in urls while testing
-
 
 parse_jobs <- function(url) {
   so_html <- read_html(url)
@@ -36,9 +27,9 @@ parse_jobs <- function(url) {
   job_details <- job %>% html_text2() %>% parse_json()
   
   
-  title <- job_details$title
+  job_title <- job_details$title
   skills <- unlist(job_details$skills)
-  description <- job_details$description %>% str_replace_all("\\<.*?\\>", " ") %>% str_replace_all("&bull;", "")
+  description <- job_details$description %>% str_replace_all("\\<.*?\\>", " ") %>% str_replace_all("&bull;", "") %>% trimws()
   state <- job_details$jobLocation 
   state <- state[[1]][2]
   state <- state[[1]]
@@ -67,19 +58,36 @@ parse_jobs <- function(url) {
      max_salary <- as.integer(NA)}
 
   
-  job_skills <- tribble(~title,~skills,~description,~state,~country,~employment_type,~company_name,~company_url,~min_salary,~max_salary,
-                    title,skills,description,state,country,employment_type,company_name,company_url, min_salary, max_salary)
+  job_skills <- tribble(~job_title,~skills,~description,~state,~country,~employment_type,~company_name,~company_url,~min_salary,~max_salary,
+                    job_title,skills,description,state,country,employment_type,company_name,company_url, min_salary, max_salary)
   # output path
-  json_path <- str_c(getwd(), "/so/", company_name, "_", title, ".json")
+  json_path <- str_c(getwd(), "/so/", company_name, "_", job_title, ".json")
   write_json(job_details, json_path)
   return(job_skills)
 }
+```
 
-
-
+```{r job-skills}
 job_skills <- lapply(so_urls$url, parse_jobs) #parse all jobs
 
 job_skills <- bind_rows(job_skills)
 
+long_job_skills <- job_skills %>% unnest(skills)
+
+write.csv(long_job_skills, file = "stackoverflow_jobs.csv",
+          row.names = FALSE)
+```
+
+
+```{r emsi-skill-extraction}
+client_id <- key_list("EMSI")[1,2]
+secret <- key_get("EMSI", client_id)
+scope <- "emsi_open"
+
+access_token <- get_token(client_id,secret,scope_4)
+
+all_skills_df <- get_dataset_skills(job_skills, "0.4",access_token)
+
+write.csv(all_skills_df, file= "stackoverflow_jobs_emsi.csv", row.names = FALSE)
 
 ```
