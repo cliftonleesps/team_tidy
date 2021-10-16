@@ -1,0 +1,103 @@
+{
+  "@context": [
+    "http://schema.org"
+  ],
+  "@type": [
+    "JobPosting"
+  ],
+  "title": [
+    "Data Scientist -Working in Japan"
+  ],
+  "skills": [
+    [
+      "web-services"
+    ],
+    [
+      "python"
+    ],
+    [
+      "r"
+    ],
+    [
+      "sql"
+    ],
+    [
+      "tableau-api"
+    ]
+  ],
+  "description": [
+    "<h2>About this job<\/h2>\r\n<p><span>Compensation: <strong>¥6000k - 10000k<\/strong><\/span><br/><span>Location options: <strong>Visa sponsor, Paid relocation<\/strong><\/span><br/><span>Job type: <strong>Full-time<\/strong><\/span><br/><span>Experience level: <strong>Mid-Level<\/strong><\/span><br/><span>Role: <strong>Data Scientist<\/strong><\/span><br/><\/p><br/><br/><h2>Technologies<\/h2> <p>web-services, python, r, sql, tableau-api<\/p> <br/><br/><h2>Job description<\/h2> <p>※Important※<br>Please read before applying.<\/p>\r\n<p>The health and safety of our employees and candidates is very important to us.<\/p>\r\n<p>Due to the coronavirus (COVID-19) pandemic we are currently facing difficulties applying for working visas and traveling into Japan is restricted.<br>Under these circumstances, please understand that for candidates who receive an offer and are living outside of Japan or do not own a permit to work in Japan,<br>there may be delays with entry into Japan and your subsequent commencement date.<br>Please apply only if you agree to the above condition.<\/p>\r\n<p><strong>*Please apply to only one position at a time.<\/strong><\/p>\r\n<p>LINE is a diverse company with some of the best engineers from around the world, approximately 30% of our developers come from outside of Japan. We are looking for experienced engineers with an interest in customer focused development who wish to make an impact on our tens of millions of daily users!<\/p>\r\n<p><strong>Job Description:<\/strong><\/p>\r\n<p>You will be responsible for collaborating with the departments in charge of various services that LINE offers as well as the operations departments that support them, analyzing accumulated LINE data, and improving existing services in addition to planning new services. You will also be responsible for creating a system that effectively utilizes vast amounts of data and is used to make our services better.<\/p>\r\n<p><strong>【<\/strong><strong>Specific Responsibilities Include<\/strong><strong>】<\/strong><\/p>\r\n<ul>\r\n<li>Promoting service growth through data analysis, proposals, and verifying the effects of measures taken<\/li>\r\n<li>Analyzing data and creating proposals to reduce review work and monitoring costs<\/li>\r\n<li>Creating dashboards with reporting tools like Tableau<\/li>\r\n<\/ul>\r\n<p>You will be working closely with the various services that LINE offers and the operations that support those services, as well as investigating how technology and knowledge (such as statistical analysis or machine learning) for encouraging growth and reducing costs can be applied and putting it into practice.<\/p>\r\n<p><strong>【<\/strong><strong>Technologies We Use<\/strong><strong>】<\/strong><br>Python, R, SQL, Tableau, tidyverse, Numpy, Scipy, Jupyter Notebook, Keras, TensorFlow, Spark, Hadoop, Hive, Presto, Git, scikit-learn<\/p>\r\n<p><strong>【Required Skills】<\/strong><\/p>\r\n<ul>\r\n<li>Experience solving business or research issues through data analysis<\/li>\r\n<li>Data analysis experience using tools such as SQL, R, or Python (any acceptable)<\/li>\r\n<li>Basic knowledge related to statistical analysis and machine learning<\/li>\r\n<li>Problem solving and logical thinking abilities to solve business issues<\/li>\r\n<li>Japanese skills equivalent to JLPT Level 2 or above<\/li>\r\n<\/ul>\r\n<p><strong>【Preferred Skills】<\/strong><\/p>\r\n<ul>\r\n<li>Statistical analysis or machine learning expertise, and experience applying it to actual business<\/li>\r\n<li>Communication skills to promote collaboration with related departments and smooth work progression<\/li>\r\n<li>Data analysis-related project management experience<\/li>\r\n<li>Language skills (English or Korean)<\/li>\r\n<\/ul>\r\n<p><strong>Working Hours: <\/strong><br>Discretionary and flexible according to ability and speed of work; if projects are completed on time there is no need to work for extended periods of time.<br><br><strong>Salary: <\/strong><\/p>\r\n<p>Minimum salary starting from 6 million Japanese yen per annum (salary based on experience and ability).<\/p>\r\n<p>*Other details to be discussed during the interview process.<\/p> <br/><br/>"
+  ],
+  "datePosted": [
+    "2021-09-29"
+  ],
+  "validThrough": [
+    "2022-03-30"
+  ],
+  "employmentType": [
+    "FULL_TIME"
+  ],
+  "experienceRequirements": [
+    "Mid-Level"
+  ],
+  "hiringOrganization": {
+    "@type": [
+      "Organization"
+    ],
+    "name": [
+      "LINE Fukuoka"
+    ],
+    "sameAs": [
+      "https://engineering.linecorp.com/en/blog"
+    ],
+    "logo": [
+      "https://i.stack.imgur.com/aEYCL.jpg"
+    ],
+    "description": [
+      "<p>「Closing the distance」 Our mission is to bring people,information and services closer together.<\/p>"
+    ]
+  },
+  "baseSalary": {
+    "@type": [
+      "MonetaryAmount"
+    ],
+    "currency": [
+      "JPY"
+    ],
+    "value": {
+      "@type": [
+        "QuantitativeValue"
+      ],
+      "minValue": [
+        6000000
+      ],
+      "maxValue": [
+        10000000
+      ],
+      "unitText": [
+        "YEAR"
+      ]
+    }
+  },
+  "jobLocation": [
+    {
+      "@type": [
+        "Place"
+      ],
+      "address": {
+        "@type": [
+          "PostalAddress"
+        ],
+        "addressCountry": [
+          "JP"
+        ],
+        "addressRegion": [
+          "-"
+        ],
+        "addressLocality": [
+          "Fukuoka"
+        ]
+      }
+    }
+  ]
+}

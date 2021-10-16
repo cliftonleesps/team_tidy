@@ -9,31 +9,77 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 library(rvest)
 library(jsonlite)
+library(tidyverse)
 ```
 
 # PoC
 
 
 ```{r one-page-to-skills}
-json_path <- str_c(getwd(), "/job_info.json")
+so_urls <- read_csv("so_urls.csv")
 
-so_df <- read_html("https://stackoverflow.com/jobs/537934/data-scientist-performance-media-horizon-media")
-scripts <- so_df %>% html_elements("script")
-job <- scripts[5]
 
-job_info <- job %>% html_text2() %>% parse_json()
 
-title <- job_info$title
-skills <- unlist(job_info$skills)
-description <- job_details$description
-state <- job_details$jobLocation %>% .[[1]] %>% .$address %>% .$addressRegion
-employment_type <- job_details$employmentType
-company_name <-job_details$hiringOrganization$name
-company_url <- job_details$hiringOrganization$sameAs
-min_salary <- job_details$baseSalary$value$maxValue
 
-paste(title, state, employment_type, company_name, company_url, min_salary)
-paste(skills)
-paste(description)
-write_json(job_info, json_path)
+
+read_job_html <- function(url) {
+  return(so_html)
+}
+# reduces how often i'm reading in urls while testing
+
+
+parse_jobs <- function(url) {
+  so_html <- read_html(url)
+
+  job <- so_html %>% html_elements("script[type*=ld]") # select only script that contains json job data
+  
+  job_details <- job %>% html_text2() %>% parse_json()
+  
+  
+  title <- job_details$title
+  skills <- unlist(job_details$skills)
+  description <- job_details$description %>% str_replace_all("\\<.*?\\>", " ") %>% str_replace_all("&bull;", "")
+  state <- job_details$jobLocation 
+  state <- state[[1]][2]
+  state <- state[[1]]
+  state <- state[3] %>% as.character()
+  country <- job_details$jobLocation 
+  country <- country[[1]][2]
+  country <- country[[1]]
+  country <- country[2] %>% as.character()
+  employment_type <- job_details$employmentType
+  company_name <-job_details$hiringOrganization$name
+  
+  
+  company_url <- job_details$hiringOrganization$sameAs
+  
+  if (is.null(company_url)) {
+     company_url <- as.character(NA)}
+  
+  min_salary <- job_details$baseSalary$value$minValue
+  
+  if (is.null(min_salary)) {
+     min_salary <- as.integer(NA)}
+  
+  max_salary <- job_details$baseSalary$value$maxValue
+  
+    if (is.null(max_salary)) {
+     max_salary <- as.integer(NA)}
+
+  
+  job_skills <- tribble(~title,~skills,~description,~state,~country,~employment_type,~company_name,~company_url,~min_salary,~max_salary,
+                    title,skills,description,state,country,employment_type,company_name,company_url, min_salary, max_salary)
+  # output path
+  json_path <- str_c(getwd(), "/so/", company_name, "_", title, ".json")
+  write_json(job_details, json_path)
+  return(job_skills)
+}
+
+
+
+job_skills <- lapply(so_urls$url, parse_jobs) #parse all jobs
+
+job_skills <- bind_rows(job_skills)
+
+
 ```
