@@ -3,6 +3,14 @@ library(jsonlite)
 library(tidyverse)
 library(stringr)
 
+client_id_4 <- "pw2zn2lexwtbas3e"
+secret_4 <- "M2i5Hrjd"
+scope_4 <- "emsi_open"
+
+client_id_3 <- "74x7zmozmz8fiqud"
+secret_3 <- "6stwSF9B"
+scope_3 <- "emsi_open"
+
 client_id_2 <- "duwgu3vuhlbr3vj2"
 secret_2 <- "RWY09R8M"
 scope_2 <- "emsi_open"
@@ -39,7 +47,7 @@ get_token <- function(client_id, secret, scope){
   return(access_token)
 }
 
-access_token <- get_token(client_id_2,secret_2,scope_2)
+access_token <- get_token(client_id_4,secret_4,scope_4)
 
 # get indeed data
 
@@ -86,12 +94,6 @@ get_skills <- function(job_description, confidence_string, access_token){
   return(skill_df)
 }
 
-test_job <- data$description[16]
-
-test_job
-
-new_test<- get_skills(test_job, "0.1", access_token)
-
 create_skills_df <- function(job_title, company_name, state, description, confidence_threshold, access_token){
   base_df <- tibble(
     job_title = character(),
@@ -121,24 +123,6 @@ create_skills_df <- function(job_title, company_name, state, description, confid
   
   return(skills_df)
 }
-
-length(new_test)
-
-job_title = data[1,"job_title"][[1]]
-company_name = data[1,"company_name"][[1]]
-state = data[1,"state"][[1]]
-description = data[1,"description"][[1]]
-
-test_df <- create_skills_df(job_title, 
-                            company_name, 
-                            state, 
-                            description, 
-                            "0.6",
-                            access_token)
-
-description
-
-
 
 
 get_dataset_skills <- function(data, confidence_threshold, access_token){
@@ -172,7 +156,8 @@ get_dataset_skills <- function(data, confidence_threshold, access_token){
   return(base_df)
 }
 
-all_skills_df <- get_dataset_skills(data, "0.7",access_token)
+
+all_skills_df <- get_dataset_skills(data, "0.4",access_token)
 
 
 write.csv(all_skills_df, file = "indeed_skills_df_fixed.csv",
@@ -185,3 +170,5 @@ test_read %>%
   geom_bar(aes(x=type))
 
 length(unique(test_read$skill))
+
+data[90,]$description
