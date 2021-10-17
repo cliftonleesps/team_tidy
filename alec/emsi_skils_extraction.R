@@ -3,6 +3,15 @@ library(jsonlite)
 library(tidyverse)
 library(stringr)
 
+
+client_id_6 <- "tzdjkr6akvgkxdmo"
+secret_6 <- "QB3rtACu"
+scope_6 <- "emsi_open"
+
+client_id_5 <- "d41nsww2xml7wm3e"
+secret_5 <- "C4LLBeVp"
+scope_5 <- "emsi_open"
+
 client_id_4 <- "pw2zn2lexwtbas3e"
 secret_4 <- "M2i5Hrjd"
 scope_4 <- "emsi_open"
@@ -47,13 +56,13 @@ get_token <- function(client_id, secret, scope){
   return(access_token)
 }
 
-access_token <- get_token(client_id_4,secret_4,scope_4)
+access_token <- get_token(client_id_6,secret_6,scope_6)
 
 # get indeed data
 
-data <- read_csv("ny_boston_chicago.csv")
+data <- read_csv("ny_texas_california.csv")
 
-colnames(data) <- c("job_title","company_name","state","description")
+colnames(data) <- c("job_url", "job_title", "company_name","state","description")
 
 
 # test out the skills pasrer!
@@ -94,8 +103,9 @@ get_skills <- function(job_description, confidence_string, access_token){
   return(skill_df)
 }
 
-create_skills_df <- function(job_title, company_name, state, description, confidence_threshold, access_token){
+create_skills_df <- function(job_url, job_title, company_name, state, description, confidence_threshold, access_token){
   base_df <- tibble(
+    job_url = character(),
     job_title = character(),
     company_name = character(),
     state = character(),
@@ -113,20 +123,22 @@ create_skills_df <- function(job_title, company_name, state, description, confid
   
   skills_df <- skills_df %>%
                   mutate(
+                    job_url = job_url,
                     job_title = job_title,
                     company_name = company_name,
                     state = state,
                     description = description
                   ) %>%
-                  select(job_title, company_name, state, 
+                  select(job_url, job_title, company_name, state, 
                          description, skill, type)
   
   return(skills_df)
 }
 
 
-get_dataset_skills <- function(data, confidence_threshold, access_token){
+get_dataset_skills <- function(data_frame, confidence_threshold, access_token){
   base_df <- tibble(
+    job_url = character(),
     job_title = character(),
     company_name = character(),
     state = character(),
@@ -135,15 +147,17 @@ get_dataset_skills <- function(data, confidence_threshold, access_token){
     type = character()
   )
   
-  for (row in 1:nrow(data)){
-    job_title = data[row,"job_title"][[1]]
-    company_name = data[row,"company_name"][[1]]
-    state = data[row,"state"][[1]]
-    description = data[row,"description"][[1]]
+  for (row in 1:nrow(data_frame)){
+    job_url = data_frame[row,"job_url"][[1]]
+    job_title = data_frame[row,"job_title"][[1]]
+    company_name = data_frame[row,"company_name"][[1]]
+    state = data_frame[row,"state"][[1]]
+    description = data_frame[row,"description"][[1]]
     
     print(c(job_title, company_name, state))
     
-    skills_df = create_skills_df(job_title, 
+    skills_df = create_skills_df(job_url,
+                                 job_title, 
                                  company_name, 
                                  state, 
                                  description, 
@@ -156,19 +170,32 @@ get_dataset_skills <- function(data, confidence_threshold, access_token){
   return(base_df)
 }
 
+first_half <- data[1:49,]
+second_half <- data[50:length(data),]
 
-all_skills_df <- get_dataset_skills(data, "0.4",access_token)
+
+first_half_df <- get_dataset_skills(first_half, "0.4",access_token)
+
+second_half_df <- get_dataset_skills(second_half, "0.4",access_token)
 
 
-write.csv(all_skills_df, file = "indeed_skills_df_fixed.csv",
+write.csv(second_half_df, file = "ny_texas_california_second_half_emsi.csv",
           row.names = FALSE)
 
-test_read <- read_csv("indeed_skills_df_fixed.csv")
+first_half_ny_texas_cali <- read_csv("ny_texas_california_first_half_emsi.csv")
 
-test_read %>%
-  ggplot() +
-  geom_bar(aes(x=type))
+second_half_ny_texas_cali <- read_csv("ny_texas_california_second_half_emsi.csv")
 
-length(unique(test_read$skill))
+aggregated_ny_texas_cali <- bind_rows(first_half_ny_texas_cali, second_half_ny_texas_cali)
 
-data[90,]$description
+aggregated_ny_texas_cali <- aggregated_ny_texas_cali %>%
+                              mutate(
+                                employment_type = NA,
+                                min_salary = NA,
+                                max_salary = NA,
+                                original_source = "Indeed"
+                              )
+
+
+write.csv(aggregated_ny_texas_cali, file = "final_indeed_emsi_data.csv",
+          row.names = FALSE)
