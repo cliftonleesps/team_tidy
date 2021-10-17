@@ -19,17 +19,23 @@ insert_esmi_data <- function(all_skills_df, db_connection) {
     # if we have a new description, we have a new job so insert a new job record
     if (current_job_description != job$description) {
       job_tibble <- tibble(
+        url = job$job_url,
         job_title = job$job_title,
         company_name = job$company_name ,
         state = job$state,
-        description = job$description
+        description = job$description,
+        employment_type = job$employment_type,
+        min_salary = job$min_salary,
+        max_salary = job$max_salary
       )
+      
+      
       dbAppendTable(db_connection, "job", job_tibble)
       
       # update the job_id from the db
       query_result <- dbGetQuery(db_connection,"SELECT max(job_id) as job_id FROM job"  )
       job_id <- query_result$job_id
-      # print (sprintf("max_id: %s", job_id))
+      sprintf("max_id: %s", job_id)
       
       # update the temporary description variable
       current_job_description <- job$description
@@ -45,3 +51,7 @@ insert_esmi_data <- function(all_skills_df, db_connection) {
   }
   
 }
+
+
+
+
