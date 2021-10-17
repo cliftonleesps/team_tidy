@@ -7,14 +7,14 @@ output: html_document
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
-library
+library(here)
 library(rvest)
 library(jsonlite)
 library(tidyverse)
 library(mongolite)
 library(DBI)
-source(str_c(getwd(),"/alec/skills_extraction.R"))
-source(str_c(getwd(),"/insert_esmi.R"))
+source(here("alec", "skills_extraction.R"))
+source(here("insert_esmi.R"))
 ```
 
 # PoC
@@ -65,7 +65,7 @@ parse_jobs <- function(url) {
   job_skills <- tribble(~job_title,~skills,~description,~state,~country,~employment_type,~company_name,~company_url,~min_salary,~max_salary,
                     job_title,skills,description,state,country,employment_type,company_name,company_url, min_salary, max_salary)
   # output path
-  json_path <- str_c(getwd(), "/job_jsons/", company_name, "_", job_title, ".json")
+  json_path <- here("stack_overflow", "job_jsons", str_c(company_name, job_title, ".json"))
   write_json(job_details, json_path)
   return(job_skills)
 }
@@ -91,9 +91,12 @@ client_id <- key_list("EMSI")[1,2]
 secret <- key_get("EMSI", client_id)
 scope <- "emsi_open"
 
-access_token <- get_token(client_id,secret,scope_4)
+access_token <- get_token(client_id,secret,scope)
 
 all_skills_df <- get_dataset_skills(job_skills, "0.4",access_token)
+
+original_source = "stack_overflow"
+all_skills_df <- all_skills_df %>% add_column(original_source)
 
 write.csv(all_skills_df, file= "stackoverflow_jobs_emsi.csv", row.names = FALSE)
 
@@ -102,16 +105,18 @@ write.csv(all_skills_df, file= "stackoverflow_jobs_emsi.csv", row.names = FALSE)
 
 ```{r MariaDB}
 db_connection <- dbConnect(RMariaDB::MariaDB(),
-                           host=Sys.getenv("TEAMTIDY_DB_HOST"),
-                           user = Sys.getenv("TEAMTIDY_DB_USER"),
-                           password = Sys.getenv("TEAMTIDY_DB_PASS"),
-                           dbname = 'data_science_jobs')
+                          host=Sys.getenv("TEAMTIDY_DB_HOST"),
+                         user = Sys.getenv("TEAMTIDY_DB_USER"),
+                        password = Sys.getenv("TEAMTIDY_DB_PASS"),
+                       dbname = 'data_science_jobs')
 
 
 insert_esmi_data(all_skills_df, db_connection)
 
-dbGetQuery(db_connection, "SELECT * FROM job")
+skills <- dbGetQuery(db_connection, "SELECT * FROM skill")
+total_jobs <- dbGetQuery(db_connection, "SELECT * FROM job")
 
+skills %>% group_by(description) %>% summarize(count = n()) %>% arrange(desc(count))
 dbDisconnect()
 
 ```
@@ -119,8 +124,8 @@ dbDisconnect()
 
 
 ```{r mongo-db}
-connection_string = 'mongodb+srv://dbUser:Q47Ev1vZU8oEUGxF@cluster0.yvrzo.mongodb.net/test?readPreference=primary&ssl=true'
-trips_collection = mongo(collection="trips", db="jobs", url=connection_string)
+connection_string = 'mongodb+srv://dbUser:Q47Ev1vZU8oEUGxF@cluster0.yvrzo.mongodb.net/test'
+trips_collection = mongo(collection="trips", db="jobs", url=connection_string, verbose = TRUE)
 trips_collection$count()
 
 connection_string = 'mongodb+srv://dbUser:Q47Ev1vZU8oEUGxF@cluster0.yvrzo.mongodb.net/test'
