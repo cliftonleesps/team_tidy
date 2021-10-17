@@ -12,6 +12,8 @@ insert_esmi_data <- function(all_skills_df, db_connection) {
   job_id <- 0
   current_job_description <- ''
   
+  dbBegin(db_connection)
+  
   # iterate through the ESMI data frame
   for (i in 1:nrow(all_skills_df)) {
     job <- all_skills_df[i,]
@@ -50,6 +52,7 @@ insert_esmi_data <- function(all_skills_df, db_connection) {
     dbAppendTable(db_connection, "skill", skill_tibble)
   }
   
+  dbCommit(db_connection)
 }
 
 
