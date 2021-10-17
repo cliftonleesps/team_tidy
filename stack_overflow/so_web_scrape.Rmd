@@ -7,11 +7,14 @@ output: html_document
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+library
 library(rvest)
 library(jsonlite)
 library(tidyverse)
 library(mongolite)
+library(DBI)
 source(str_c(getwd(),"/alec/skills_extraction.R"))
+source(str_c(getwd(),"/insert_esmi.R"))
 ```
 
 # PoC
@@ -62,7 +65,7 @@ parse_jobs <- function(url) {
   job_skills <- tribble(~job_title,~skills,~description,~state,~country,~employment_type,~company_name,~company_url,~min_salary,~max_salary,
                     job_title,skills,description,state,country,employment_type,company_name,company_url, min_salary, max_salary)
   # output path
-  json_path <- str_c(getwd(), "/so/", company_name, "_", job_title, ".json")
+  json_path <- str_c(getwd(), "/job_jsons/", company_name, "_", job_title, ".json")
   write_json(job_details, json_path)
   return(job_skills)
 }
@@ -97,8 +100,26 @@ write.csv(all_skills_df, file= "stackoverflow_jobs_emsi.csv", row.names = FALSE)
 ```
 
 
+```{r MariaDB}
+db_connection <- dbConnect(RMariaDB::MariaDB(),
+                           host=Sys.getenv("TEAMTIDY_DB_HOST"),
+                           user = Sys.getenv("TEAMTIDY_DB_USER"),
+                           password = Sys.getenv("TEAMTIDY_DB_PASS"),
+                           dbname = 'data_science_jobs')
+
+
+insert_esmi_data(all_skills_df, db_connection)
+
+dbGetQuery(db_connection, "SELECT * FROM job")
+
+dbDisconnect()
+
+```
+
+
+
 ```{r mongo-db}
-connection_string = 'mongodb+srv://dbUser:Q47Ev1vZU8oEUGxF@cluster0.yvrzo.mongodb.net/'
+connection_string = 'mongodb+srv://dbUser:Q47Ev1vZU8oEUGxF@cluster0.yvrzo.mongodb.net/test?readPreference=primary&ssl=true'
 trips_collection = mongo(collection="trips", db="jobs", url=connection_string)
 trips_collection$count()
 
@@ -127,5 +148,4 @@ Q47Ev1vZU8oEUGxF
 my_collection = mongo(collection = "jobs", db = "DataScience", url=connection_string) # create connection, database and collection
 
 my_collection$insert(job_skills)
-
 ```
