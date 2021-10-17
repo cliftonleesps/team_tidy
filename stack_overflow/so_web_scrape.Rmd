@@ -21,8 +21,6 @@ source(here("insert_esmi.R"))
 
 
 ```{r parse-jobs}
-so_urls <- read_csv("so_urls.csv")
-
 parse_jobs <- function(url) {
   so_html <- read_html(url)
 
@@ -69,9 +67,12 @@ parse_jobs <- function(url) {
   write_json(job_details, json_path)
   return(job_skills)
 }
+
+
 ```
 
 ```{r job-skills}
+so_urls <- read_csv("so_urls.csv")
 job_skills <- lapply(so_urls$url, parse_jobs) #parse all jobs
 
 job_skills <- bind_rows(job_skills)
@@ -114,43 +115,9 @@ db_connection <- dbConnect(RMariaDB::MariaDB(),
 insert_esmi_data(all_skills_df, db_connection)
 
 skills <- dbGetQuery(db_connection, "SELECT * FROM skill")
-total_jobs <- dbGetQuery(db_connection, "SELECT * FROM job")
+total_jobs <- dbGetQuery(db_connection, "SELECT job_title, job_id FROM job")
 
 skills %>% group_by(description) %>% summarize(count = n()) %>% arrange(desc(count))
 dbDisconnect()
 
-```
-
-
-
-```{r mongo-db}
-connection_string = 'mongodb+srv://dbUser:Q47Ev1vZU8oEUGxF@cluster0.yvrzo.mongodb.net/test'
-trips_collection = mongo(collection="trips", db="jobs", url=connection_string, verbose = TRUE)
-trips_collection$count()
-
-connection_string = 'mongodb+srv://dbUser:Q47Ev1vZU8oEUGxF@cluster0.yvrzo.mongodb.net/test'
-
-connection_string = 'mongodb+srv://dbUser:Q47Ev1vZU8oEUGxF@cluster0.yvrzo.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
-
-trips_collection$iterate()$one()
-
-trips_collection$find(sort = '{"tripduration" : -1}' , limit = 5, fields = '{"_id" : true, "tripduration" : true}')
-
-query = trips_collection$find('{"usertype":"Subscriber","tripduration":{"$gt":500},"$expr": {"$eq": ["$start station name","$end station name"]}}')
-
-nrow(query)
-
-user_types = trips_collection$aggregate('[{"$group":{"_id":"$usertype", "Count": {"$sum":1}}}]')
-
-df <- as.data.frame(user_types)
-
-ggplot(df,aes(x=reorder(`_id`,Count),y=Count))+
-  geom_bar(stat="identity",color='yellow',fill='#FFC300')+geom_text(aes(label = Count), color = "red") +coord_flip()+xlab("User Type")
-
-
-Q47Ev1vZU8oEUGxF
-
-my_collection = mongo(collection = "jobs", db = "DataScience", url=connection_string) # create connection, database and collection
-
-my_collection$insert(job_skills)
 ```
