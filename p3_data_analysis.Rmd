@@ -1,0 +1,92 @@
+---
+title: "Project_3_dataAn"
+author: "Project 3 group"
+date: "10/17/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r message=FALSE}
+library(tidyverse)
+```
+
+
+```{r}
+library(RJDBC)
+library(DBI)
+
+
+
+db_connection <- dbConnect(RMariaDB::MariaDB(),
+                           host=Sys.getenv("TEAMTIDY_DB_HOST"),
+                           user = Sys.getenv("TEAMTIDY_DB_USER"),
+                           password = Sys.getenv("TEAMTIDY_DB_PASS"),
+                           dbname = 'data_science_jobs')
+```
+
+```{r hard-vs-soft}
+hard_vs_soft <- dbGetQuery(db_connection, "SELECT type, COUNT(*) AS n FROM skill GROUP BY type")
+hard_vs_soft$n <- as.numeric(hard_vs_soft$n)
+hard_vs_soft
+```
+```{r}
+hard_vs_soft %>% slice(2:3) %>% ggplot(aes(x = type, y = n)) + 
+  geom_bar(stat = "identity", fill = "brown", width = 0.2) + 
+  ylab("Number of Jobs") + labs(title = "Hard vs Soft Skills")+ theme_bw() 
+```
+
+```{r}
+#dbGetQuery(db_connection, "SELECT * FROM skill LIMIT 35")
+```
+```{r ds-job-skills}
+job_skill <- dbGetQuery(db_connection, "SELECT description, type, COUNT(*) AS n 
+                        FROM skill GROUP BY description ORDER BY n DESC")
+job_skill$n <- as.numeric(job_skill$n)
+head(job_skill, n =10)
+```
+```{r ds-job-skill-barchart}
+job_skill %>% top_n(30) %>% ggplot(aes(reorder(description, n), n)) + 
+  geom_col(fill = "brown") + coord_flip() + xlab("") + labs(title = "Top Data Science job Skills") +
+  theme_bw()
+```
+
+
+
+```{r hard-skill}
+hard_skill <- dbGetQuery(db_connection, "SELECT description, COUNT(*) AS n 
+                             FROM skill WHERE type = 'Hard Skill' GROUP BY description ORDER BY n DESC")
+hard_skill$n <- as.numeric(hard_skill$n)
+head(hard_skill, n = 10)
+```
+```{r hard-skill-barchart}
+hard_skill %>% top_n(10) %>% ggplot(aes(reorder(description, n), n)) + 
+  geom_col(fill = "brown") + coord_flip() + xlab("") + labs(title = "Top 10 Data Science Hard Skills") +
+  theme_bw()
+```
+
+```{r soft-skill}
+soft_skill <- dbGetQuery(db_connection, "SELECT description, COUNT(*) AS n 
+                             FROM skill WHERE type = 'Soft Skill' GROUP BY description ORDER BY n DESC")
+soft_skill$n <- as.numeric(soft_skill$n)
+head(soft_skill, n =10)
+```
+
+```{r soft-skill-barchart}
+soft_skill %>% top_n(10) %>% ggplot(aes(reorder(description, n), n)) + 
+  geom_col(fill = "brown") + coord_flip() + xlab("") + labs(title = "Top 10 Data Science Soft Skills") +
+  theme_bw()
+```
+```{r}
+soft_skill <- dbGetQuery(db_connection, "SELECT description, COUNT(*) AS n 
+                             FROM skill WHERE type = 'Soft Skill' GROUP BY description ORDER BY n DESC")
+```
+
+
+
+
+
+
+
