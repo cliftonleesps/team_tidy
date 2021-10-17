@@ -10,6 +10,7 @@ knitr::opts_chunk$set(echo = TRUE)
 library(rvest)
 library(jsonlite)
 library(tidyverse)
+library(mongolite)
 source(str_c(getwd(),"/alec/skills_extraction.R"))
 ```
 
@@ -72,6 +73,9 @@ job_skills <- lapply(so_urls$url, parse_jobs) #parse all jobs
 
 job_skills <- bind_rows(job_skills)
 
+
+write_json(job_skills, "stackoverflow_jobs_mongodb.json")
+
 long_job_skills <- job_skills %>% unnest(skills)
 
 write.csv(long_job_skills, file = "stackoverflow_jobs.csv",
@@ -89,5 +93,39 @@ access_token <- get_token(client_id,secret,scope_4)
 all_skills_df <- get_dataset_skills(job_skills, "0.4",access_token)
 
 write.csv(all_skills_df, file= "stackoverflow_jobs_emsi.csv", row.names = FALSE)
+
+```
+
+
+```{r mongo-db}
+connection_string = 'mongodb+srv://dbUser:Q47Ev1vZU8oEUGxF@cluster0.yvrzo.mongodb.net/'
+trips_collection = mongo(collection="trips", db="jobs", url=connection_string)
+trips_collection$count()
+
+connection_string = 'mongodb+srv://dbUser:Q47Ev1vZU8oEUGxF@cluster0.yvrzo.mongodb.net/test'
+
+connection_string = 'mongodb+srv://dbUser:Q47Ev1vZU8oEUGxF@cluster0.yvrzo.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
+
+trips_collection$iterate()$one()
+
+trips_collection$find(sort = '{"tripduration" : -1}' , limit = 5, fields = '{"_id" : true, "tripduration" : true}')
+
+query = trips_collection$find('{"usertype":"Subscriber","tripduration":{"$gt":500},"$expr": {"$eq": ["$start station name","$end station name"]}}')
+
+nrow(query)
+
+user_types = trips_collection$aggregate('[{"$group":{"_id":"$usertype", "Count": {"$sum":1}}}]')
+
+df <- as.data.frame(user_types)
+
+ggplot(df,aes(x=reorder(`_id`,Count),y=Count))+
+  geom_bar(stat="identity",color='yellow',fill='#FFC300')+geom_text(aes(label = Count), color = "red") +coord_flip()+xlab("User Type")
+
+
+Q47Ev1vZU8oEUGxF
+
+my_collection = mongo(collection = "jobs", db = "DataScience", url=connection_string) # create connection, database and collection
+
+my_collection$insert(job_skills)
 
 ```
