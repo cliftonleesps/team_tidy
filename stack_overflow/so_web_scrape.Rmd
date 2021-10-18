@@ -13,8 +13,8 @@ library(jsonlite)
 library(tidyverse)
 library(mongolite)
 library(DBI)
-source(here("alec", "skills_extraction.R"))
-source(here("insert_esmi.R"))
+source(here("scripts", "skills_extraction.R"))
+source(here("scripts", "insert_esmi.R"))
 ```
 
 # PoC
@@ -96,7 +96,7 @@ access_token <- get_token(client_id,secret,scope)
 
 all_skills_df <- get_dataset_skills(job_skills, "0.4",access_token)
 
-original_source = "stack_overflow"
+original_source = "stack overflow"
 all_skills_df <- all_skills_df %>% add_column(original_source)
 
 write.csv(all_skills_df, file= "stackoverflow_jobs_emsi.csv", row.names = FALSE)
@@ -115,9 +115,24 @@ db_connection <- dbConnect(RMariaDB::MariaDB(),
 insert_esmi_data(all_skills_df, db_connection)
 
 skills <- dbGetQuery(db_connection, "SELECT * FROM skill")
-total_jobs <- dbGetQuery(db_connection, "SELECT job_title, job_id FROM job")
+
+total_jobs <- dbGetQuery(db_connection, "SELECT * FROM job")
+
+dbDisconnect(db_connection)
+```
+
+
+```{r}
+df <- left_join(total_jobs,skills, by= "job_id")
+
+df <- df %>% select(job_id,job_title,company_name, state, skill = description.y, type, original_source)
+
+df_skill <- df %>% chop(c(skill))
+
+df_type <- df %>% chop(c(type,skill))
+
 
 skills %>% group_by(description) %>% summarize(count = n()) %>% arrange(desc(count))
-dbDisconnect()
 
 ```
+

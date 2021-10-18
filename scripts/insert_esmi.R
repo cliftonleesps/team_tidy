@@ -28,7 +28,8 @@ insert_esmi_data <- function(all_skills_df, db_connection) {
         description = job$description,
         employment_type = job$employment_type,
         min_salary = job$min_salary,
-        max_salary = job$max_salary
+        max_salary = job$max_salary,
+        original_source = job$original_source
       )
       
       
