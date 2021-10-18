@@ -42,3 +42,10 @@ After scraping our identified sources, we created a script skills_extraction.R w
 
 We then inserted each of the source outputs into a normalized SQL database for persistent storage.
 
+# Findings:  
+
+![Top 30 Data Science Skills](https://github.com/cliftonleesps/team_tidy/blob/main/images/all_skills.png)
+![To 10 Hard Data Science Skills](https://github.com/cliftonleesps/team_tidy/blob/main/images/hard_skills.png)
+![Top 10 Soft Data Science Skills](https://github.com/cliftonleesps/team_tidy/blob/main/images/soft_skills.png)
+![Source Proportion](https://github.com/cliftonleesps/team_tidy/blob/main/images/source_proportion.png)
+
