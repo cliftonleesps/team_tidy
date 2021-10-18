@@ -14,7 +14,7 @@ db_connection <- dbConnect(RMariaDB::MariaDB(),
                            dbname = 'data_science_jobs')
 
 
-test_read <- read_csv("alec/indeed_skills_df_fixed.csv")
+test_read <- read_csv("indeed/cali_oregon_utah_nj_emsi.csv")
 
 insert_esmi_data(test_read, db_connection)
 

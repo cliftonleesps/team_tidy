@@ -1,6 +1,3 @@
-install.packages("httr","jsonlite")
-install.packages("RCurl")
-install.packages("rvest")
 
 library(httr)
 library(jsonlite)
@@ -11,13 +8,6 @@ library(rvest)
 library(RSelenium)
 
 
-remDr <- remoteDriver(
-  remoteServerAdd = "localhost",
-  port = 4445L,
-  browser = "chrome"
-)
-
-remDr$open()
 
 get_base_page <- function(state_string){
   job_string <- str_c("Data-Scientist-jobs-in-",state_string)
@@ -66,7 +56,9 @@ get_href_list <- function(jobs_list) {
 
 
 
-pull_page_results <- function(job_href_list) {
+pull_page_results <- function(job_href_list, state_string) {
+  original_source_list = list()
+  job_url_list = list()
   job_title_list = list()
   company_name_list = list()
   state_list = list()
@@ -87,16 +79,15 @@ pull_page_results <- function(job_href_list) {
     job_description_text <- html_element(new_page, 'div[id="jobDescriptionText"]') %>%
       html_text2()
     
-    #viewJobSSRRoot <- rvest::html_element(new_page, 'div[id="viewJobSSRRoot"]')
-    #full_text <- viewJobSSRRoot %>% html_text2()
-    
+    original_source_list <- append(original_source_list, "indeed")
+    job_url_list <- append(job_url_list, new_url)
     job_title_list <- append(job_title_list, job_title)
     company_name_list <- append(company_name_list, company)
     state_list <- append(state_list, state_string)
     job_description_list <- append(job_description_list, job_description_text)
   }
   
-  ret = list(job_title_list,company_name_list,state_list,job_description_list)
+  ret = list(original_source_list,job_url_list,job_title_list,company_name_list,state_list,job_description_list)
   
   return(ret)
 }
@@ -104,6 +95,8 @@ pull_page_results <- function(job_href_list) {
 
 
 traverse_job_search <- function(base_page, state_string, depth){
+  original_source_list = list()
+  job_url_list = list()
   job_title_list = list()
   company_name_list = list()
   state_list = list()
@@ -115,14 +108,15 @@ traverse_job_search <- function(base_page, state_string, depth){
     jobs <- get_jobs(base_page)
     page_url <- get_page_url(base_page)
     href_list <- get_href_list(jobs)
-    page_results <- pull_page_results(href_list)
+    page_results <- pull_page_results(href_list, state_string)
     
-    job_title_list <- append(job_title_list, page_results[1])
-    job_title_list <- append(job_title_list, page_results[1])
-    job_title_list <- append(job_title_list, page_results[1])
-    job_title_list <- append(job_title_list, page_results[1])
+    original_source_list <- append(original_source_list, page_results[1])
+    job_url_list <- append(job_url_list, page_results[2])
+    job_title_list <- append(job_title_list, page_results[3])
+    company_name_list <- append(company_name_list, page_results[4])
+    state_list <- append(state_list, page_results[5])
+    job_description_list <- append(job_description_list, page_results[6])
     
-    ret_list <- append(ret_list, job_descriptions)
     #sel_driver$navigate(page_url)
     #base_page <-sel_driver$getPageSource()[[1]]
     base_page <- xml2::read_html(page_url)
@@ -132,79 +126,71 @@ traverse_job_search <- function(base_page, state_string, depth){
       Sys.sleep(8)
     }
   }
+  ret = list(original_source_list,job_url_list,job_title_list,company_name_list,state_list,job_description_list)
   
-  return(ret_list)
+  return(ret)
 }
 
 
 get_state_jobs <- function(state_string, depth){
   base_page <- get_base_page(state_string)
-  test_results <- traverse_job_search(base_page, depth=depth)
+  test_results <- traverse_job_search(base_page, state_string, depth=depth)
   
   return(test_results)
 }
 
+
+california_jobs <- get_state_jobs("California",1)
+oregon_jobs <- get_state_jobs("Oregon",1)
+
+conv_state_results_to_dataframe <- function(state_results){
+  state_df <- as_tibble(unlist(state_results[1]))
+  colnames(state_df) = c("original_source")
+  
+  state_df <- state_df %>%
+    mutate(
+      job_url = unlist(state_results[2]),
+      job_title = unlist(state_results[3]),
+      company_name = unlist(state_results[4]),
+      state = unlist(state_results[5]),
+      description = unlist(state_results[6])
+    )
+  
+  return(state_df)
+}
+
+cali_df <- conv_state_results_to_dataframe(california_jobs)
+
+oregon_df <- conv_state_results_to_dataframe(oregon_jobs)
+
+
 get_multiple_state_jobs <- function(state_list, depth) {
-  final_states <- list()
-  final_results <- list()
+  base_df <- tibble(
+    original_source = character(),
+    job_url = character(),
+    job_title = character(),
+    company_name = character(),
+    state = character(),
+    description = character()
+  )
   
   for (state in state_list) {
     print(state)
     state_results <- get_state_jobs(state,depth=depth)
-    final_results <- append(final_results, state_results)
-    final_states <- append(final_states, state_count)
+    
+    formatted_state_results <- conv_state_results_to_dataframe(state_results)
+    
+    base_df <- bind_rows(base_df, formatted_state_results)
   }
   
-  return(c(final_states,final_results))
+  return(base_df)
 }
 
-
-page <- get_base_page("New-York")
-
-jobs <- get_jobs(page)
-
-href_list <- get_href_list(jobs)
-
-sample_job_string <-str_c("https://indeed.com", href_list[1])
-
-sample_job <- xml2::read_html(sample_job_string)
-
-company <- html_element(sample_job, 'div[class="jobsearch-CompanyReview--heading"]') %>%
-            html_text2()
-
-job_title <- html_element(sample_job, 'h1[class="icl-u-xs-mb--xs icl-u-xs-mt--none jobsearch-JobInfoHeader-title"]') %>%
-  html_text2()
-
-job_description_text <- html_element(sample_job, 'div[id="jobDescriptionText"]') %>%
-  html_text2()
-
-data <- rvest::html_element(sample_job, 'div[id="viewJobSSRRoot"]')
+state_list <- c("Utah",
+                "New-Jersey")
 
 
+utah_nj_df <- get_multiple_state_jobs(state_list, 1)
 
-
-
-state_list <- c("New-York",
-                "Boston",
-                "Chicago",
-                "Las-Angeles",
-                "San-Francisco",
-                "Austin")
-
-all_jobs <- get_multiple_state_jobs(state_list = state_list, depth=5, sel_driver = remDr)
-
-
-new_york_jobs <- get_state_jobs("New-York",5)
-
-jobs <- unlist(new_york_jobs)
-
-jobs_df <- as_tibble(jobs)
-
-colnames(jobs_df) <- c("full_job_text")
-
-first_job <- jobs_df[1,]
-
-write.csv(jobs_df, file = "sample_new_york_jobs.csv",
+write.csv(utah_nj_df, file = "utah_nj.csv",
           row.names = FALSE)
-
-
