@@ -6,153 +6,295 @@ output: html_document
 ---
 
 # Import
-```{r}
+```{r message=FALSE}
 library(dplyr)
 library(rvest)
 library(stringr)
 library(XML)
 library(RSelenium)
+library(here)
+library(keyring)
+library(DBI)
+
+source(here("scripts", "skills_extraction.R"))
+source(here("scripts", "insert_esmi.R"))
 ```
 
+
+
+```{r include=FALSE}
+#####OLD: Skill parsers
+#skillsKeywords <- c(
+#  "Qualification",
+#  "Requirement",
+#  "Education",
+#  "Soft Skills",
+#  "Hard Skills",
+#  "What You'll Need",
+#  "What You Need",
+#  "What It Takes"
+#)
+#
+#skillsRegex <- skillsKeywords %>%
+#  paste(collapse = "|")
+#
+#Lazy operator matches soonest instead of latest
+#skillsRegex <- paste("(", skillsRegex, ").*?", sep = "")
+#parseSkillsRegex <- paste(skillsRegex, "(\\1|\\.)", sep = "")
+#notBeginsWithNewlineRegex <- "^[^\\\n]"
+```
 
 
 # Start server
 ```{r}
 #####Used selenium  to ensure page load, consistency, and to view and understand the process
-#driver <- rsDriver(browser = "firefox", port = 4568L)
-#remDr <- driver$client
+driver <- rsDriver(browser = "firefox", port = 4568L)
+remDr <- driver$client
 ```
-
-
 
 # Form search URL
 ```{r}
+spaceCharacter <- "%20"
+andCharacter <- "&"
+
+
+
+site <- "LinkedIn"
 baseUrl <- "https://www.linkedin.com/jobs/search/?"
 
-spaceCharacter <- "%20"
+
 
 keywordsKey <- "keywords="
-keywordsValue <- c("data", "science") %>%
+keywordsValue <- c("data", "scientist") %>%
   paste(collapse = spaceCharacter)
+keywordsKeyValue <- paste(keywordsKey, keywordsValue, sep = "")
 
-keywordsKeyValue <- keywordsKey %>%
-  paste(keywordsValue, sep = "")
 
-searchUrl <- baseUrl %>% 
-  paste(keywordsKeyValue, sep = "")
+
+startKey <- "start="
+startValue <- 0
+startKeyValue <- paste(startKey, startValue, sep = "")
+
+
+
+queries <- paste(keywordsKeyValue, startKeyValue, sep = andCharacter)
+
+searchUrl <- paste(baseUrl, queries, sep = "")
+searchUrl
 ```
 
 
 
 # Find job redirect links
 ```{r}
+scrollToBottom <- function(driver, reps = 3) {
+  for (i in 1:reps) {
+    driver$
+      findElement("css", "body")$
+      sendKeysToElement(list(key = "end"))
+    Sys.sleep(2)
+  }
+}
+```
+
+```{r}
 liElement <- "li"
 aElement <- "a"
+
 hrefAttribute <- "href"
 
 jobsRouteRegex = "\\/jobs\\/"
 
-urls <- searchUrl %>%
+
+remDr$navigate(searchUrl)
+scrollToBottom(remDr)
+
+urls <- remDr$getPageSource()[[1]] %>%
   read_html %>%
   html_elements(liElement) %>%
   html_elements(aElement) %>%
   html_attr(hrefAttribute)
 
+remDr$close()
 urls <- urls[grepl(jobsRouteRegex, urls)]
 ```
 
 
 
-# Scrape web pages
+# Scrape
+## Functions
+```{r}
+emptyTable <- function(cols = 1, rows = 1, colNames = NULL) {
+  tibble <- data.frame(matrix(NA, ncol = cols, nrow = rows)) %>%
+    as_tibble
+  
+  if (!is.null(colNames)) {
+    colnames(tibble) <- colNames
+  }
+  
+  return(tibble)
+}
+```
+
+```{r}
+extractField <- function(url, field) {
+  field <- url %>%
+    read_html %>%
+    html_element(field) %>%
+    html_text2 %>%
+    str_squish
+  
+  return(field)
+}
+```
+
+```{r}
+extractEmployment <- function(url, employment) {
+  field <- url %>%
+    read_html %>%
+    html_elements(employment)
+  
+  if(!is.na(field) && length(field) > 1) {
+    field <- field[2] %>%
+      html_text2 %>%
+      str_squish
+  } else {
+    field <- ""
+  }
+  
+  field
+  return(field)
+}
+```
+
+```{r}
+extractSalary <- function(url, salary, min = TRUE) {
+  field <- extractField(url, salary)
+  
+  if(!is.na(field) && field != '') {
+    field <- ((field %>%
+      str_split(" - "))[[1]])
+    
+    field <- field[ifelse(!min && length(field) > 1, 2, 1)]
+  }
+  
+  return(field)
+}
+```
+
 ## Setup
 ```{r}
-sectionElement <- "section"
-ulElement <- "ul"
-skillsKeywords <- c(
-  "Qualification",
-  "Soft Skills",
-  "Hard Skills",
-  "Requirement",
-  "Education",
-  "What You'll Need",
-  "What You Need",
-  "What It Takes"
+title <- 'h1[class="top-card-layout__title topcard__title"]'
+company <- 'a[class="topcard__org-name-link topcard__flavor--black-link"]'
+employment_type <- 'span[class="description__job-criteria-text description__job-criteria-text--criteria"]'
+location <- 'span[class="topcard__flavor topcard__flavor--bullet"]'
+details <- 'div[class="show-more-less-html__markup show-more-less-html__markup--clamp-after-5"]'
+salary_range <- 'div[class="salary compensation__salary"]'
+
+sampleUrl <- "https://www.linkedin.com/jobs/view/2724684312/?alternateChannel=search&refId=a%2Fh7xo#2jT4A%2FxfhHuH7AQ%3D%3D&trackingId=n8Yytqaa%2FLIpZ5e3bnOi7g%3D%3D"
+
+columnNames <- c(
+  "job_title",
+  "company_name",
+  "employment_type",
+  "description",
+  "min_salary",
+  "max_salary",
+  "state",
+  "job_url",
+  "original_source"
 )
 
-skillsRegex <- skillsKeywords %>%
-  paste(collapse = "|")
-
-#Lazy operator matches soonest instead of latest
-skillsRegex <- paste("(", skillsRegex, ").*?", sep = "")
-parseSkillsRegex <- paste(skillsRegex, "(\\1|\\.)", sep = "")
-notBeginsWithNewlineRegex <- "^[^\\\n]"
-
-companyXPath <- "/html/body/main/section[1]/div/section[2]/div/div[1]/div/h4/div[1]/span[1]/a"
-positionXPath <- "/html/body/main/section[1]/div/section[2]/div/div[1]/div/h1"
+scrape <- emptyTable(length(columnNames), 1, columnNames)
 
 max <- length(urls)
 ```
 
-
-
-## Scrape
+## Extract
 ```{r}
-for (i in 1:1) {
-  #Sys.sleep(1)
+for (i in 1:10) {
+  Sys.sleep(2)
   
-  url <- "https://www.linkedin.com/jobs/view/data-applied-scientist-at-microsoft-2728708352?refId=0mjCey64wlPBGB7jUV4Q5A%3D%3D&trackingId=7mAT8GpiogFqF4OWvOMwpA%3D%3D&position=1&pageNum=0&trk=public_jobs_jserp-result_search-card" #$urls[i]
-
-  #remDr$navigate(url)
+  url <- urls[i]
   
-  #####Get description
-  loadedUrl <- url %>% #remDr$getPageSource()[[1]] %>%
-    read_html
+  job_title <- url %>%
+    extractField(title)
+  
+  company_name <- url %>%
+    extractField(company)
+  
+  employment <- url %>%
+    extractEmployment(employment_type)
     
-  jobDescription <- loadedUrl %>%
-    html_elements(sectionElement)
+  description <- url %>%
+    extractField(details)
   
-  #####Get bullet pointed skills
-  listSkills <- jobDescription %>%
-    html_elements(ulElement) %>%
-    html_elements(liElement) %>%
-    html_text
+  minSalary <- url %>%
+    extractSalary(salary_range)
   
-  listSkills <- listSkills[grepl(notBeginsWithNewlineRegex, listSkills)] %>%
-    str_squish
+  maxSalary <- url %>%
+    extractSalary(salary_range, min = FALSE)
   
-  #####Get loose skills in description
-  jobDescriptionText <- jobDescription %>%
-    html_text
-  jobDescriptionText <- jobDescriptionText[grepl(skillsRegex, jobDescriptionText, ignore.case = TRUE)][1] %>%
-    str_squish
+  state <- url %>%
+    extractField(location)
     
-  looseSkills <- jobDescriptionText %>%
-    str_extract_all(regex(parseSkillsRegex, ignore_case = TRUE)) %>%
-    unique
-  
-  
-  #####Aggregate
-  #position <- remDr$findElements(using = 'xpath', positionXPath)[[1]]$getElementText()[[1]]
-  position <- (jobDescription %>%
-    html_nodes(xpath = positionXPath))[[1]] %>%
-    html_text %>%
-    str_squish
-  
-  #company <- remDr$findElements(using = 'xpath', companyXPath)[[1]]$getElementText()[[1]]
-  company <- (jobDescription %>%
-      html_nodes(xpath = companyXPath))[[1]] %>%
-      html_text %>%
-      str_squish
-
-  scrape <- c(
-    url,
-    company,
-    position,
-    list(listSkills),
-    list(looseSkills)
-  )
-
-  print(jobDescriptionText)
-  print(scrape)
+  scrape <- scrape %>%
+    add_row(
+      job_title = job_title,
+      company_name = company_name,
+      employment_type = employment,
+      description = description,
+      min_salary = minSalary,
+      max_salary = maxSalary,
+      state = state,
+      job_url = urls[i],
+      original_source = site
+    )
 }
+
+scrape <- scrape[-1,]
+scrape[-4]
+```
+
+## Analyze
+```{r job-skills}
+emsiClientIdKey <- "EMSI_CLIENT_ID"
+emsiSecretKey <- "EMSI_SECRET"
+scope <- "emsi_open"
+
+confidence = "0.4"
+
+client_id <- key_get(emsiClientIdKey)
+secret <- key_get(emsiSecretKey)
+
+
+
+access_token <- client_id %>%
+  get_token(secret, scope)
+
+all_skills_df <- scrape %>%
+  get_dataset_skills(confidence, access_token)
+
+all_skills_df
+
+all_skills_df %>%
+  write.csv("all_skills_df_batch_1.csv", row.names = FALSE)
+```
+
+ Insert
+```{r}
+#host <- "TEAMTIDY_DB_HOST"
+#user <- "TEAMTIDY_DB_USER"
+#password <- "TEAMTIDY_DB_PASS"
+#dbname <- "data_science_jobs"
+#
+#
+#
+#db_connection <- dbConnect(RMariaDB::MariaDB(),
+#                           host = Sys.getenv(host),
+#                           user = Sys.getenv(user),
+#                           password = Sys.getenv(password),
+#                           dbname = dbname)
+#
+#insert_esmi_data(all_skills_df, db_connection)
 ```
