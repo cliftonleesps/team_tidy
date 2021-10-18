@@ -115,7 +115,6 @@ urls <- remDr$getPageSource()[[1]] %>%
   html_elements(aElement) %>%
   html_attr(hrefAttribute)
 
-remDr$close()
 urls <- urls[grepl(jobsRouteRegex, urls)]
 ```
 
@@ -137,27 +136,25 @@ emptyTable <- function(cols = 1, rows = 1, colNames = NULL) {
 ```
 
 ```{r}
-extractField <- function(url, field) {
-  field <- url %>%
+extractField <- function(field) {
+  field <- remDr$getPageSource()[[1]] %>%
     read_html %>%
     html_element(field) %>%
-    html_text2 %>%
-    str_squish
+    html_text2
   
   return(field)
 }
 ```
 
 ```{r}
-extractEmployment <- function(url, employment) {
-  field <- url %>%
+extractEmployment <- function(employment) {
+  field <- remDr$getPageSource()[[1]] %>%
     read_html %>%
     html_elements(employment)
   
   if(!is.na(field) && length(field) > 1) {
     field <- field[2] %>%
-      html_text2 %>%
-      str_squish
+      html_text2
   } else {
     field <- ""
   }
@@ -168,8 +165,8 @@ extractEmployment <- function(url, employment) {
 ```
 
 ```{r}
-extractSalary <- function(url, salary, min = TRUE) {
-  field <- extractField(url, salary)
+extractSalary <- function(salary, min = TRUE) {
+  field <- extractField(salary)
   
   if(!is.na(field) && field != '') {
     field <- ((field %>%
@@ -212,31 +209,32 @@ max <- length(urls)
 
 ## Extract
 ```{r}
-for (i in 1:10) {
+for (i in 1:max) {
   Sys.sleep(2)
   
   url <- urls[i]
+  remDr$navigate(url)
+
+  job_title <- title %>%
+    extractField
   
-  job_title <- url %>%
-    extractField(title)
+  company_name <- company %>%
+    extractField
   
-  company_name <- url %>%
-    extractField(company)
-  
-  employment <- url %>%
-    extractEmployment(employment_type)
+  employment <- employment_type %>%
+    extractEmployment
     
-  description <- url %>%
-    extractField(details)
+  description <- details %>%
+    extractField
   
-  minSalary <- url %>%
-    extractSalary(salary_range)
+  minSalary <- salary_range %>%
+    extractSalary
   
-  maxSalary <- url %>%
-    extractSalary(salary_range, min = FALSE)
+  maxSalary <- salary_range %>%
+    extractSalary(min = FALSE)
   
-  state <- url %>%
-    extractField(location)
+  state <- location %>%
+    extractField
     
   scrape <- scrape %>%
     add_row(
@@ -256,7 +254,7 @@ scrape <- scrape[-1,]
 scrape[-4]
 ```
 
-## Analyze
+# Analyze
 ```{r job-skills}
 emsiClientIdKey <- "EMSI_CLIENT_ID"
 emsiSecretKey <- "EMSI_SECRET"
@@ -278,23 +276,44 @@ all_skills_df <- scrape %>%
 all_skills_df
 
 all_skills_df %>%
-  write.csv("all_skills_df_batch_1.csv", row.names = FALSE)
+  write.csv("all_skills_df_batch.csv", row.names = FALSE)
 ```
 
- Insert
+# Insert
 ```{r}
-#host <- "TEAMTIDY_DB_HOST"
-#user <- "TEAMTIDY_DB_USER"
-#password <- "TEAMTIDY_DB_PASS"
-#dbname <- "data_science_jobs"
-#
-#
-#
-#db_connection <- dbConnect(RMariaDB::MariaDB(),
-#                           host = Sys.getenv(host),
-#                           user = Sys.getenv(user),
-#                           password = Sys.getenv(password),
-#                           dbname = dbname)
-#
+library(DBI)
+library(here)
+source(here("scripts", "skills_extraction.R"))
+source(here("scripts", "insert_esmi.R"))
+
+batches <- c(
+  as_tibble(read.csv("all_skills_df_batch_1.csv"), header = TRUE),
+  as_tibble(read.csv("all_skills_df_batch_2.csv"), header = TRUE),
+  as_tibble(read.csv("all_skills_df_batch_3.csv"), header = TRUE),
+  as_tibble(read.csv("all_skills_df_batch_4.csv"), header = TRUE),
+  as_tibble(read.csv("all_skills_df_batch_5.csv"), header = TRUE),
+  as_tibble(read.csv("all_skills_df_batch_6.csv"), header = TRUE),
+  as_tibble(read.csv("all_skills_df_batch_7.csv"), header = TRUE),
+  as_tibble(read.csv("all_skills_df_batch_8.csv"), header = TRUE),
+  as_tibble(read.csv("all_skills_df_batch_9.csv"), header = TRUE),
+  as_tibble(read.csv("all_skills_df_batch_10.csv"), header = TRUE)
+)
+
+max <- length(batches)
+
+host <- "TEAMTIDY_DB_HOST"
+user <- "TEAMTIDY_DB_USER"
+password <- "TEAMTIDY_DB_PASS"
+dbname <- "data_science_jobs"
+
+db_connection <- dbConnect(RMariaDB::MariaDB(),
+                           host = Sys.getenv(host),
+                           user = Sys.getenv(user),
+                           password = Sys.getenv(password),
+                           dbname = dbname)
+
+
+
+insert_esmi_data(batches[1], db_connection)
 #insert_esmi_data(all_skills_df, db_connection)
 ```
