@@ -1,5 +1,5 @@
 ---
-title: "Project_3_dataAn"
+title: "Project_3_dataAnalysis"
 author: "Project 3 group"
 date: "10/17/2021"
 output: html_document
@@ -19,7 +19,6 @@ library(RJDBC)
 library(DBI)
 
 
-
 db_connection <- dbConnect(RMariaDB::MariaDB(),
                            host=Sys.getenv("TEAMTIDY_DB_HOST"),
                            user = Sys.getenv("TEAMTIDY_DB_USER"),
@@ -33,7 +32,7 @@ hard_vs_soft$n <- as.numeric(hard_vs_soft$n)
 hard_vs_soft
 ```
 ```{r}
-hard_vs_soft %>% slice(2:3) %>% ggplot(aes(x = type, y = n)) + 
+hard_vs_soft %>% ggplot(aes(x = type, y = n)) + 
   geom_bar(stat = "identity", fill = "brown", width = 0.2) + 
   ylab("Number of Jobs") + labs(title = "Hard vs Soft Skills")+ theme_bw() 
 ```
@@ -41,6 +40,7 @@ hard_vs_soft %>% slice(2:3) %>% ggplot(aes(x = type, y = n)) +
 ```{r}
 #dbGetQuery(db_connection, "SELECT * FROM skill LIMIT 35")
 ```
+
 ```{r ds-job-skills}
 job_skill <- dbGetQuery(db_connection, "SELECT description, type, COUNT(*) AS n 
                         FROM skill GROUP BY description ORDER BY n DESC")
@@ -48,8 +48,8 @@ job_skill$n <- as.numeric(job_skill$n)
 head(job_skill, n =10)
 ```
 ```{r ds-job-skill-barchart}
-job_skill %>% top_n(30) %>% ggplot(aes(reorder(description, n), n)) + 
-  geom_col(fill = "brown") + coord_flip() + xlab("") + labs(title = "Top Data Science job Skills") +
+job_skill %>% top_n(30) %>% ggplot(aes(reorder(description, n), n, fill = type)) + 
+  geom_col() + coord_flip() + xlab("") + labs(title = "Top 30 Data Science job Skills") +
   theme_bw()
 ```
 
@@ -73,16 +73,97 @@ soft_skill <- dbGetQuery(db_connection, "SELECT description, COUNT(*) AS n
 soft_skill$n <- as.numeric(soft_skill$n)
 head(soft_skill, n =10)
 ```
+```{r}
+#dbGetQuery(db_connection, "SELECT * FROM job")
+```
 
-```{r soft-skill-barchart}
-soft_skill %>% top_n(10) %>% ggplot(aes(reorder(description, n), n)) + 
-  geom_col(fill = "brown") + coord_flip() + xlab("") + labs(title = "Top 10 Data Science Soft Skills") +
-  theme_bw()
+```{r}
+data_source <- dbGetQuery(db_connection, "SELECT j.job_title, j.state, j.original_source, s.description, s.type 
+           FROM job as j JOIN skill as s
+           ON j.job_id = s.job_id")
+head(data_source, n=10)
 ```
 ```{r}
-soft_skill <- dbGetQuery(db_connection, "SELECT description, COUNT(*) AS n 
-                             FROM skill WHERE type = 'Soft Skill' GROUP BY description ORDER BY n DESC")
+data_source %>% count(original_source) %>% top_n(2) %>% mutate(prop = round((p = n/sum(n)),3))
 ```
+```{r}
+#data_source %>% filter(original_source == "stack overflow")
+```
+
+
+
+
+
+```{r statistics-by-type}
+hard_soft_prop <- data_source %>% count(type) %>% top_n(2) %>% mutate(prop = round((p = n/sum(n)),3))
+hard_soft_prop                                    
+```
+**Hypothesis Test:**  
+Null Hypothesis, $H_{0}$: There is no difference in the proportion of hard and soft skills.$\mu_{hard} - \mu_{soft} = 0$  
+Alternative Hypothesis, $H_{1}$: The proportion of hard skills is greater than proportion of soft skills.$\mu_{hard} - \mu_{soft} \geq 0$  
+
+
+*Check conditions:*  
+Sampling Independence: The sample is gotten from random Indeed, Stack Overflow, and LinkedIn job postings.  
+Normality: Success - failure condition: np, n(1-p) > 10;  
+```{r check-conditions}
+prop_hard <- hard_soft_prop$prop[1] # proportion of hard skills
+prop_soft <- hard_soft_prop$prop[2] # proportion of soft skills
+n_hard <- hard_soft_prop$n[1] # number of hard skills
+n_soft <- hard_soft_prop$n[2] # number of soft skills
+
+#Check success - failure conditions
+# Hard Skills
+paste0("Hard Skills: np = ", n_hard*(prop_hard), " > 10, and n(1-p) = ",n_hard*(1 - prop_hard), " > 10")
+# Soft Skills
+paste0("Soft Skills: np = ", n_soft*(prop_soft), " > 10, and n(1-p) = ",n_soft*(1 - prop_soft), " > 10")
+```
+The Independence and success-failure condition are both satisfied. Therefore, a normal model can be assumed for this data.  
+
+
+```{r hypothesis-test}
+mu <- 0
+alpha <- 0.05 # level of significance
+df <- n_hard + n_soft - 2 # degree of freedom
+diff_prop <- prop_hard - prop_soft # difference in proportion of hard and soft skills
+SE <- sqrt(prop_hard*(1 - prop_hard)/n_hard + prop_soft*(1-prop_soft)/n_soft) # standard error for difference in proportions
+Test_statistic <- (diff_prop - mu)/SE # Test statistic
+p_value <- round(pt(Test_statistic, df, lower.tail = FALSE), 9) # p_value for one tail test
+paste0("Since the p value is ", p_value, " which is less than ", alpha,
+       ", we reject the null hypothesis at 0.05 level of significance.")
+```
+**Conclusion: ** Therefore, there is no sufficient statistical evidence that the proportion of hard skills sought for in data science job postings is equal to the proportion of soft skills sought for in data science job postings. i.e. The proportion of hard skills is greater than the proportion of soft skills.
+
+
+
+
+```{r statistics-source-indeed}
+source_indeed <- data_source %>% filter(original_source == "indeed") %>% count(type) %>% 
+  top_n(2) %>% mutate(prop = round((p = n/sum(n)),3))
+source_indeed
+```
+
+```{r}
+source_indeed %>% ggplot(aes(x = type, y = prop)) + 
+  geom_bar(stat = "identity", fill = "brown", width = 0.2) + 
+  ylab("Proportion") + labs(title = "Indeed - Hard vs Soft Skills")+ theme_bw()
+```
+
+```{r statistics-source-stackoverflow}
+source_stack <- data_source %>% filter(original_source == "stack overflow") %>% count(type) %>% top_n(2) %>% 
+  mutate(prop = round((p = n/sum(n)),3))
+source_stack                  
+```
+
+```{r}
+source_stack %>% ggplot(aes(x = type, y = prop)) + 
+  geom_bar(stat = "identity", fill = "brown", width = 0.2) + 
+  ylab("Proportion") + labs(title = "Stack - Hard vs Soft Skills")+ theme_bw()
+```
+
+
+
+
 
 
 

@@ -1,0 +1,1627 @@
+"original_source","job_url","job_title","company_name","state","description"
+"indeed","https://indeed.com/pagead/clk?mo=r&ad=-6NYlbfkN0A1xek5knTnC5i_gSNNUQ677KkFw824YX3Xvyf6DkeM2VycB-_zAS9fKDHwOMPdvrdR4u0Tv4wl7d-t6NNfzcWVhifd4XJJJedGUxyeMW3HyuTJY5gyoDagjnOUPzPkaak-fUZxt2Ux8bwHvRWnmNYUzvuA78slyBqQd-IGc4ChLQyXc5f2ZG5OOHT52D5-keAwdB38ZCapxbAaFoKVjJ0J1H0IdcakVtUjT8uMf6fQsZodC3_X0ef0VNTSQAJ6Ejz61bvDIZyI3M20euIRnZQ-j33WFmGt-aoFcffVUFMWQHJh50jIEHZklmY58ABfpylmslh4P6VUSlh0mvVGYoWB7bxHmraA3V_7deFX2Cje7gCp9kHJsnR49d_Lj52B63WBFodFVIYWNnukBKGz2aw6MZkwdX8tsKbKxG1_6K-k8LGkLVrhbHDAOpP71MTyNfUeWIWjRJBmxFHhKJJWwURXFa3Vh_d2qlfR83Tb1FROFzl1QOcgjo4A&p=0&fvj=1&vjs=3","Data Scientist","TikTok","California","TikTok is the leading destination for short-form mobile video. Our mission is to inspire creativity and bring joy. TikTok has global offices including Los Angeles, New York, London, Paris, Berlin, Dubai, Mumbai, Singapore, Jakarta, Seoul and Tokyo.
+Recommendation algorithm team plays a central role in the company, driving critical product decisions and platform growth. The team is made up of machine learning researchers and engineers, who support and innovate on production recommendation models and drive product impact. The team is dynamic, fast-pacing, collaborative and impact-driven.
+Responsibilities - What You'II Do
+
+Design and analyze experiments to verify product hypothesis and direction;
+Audit quality of launch experiment results and guarantee correct measurement of product or technical changes' impact;
+Keep track of core metrics and attribute metrics changes to root causes;
+Analyze market dynamics, potential gain and cost of new product initiatives, and consult on product strategy;
+Use data and experiment to verify hypothesis around bottlenecks in product growth, and consult on direction for improvement;
+Work with engineers and product stakeholders to deliver product insights.
+
+Qualifications
+
+Master degree in statistics, econometrics, quantitative sociology or a related scientific major, with 3+ years of related work experience;
+Expertise in SQL and programming in Python or R;
+Knowledge in basic machine learning and deep learning;
+Strong analytical and causal reasoning mindset, and rigidity on statistical correctness;
+Strong communication and teamwork skills;
+Passion about social product and curiosity to deep dive.
+
+Job Type: Full-time
+
+Work authorization:
+
+United States (Required)
+
+COVID-19 Precaution(s):
+
+Remote interview process
+Virtual meetings"
+"indeed","https://indeed.com/pagead/clk?mo=r&ad=-6NYlbfkN0BhYylDqghje0ff2KplHg9yv97rDOpeEevfMVEZYorIBJdJR5DivdqAuyKgwk53_ApgWhdZjeerFBpzJjRDy4D0_Joq1ngX9okz1pz35VQ6gbt8c3EJobv7iFB5bXxlwXcNPxreb79mRoluoorrIL7o1HArASv4_7CTa3QU7s5FNOuhpi4WTDmRsnC9ezH9LQuhRoFtGgYFQ4r6ZIf9Wi5OZpSIVlJz1O_N-MmoU6VxZm_nY7J6y9WDyL5TZMGi-0gKQGPCCD21mV7vKe6kaA43E-O22Xi46ikWYBDjKZI5b18s57xCBhufXJ-J974fxOGmWG_W8V7qfe26VLejmBFU81dOdhXsZxv5TBihsY9w7gJK4lWNfNTbqs3X1_xqBu-_Ruuf_MjZd1TxY5GN-PI9-1VIOQXKWf7cjrFL_puYcZNt9cmJlnMpru4_HOG8NuKUyW5d6DBXybTorbPux5d0_4IW169XGvNj73_OcYq1HLmR0rkCGW0tsiNs_tDhohg92pAzechLPxRXstKs_KBIDKbuqJav-_rHYYhOdeT_FUjH1vftRMv3zTku65PR79o=&p=1&fvj=0&vjs=3","Data Scientist (Ondot)","Fiserv","California","Ondot, now part of Fiserv, has helped over 4,500 financial institutions modernize their credit and debit cards with digital technology. Over the last 10 years, Ondot has won numerous awards for its technology, and is excited to bring this innovation to Fiserv.
+
+Job Description
+
+Summary
+
+As a member of the Data Scientist team, you will have the opportunity to work on fintech use cases, use the cut-edge AI technology to discover data insights for card holders based on the unique combination of real-time transaction data, merchant data, consumer data and location data, and build Data Insight products that bring intelligence to the consumer’s digital card management and card spending experience.
+
+Responsibilities
+
+The candidate will work on improving the Transaction Enrichment (TE) solution, and apply exploratory data analysis, statistical algorithms and machine learning algorithms to cleanse raw payment transaction data and enrich it with additional attributes, such as merchant names, locations, merchant contacts, merchant categories, logos, etc. The responsibilities include:
+
+Work with managers and cross-functional product teams to create the prioritized list of data use cases and problems to solve
+Conduct independent data analysis to gain a thorough understanding of the main characteristics and patterns of the data, and identify the main data issues to resolve and the main areas in algorithms to improve
+Leverage data warehousing and visualization methods to create dashboards and tools for effectively performing data analysis, model evaluation, and actionable data insight storytelling
+Recommend statistical or machine learning methods to solve the data issues
+Process data from multiple data sources to create clean and normalized datasets for training, validation and testing
+Execute model training, hyperparameter tuning, feature selection, and performance evaluation
+Develop innovative machine learning algorithms to solve complex classification problems
+Develop advanced NLP algorithms for merchant and transaction data enrichment
+Develop state-of-the-art computer vision algorithms for image processing
+
+Qualifications
+
+Minimum of 3 years-experience in Data Science.
+Must have passion about data: you feel a strong sense of achievement when you discover the hidden patterns within the data, the exceptions not dealt with before, the beauty of feature engineering, and the new model yielding best performance without overfitting
+Strong data processing skills and abilities to deal with large amount of data
+Proficient with at SQL, Python, and data processing pipeline
+Strong experience in developing machine learning models, such as classification, NLP, NER, neural network, RNN, CNN, and other deep learning algorithms using Tensorflow or PyTorch
+Strong experience in feature engineering, hyperparameter tuning, and model training
+Extremely attentive to metric and details: precision, recall, accuracy, outliers, anomalies, trends, etc.
+Respect data privacy and data governance rules and regulations
+Ability to communicate clearly with different stakeholders
+A team player who can learn and grow with other team members, while contributing to the success of the product
+
+Education: A Master’s or a Bachelor’s degree in Math, Statistics, Data Science, Computer Science, or other related fields. Master’s degree preferred."
+"indeed","https://indeed.com/rc/clk?jk=d06f716613371f31&fccid=5c92f2e50cf01fad&vjs=3","Data Scientist","JPL/NASA","California","Job Details
+
+New ideas are all around us, but only a few will change the world. That’s our focus at JPL. We ask the biggest questions, then search the universe for answers—literally. We build upon ideas that have guided generations, then share our discoveries to inspire generations to come. Your mission—your opportunity—is to seek out the answers that bring us one step closer. If you’re driven to discover, create, and inspire something that lasts a lifetime and beyond, you’re ready for JPL.
+
+Located in Pasadena, California, JPL has a campus-like environment situated on 177 acres in the foothills of the San Gabriel Mountains and offers a work environment unlike any other: we inspire passion, foster innovation, build collaboration, and reward excellence.
+
+Are you intrigued about artificial intelligence and autonomous systems? Be part of the team leading the development of innovative space technologies such as self-piloting and onboard science processing systems!
+
+The Artificial Intelligence, Observation Planning and Analysis Group is looking for a Data Scientist. Our group works on fundamental research problems leading to unique software applications in spacecraft autonomy, scientific data analysis, and mission operations automation and onboard analysis for real-time decisions, and we’re hoping you’d like to join us.
+
+Development projects will include automation of ground and flight operations for communications stations, space missions, marine vehicles, aerial vehicles, including fleets of vehicles. You will use Artificial Intelligence technologies to partially and fully automate critical systems for scheduling, planning and resource allocation. You will support efforts in these areas.
+
+This job will entail but is not limited to:
+Support NASA missions, technology research, and groundbreaking projects with the National Security Program Office.
+Support ongoing advanced technology demonstration flight missions.
+Design and develop complete components of software tools for data analytics.
+Perform analysis on a wide variety of large and disparate datasets using complex techniques.
+Develop scheduling algorithms for autonomous systems that must interpret large amounts of input state, constraint, and event data to generate actions and scheduled to achieve higher level goals.
+Communicate results to internal customers.
+Apply and combine current and emerging techniques and tools in novel ways.
+Develop and combine complex data analysis techniques and methods for a specific application.
+Qualifications
+Typically requires a Bachelor's degree in Computer Science or related discipline with a minimum of 3 years of related experience; Master's degree in similar disciplines with a minimum of 1 year of related experience; or PhD in similar disciplines.
+Broad knowledge in one or more related fields of the following areas: software development, artificial intelligence, operations research, resource allocation mechanisms, quantitative modeling, machine learning, computer vision, risk models and probabilistic methods.
+Experience in wide application of principles, theories, concepts and techniques in programming languages such as C++, C, Python, Java, and Artificial Intelligence Techniques and concepts.
+Desired Qualifications:
+Strong C++ experience
+Experienced with ROS or f-prime
+Extensive knowledge of applicable industry and/or academic practices and standards in Software design & development and Computer Science.
+Experience in interdisciplinary teams.
+It is preferred, but not required, to have an active Top Secret clearance based on a Single Scope Background Investigation(SSBI) within the last five years and be approved for Sensitive Compartmented Information (SCI) access.
+
+JPL is an Equal Opportunity Employer. All qualified applicants will receive consideration for employment without regard to sex, race, color, religion, national origin, citizenship, ancestry, age, marital status, physical or mental disability, medical condition, genetic information, pregnancy or perceived pregnancy, gender, gender identity, gender expression, sexual orientation, protected military or veteran status or any other characteristic or condition protected by Federal, state or local law.
+
+In addition, JPL is a VEVRAA Federal Contractor.
+
+EEO is the Law.
+
+EEO is the Law Supplement
+
+Pay Transparency Nondiscrimination Provision
+
+The Jet Propulsion Laboratory is a federal facility. Due to rules imposed by NASA, JPL will not accept applications from citizens of designated countries or those born in a designated country unless they are Legal Permanent Residents of the U.S or have other protected status under 8 U.S.C. 1324b(a)(3). The Designated Countries List is available here."
+"indeed","https://indeed.com/rc/clk?jk=5df4f19a4abba7a9&fccid=a5b4499d9e91a5c6&vjs=3","Data Scientist, Operations Data Science - Remote","Google","California","Note: Google’s hybrid workplace includes remote and in-office roles. By applying to this position you will have an opportunity to share your preferred working location from the following:
+
+In-office locations: Mountain View, CA, USA.
+Remote location(s): United States.
+
+Minimum qualifications:
+
+Master's degree in Operations Research, Industrial Engineering, Statistics, related field, or equivalent practical experience.
+2 years of relevant work experience (e.g., as a data scientist) or equivalent. Analytical engagements outside class work while at school can be included.
+Experience with statistical software (e.g., R, Python) and database languages (e.g., SQL)
+
+
+Preferred qualifications:
+
+PhD in Operations Research, Industrial Engineering, Statistics or related field.
+4 years of relevant work experience (e.g., as a data scientist), including experience applying advanced analytics to planning and infrastructure problems.
+Experience designing and building statistical forecasting models.
+Experience designing and building machine learning models.
+Excellent problem-framing, problem-solving and project management skills.
+Excellent customer service and team collaboration skills.
+About the job
+
+At Google, data drives all of our decision-making. Data Scientists work all across the organization to help shape Google's business and technical strategies by processing, analyzing and interpreting huge data sets. Using analytical rigor and statistical methods, you mine through data to identify opportunities for Google and our clients to operate more efficiently, from enhancing advertising efficacy to network infrastructure optimization to studying user behavior. As an analyst, you do more than just crunch the numbers. You work with Engineers, Product Managers, Sales Associates and Marketing teams to adjust Google's practices according to your findings. Identifying the problem is only half the job; you also figure out the solution.
+
+As a member of the Operations Data Science team, you will apply operations research and statistical methods to solve challenges related to compute, storage, network, and datacenter capacity for both Google’s internal services and Google Cloud Platform. You will work broadly across Google’s Platforms Engineering, Systems Infrastructure, and Site Reliability Engineering teams to optimize our deployment of resources and drive innovation in our software stack, allowing for efficient use of resources.
+
+As a Data Scientist, you will think critically and strategically about Google’s cloud as a technology, a business, and as an operation. You will be comfortable discussing total cost of management with hardware engineers, resource optimization with software engineers, or reviewing fleet plans and deployment policies with operations executives, all based upon the analytical models that you will be developing.
+
+Behind everything our users see online is the architecture built by the Technical Infrastructure team to keep it running. From developing and maintaining our data centers to building the next generation of Google platforms, we make Google's product portfolio possible. We're proud to be our engineers' engineers and love voiding warranties by taking things apart so we can rebuild them. We're always on call to keep our networks up and running, ensuring our users have the best and fastest experience possible.
+
+Additional Information
+(Colorado only*) Minimum salary of $95,000 + bonus + equity + benefits.
+
+Note: Disclosure as required by sb19-085 (8-5-20) of the minimum salary compensation for this role when being hired into our offices in Colorado.
+Responsibilities
+Lead projects with hands-on analysis and modeling, drawing from multiple of analytical methods to choose the right tool and right level of complexity appropriate for the business challenges.
+Engage broadly with the organization to identify, prioritize, frame, and structure complex and ambiguous challenges, where advanced analytics projects or tools can have the biggest impact.
+Identify and communicate the challenges and opportunities that the group should be working on.
+Help define the analytical direction and influence the direction of the associated engineering and infrastructure work.
+Articulate business questions and use mathematical techniques to arrive at an answer using data. Translate analysis results into business recommendations.
+Google is proud to be an equal opportunity workplace and is an affirmative action employer. We are committed to equal employment opportunity regardless of race, color, ancestry, religion, sex, national origin, sexual orientation, age, citizenship, marital status, disability, gender identity or Veteran status. We also consider qualified applicants regardless of criminal histories, consistent with legal requirements. See also Google's EEO Policy and EEO is the Law. If you have a disability or special need that requires accommodation, please let us know by completing our Accommodations for Applicants form."
+"indeed","https://indeed.com/rc/clk?jk=d7ccd83e7f076306&fccid=caed318a9335aac0&vjs=3","Data Scientist, Monetization","TikTok","California","TikTok is the leading destination for short-form mobile video. Our mission is to inspire creativity and bring joy. TikTok has global offices including Los Angeles, New York, London, Paris, Berlin, Dubai, Mumbai, Singapore, Jakarta, Seoul and Tokyo.
+
+The Monetization Office supports the strategies and operations of multiple aspects of the business such as advertisement, e-commerce, live streaming, etc. Covering both domestic and global business, we make sure of a sustained and steady growth of revenue, improve the operating workforce and financial capital efficiency, and ensure the safety and compliance of the business.
+
+The Data Science team, within the Monetization Office, are involved in all phases of analytics projects to support and optimize Bytedance's monetization business. Coming from diverse disciplines that include business, engineering, mathematics, operations research and statistics, we build data-driven technologies that help align the highest-level corporate strategies with effective day-to-day operations, and unlock business growth potential. As part of the team, you will partner closely with strategy and product teams in a high-impact and fast-paced environment, exploring data and building advanced analytical models to find insights, diagnose problems and tell compelling stories.
+
+What You'll Do
+
+Lead data-driven projects from definition to execution, from gathering data, defining metrics to communicating actionable insights;
+Propose innovative solutions by exploratory data analysis from complex and high-dimensional datasets, applying statistical and modeling techniques to evaluate performance, make valuable discoveries and solve non-routine analysis problems;
+Use a flexible, analytical approach to design predictive models and advanced algorithms that lead to optimal value extraction from the data;
+Collaborate with various partners and influence leadership to continuously make impact, drive monetization strategy and business evolvement;
+Visualize and synthesize analytics and statistical approaches into easy-to-consume storylines for the team to provide indicated actions for executive audiences
+BS degree or above in a quantitative discipline (e.g., Statistics, Mathematics, CS) or equivalent practical experience. Industry experience in data science is strongly preferred.
+High proficiency in fundamental SQL and demonstrated skills in handling terabyte size datasets, diving into data to discover hidden patterns and using visualization tools ((e.g. Tableau, PowerBI) to present results.
+Experience with statistical software (e.g. R, Python).
+Experience building data science models (Regression, Decision Trees, K-Means, etc.). Knowledge of ML and risk control field a plus.
+Strong analytical and problem solving ability with strong attention to detail and accuracy.
+Excellent communication skills and able to manage stakeholders across businesses and levels.
+Proficiency in Mandarin a plus.
+Able to work in a fast-paced and challenging environment.
+TikTok is committed to creating an inclusive space where employees are valued for their skills, experiences, and unique perspectives. Our platform connects people from across the globe and so does our workplace. At TikTok, our mission is to inspire creativity and bring joy. To achieve that goal, we are committed to celebrating our diverse voices and to creating an environment that reflects the many communities we reach. We believe individuals shouldn't be disadvantaged because of their background or identity, but instead should be considered based on their strengths and experience. We are passionate about this and hope you are too.
+
+TikTok is committed to providing reasonable accommodations during our recruitment process. If you need assistance or an accommodation, please reach out to us at USRC@tiktok.com"
+"indeed","https://indeed.com/rc/clk?jk=f5b5d301fc3ed4f4&fccid=25b5166547bbf543&vjs=3","Professional Data Scientist","AT&T","California","AT&T’s Marketing Enablement Technology & Analytics organization is committed to driving individual product excellence, while accelerating our multi-product household base.
+
+You already know what this will say, because Machine Learning and Predictive Analytics is your thing!
+
+You know the value of anticipating customer behavior – will they stay, will they go, will they buy more – is what enables a business to allocate resources efficiently, and creating a crystal ball to predict the future is what inspires you. You know to use ML creatively to analyze business trends and identify anomalies to produce actionable insights.
+More data is no problem here… millions of customer relationships across multiple products yields a data playground measured in terabytes, and you’ve got ‘been there, done that’ experience. You’re a technique chameleon, evolving your toolset and modeling approaches to wring out the last drops of performance possible to maximize your impact on the business. And your endgame is a suite of machine learning models that could do this work for you!
+
+What you get to do:
+Utilize ML to analyze market and customers actions, detecting anomalies to drive business strategy and tactics. Predict the next actions of every consumer doing business with AT&T!
+
+Preferred locations are El Segundo, CA; Dallas, TX; or Atlanta, GA. Other locations may be considered.
+
+Qualifications:
+2-5 years in advanced analytics field
+1+ years in predictive modeling, including buy, churn, and upsell/cross-sell
+2-3 years in Python and R
+Experience in Machine Learning techniques beyond linear regression
+Advanced SQL experience
+Master’s degree or advanced coursework in Analytics, Statistics, Computer Science, or Mathematics
+Additional experience with survival modeling will be a huge advantage
+Ability to translate complex analysis into simplified actionable insights preferred
+Experience in business analysis and marketing strategy preferred
+Ready to join our team? Apply today!
+
+Our Professional Data Scientists earn between $115600 – $231100 yearly. Not to mention all of the other amazing rewards that working at AT&T offers. From health insurance to tuition reimbursement and paid time off to discounts on products and services just to name a few. There is a lot to be excited about around here.
+
+
+
+
+As part of the Predictive Analytics and Customer Valuation team, you’ll focus on how customers and prospects can deliver optimum value for the business. From purchase to retention, from upsell to cross-sell, and for all spaces in between, you’ll get to build Predictive Models that anticipate outcomes. Beyond building laser-accurate models, you’ll be an advocate for your work by partnering with clients to convey the drivers influencing those outcomes, and the behaviors and characteristics of those likely to act – or not. You’ll challenge the conventional approach of building a model and simply rescoring it each month, employing new machine learning techniques for real-time scoring and automated calibration.
+
+Details:
+
+Build anomaly detection algorithms to automatically identify strategic and tactical opportunities
+Build out customer-level propensity models to fuel acquisition, cross-sell/up-sell, retention strategy
+Build marketing offer models to determine optimal decisioning hierarchy, presenting customers with best offers
+Identify key segments / clusters of customers who will act – and those who won’t – and learn what drives the difference… and how to create opportunities from these learnings
+Work closely with pricing, marketing, credit & collections, finance, and retention to improve their ability to acquire, serve, and retain every customer household while maintaining profitability for our shareholders
+You’ll have the opportunity to grow your personal brand across several organizations as the expert on customer value.
+
+
+
+
+Qualifications:
+
+2-5 years in advanced analytics field
+1+ years in predictive modeling, including buy, churn, and upsell/cross-sell
+2-3 years in Python and R
+Experience in Machine Learning techniques beyond linear regression
+Advanced SQL experience
+Master’s degree or advanced coursework in Analytics, Statistics, Computer Science, or Mathematics
+Additional experience with survival modeling will be a huge advantage
+Ability to translate complex analysis into simplified actionable insights preferred
+Experience in business analysis and marketing strategy preferred
+
+Ready to join our team? Apply today!
+
+Our Professional Data Scientists earn between $115600 – $231100 yearly. Not to mention all of the other amazing rewards that working at AT&T offers. From health insurance to tuition reimbursement and paid time off to discounts on products and services just to name a few. There is a lot to be excited about around here."
+"indeed","https://indeed.com/rc/clk?jk=119743b454440cb9&fccid=8ea54e852901f8b5&vjs=3","Senior Data Scientist","Red Bull","California","Reporting to the Director, Data Science, you will be one of the first on the Red Bull Data Science team and work with our HQ Data Science team in Austria. As the Senior Data Scientist, you will apply your advanced analytics, data wrangling, and visualization skills to solve problems across marketing, sales, and supply chain. You'll partner with senior business leaders, helping them to determine and refine problem statements while developing frameworks with the goal to help the business understand their data and create new insights with impact. You will stay on top of developments in the analytics community and act as a knowledge hub for data-related issues at Red Bull. If you are motivated by solving problems and making an impact with data, this is the role for you.
+
+RESPONSIBILITIES
+Areas that play to your strengths
+
+All the responsibilities we'll trust you with:
+
+Expand all
+
+Advanced Analytics
+
+Manage advanced analytics projects from ideation through model development and delivery.
+Develop approaches through a foundation of data, and build production-level models.
+Identify and gather data from sources, assess data quality, complete exploratory analysis, and structure data for the task.
+Support the development and facilitation of analytics training programs, instilling data-support mindset.
+
+Collaboration and Connection
+
+Lead the way with partners (marketing, sales and supply chain), communicating with ease while creating a partnership.
+Communicate approaches with partners in easy-to-understand terms, summarizing important findings and outcomes that allow business professionals to take action.
+EXPERIENCE
+Your areas of knowledge and expertise
+
+that matter most for this role:
+
+7+ years of quantitative and qualitative research and analytics experience in a business context
+Experience in application of statistical modeling languages such as R (preferred), Python or SAS.
+SQL skills.
+Experience working with large datasets of structured and unstructured data and developing experimental frameworks and designs.
+Great applied statistics skills, such as distributions, statistical testing, predictive modeling, correlation analysis, regression.
+Experience working with ESRI/ArcGIS or equivalent geospatial tools
+Experience using visualization tools such as Tableau, PowerBI, and other viz packages such as ggplot, R-Shiny, or D3.js.
+Project management skills.
+Bachelors degree preferred
+English, additional languages an advantages
+Travel up to 10%"
+"indeed","https://indeed.com/company/Denali-System-Co.,-Ltd/jobs/Data-Scientist-037d52ea65e7a0f0?fccid=245a87d75268ec19&vjs=3","Data Scientist -- Full-time",NA,"California","Data Scientist -- Full-time, entry level
+
+About Us
+
+Denali System, a fast-growing start-up located in Silicon Valley, is committed to becoming the leading AIoT solution provider. We are dedicated to helping users break the barriers between technology, business, and data. Our goal is to help clients to discover the commercial value in the data.
+
+Denali has built a series of industry solutions based on our platform in finance, transportation, security, public service, etc., and has reached in-depth cooperation with many enterprises, including one of the fortune 500 insurance companies. We are looking for a passionate Data Scientist to join our team and build an influential startup company with us!
+
+Job Description
+
+This is a full-time position based in Mountain View, California. We are looking for an entry level Data Scientist with strong analytical and development skills to join our team. The candidate will be part of a growing team and have a chance to solve real world issues.
+
+Responsibilities:
+
+Formulating, suggesting, and managing data-driven projects which are geared at furthering the business's interests.
+Designing, training, evaluating machine learning models.
+Collaborate with team members and business partners to deliver high quality solutions and recommendations to a variety of problems across digital and merch
+Bring data to life through storytelling in a clear and meaningful way to audiences with mixed levels of technical expertise
+Reconcile divergent demands from multiple stakeholders in a fast-paced work environment.
+
+Qualifications:
+
+Master’s degree in Data Science, Computer Science, Statistics or related.
+Experience as a Data Scientist, 1+ years’ professional experience in machine learning. Familiar with deep learning and mainstream methods
+1+ years applying business logic to extract and cleanse large datasets from structured and unstructured data sources
+1+ years of professional experience analyzing complex data, drawing conclusions, and making recommendations.
+Familiar with commonly used data analysis methods and very good understanding of statistics methods.
+Experience with support vector machinate (SVM), decision tree, regression analysis and recommendation models
+Expertise in SQL with proficiency in Python or R programming language and related analysis packages.
+Familiar with Linux OS.
+Solid written and spoken communication skills.
+
+Preferred but NOT required:
+
+Experience with precision marketing and related fields
+Proven Experience in working with large scale data systems
+Fluent in Mandarin Chinese.
+
+Job Type: Full-time
+
+Pay: Up to $150,000.00 per year
+
+Schedule:
+
+Monday to Friday
+
+Education:
+
+Master's (Preferred)
+
+Experience:
+
+Machine learning: 1 year (Preferred)
+Data science: 1 year (Preferred)
+
+Work Location:
+
+One location
+
+Work Remotely:
+
+Temporarily due to COVID-19
+
+Work Location: One location"
+"indeed","https://indeed.com/rc/clk?jk=03832a3a8d4ffc93&fccid=ab0ef6192557a06f&vjs=3","Data Scientist","UCLA","California","The UCLA Latino Policy & Politics Initiative (LPPI) seeks a data scientist to help manage and grow the organization's big data projects. LPPI champions nonpartisan, evidence-based domestic policy solutions that improve the economic, political, and social landscape for Latinos and other communities of color in states and localities across the U.S. LPPI leverages UCLA's cross-disciplinary strengths to create an enterprise-wide home for Latino social policy with expertise in over a dozen issue areas including civil rights, criminal justice, educational equity, health access, housing, and voting and civic participation. LPPI fosters innovative research, leverages policy-relevant expertise, drives civic engagement, and nurtures a leadership pipeline to propel viable policy reforms that expand opportunity for all Americans. Under the direction of the Director(s) of Research and the Faculty Director, the data scientist will serve as an integral part of the research team.
+
+Percentage of Time:
+100
+
+Shift Start:
+8:00 am
+
+Shift End:
+5:00 pm
+
+Qualifications for Position
+
+18
+Records
+
+Qualifications
+
+Required/Preferred
+
+Applicants must have a bachelor's degree in computer science, statistics, economics, mathematics or other relevant field, or equivalent combination of education and experience; master's degree preferred. Applicants must also have at least one year of relevant professional experience (two to three years preferred)
+
+Required
+
+Strong SQL skills
+
+Required
+
+Strong skills in Python or R
+
+Required
+
+Strong skills in data visualization
+
+Required
+
+Attention to detail and ability to organize and document workflow
+
+Required
+
+Strong initiative and a resourceful approach to problem-solving
+
+Required
+
+Superior verbal and written communication skills, including the ability to communicate technical results and recommendations to non-technical stakeholders
+
+Required
+
+Ability to work independently and as part of a team
+
+Required
+
+Strong interpersonal skills
+
+Required
+
+Ability to multi-task with demanding timeframes
+
+Required
+
+Ability to work discreetly with sensitive and confidential data
+
+Required
+
+Experience working in an academic or think-tank environment preferred
+
+Preferred
+
+Substantive knowledge or experience in at least one of our core research areas: criminal justice, poverty, education, voting rights, and labor
+
+Preferred
+
+Substantive knowledge of SQL database internals, including query optimization, indexing, and execution plans
+
+Preferred
+
+Substantive knowledge of the design and implementation of ETL pipelines, relational databases, and data warehouses. Experience with cloud computing and Big Data frameworks a plus
+
+Preferred
+
+Substantive knowledge of quantitative research methods including machine learning and statistics. Knowledge of causal inference methods a plus
+
+Preferred
+
+Project management Experience
+
+Preferred
+
+Experience with Business Intelligence (BI) platforms
+
+Preferred
+
+Additional Posting Information
+
+Bargaining Unit:
+99-Policy Covered
+
+Application Deadline:
+10-31-2021
+
+External Posting Date:
+"
+"indeed","https://indeed.com/rc/clk?jk=d8aac838cac8a514&fccid=0e8f04b45c1591f5&vjs=3","Senior Data Scientist - Flexible Location, CA","PG&E Corporation","California","Requisition ID # 114470
+
+Job Category : Accounting / Finance
+Job Level : Individual Contributor
+Business Unit: Finance
+Job Location : San Francisco
+
+Department Overview
+The Enterprise Risk and Operational Risk Management (EORM) organization is responsible for enabling the business to effectively manage risk in key areas of the enterprise. EORM organization is charged with overseeing all operational risk management related to PG&E’s operations and public safety including evaluating risks associated with wildfires, nuclear, dams, natural gas, cyberattacks and natural disasters.
+
+Position Summary
+The headquarter location will be determined by hiring leader and successful candidate. You must be able to work out of the Oakland office at least once a week.
+
+You will be responsible for designing, developing, and executing scripts, programs, models, algorithms, and processes, using structured and unstructured data from disparate sources and sizes, generating actionable insights for strategy and policy development, process improvement, and product enhancement. You will also work on technical development phases: data engineering, analytics/modeling, and visualization/user interface; interact with technical and non-technical clients to resolve analysis and technical issues; and work with teams, clients, and senior leadership throughout the development cycle practicing continuous improvement.
+
+Responsibilities:
+Share and collaborate with other PG&E data science professionals.
+Work closely with domain experts to develop relevant domain knowledge in the electric and gas utility, as well as knowledge of related datasets.
+Gather, clean, transform, and/or reduce data from dissimilar sources from across PG&E.
+Work with business partners to advance business processes, based on analytical findings.
+Apply machine learning and other analytical modeling methods to develop robust and reliable analytical models, including visualizations, within PG&E’s software development environment.
+Document data sources, methodology, and model evaluation metrics.
+Serve as the technical lead for the development of simple models.
+Develop and present summary presentations to management
+
+Qualifications
+
+Minimum:
+Bachelor’s degree in computer science, econometrics, economics, engineering, mathematics, applied sciences, statistics or job-related discipline or equivalent experience
+5 years of data analytics and modeling experience; OR 3 years of data analytics and modeling experience and a Master’s degree in a related field; OR a doctorate in a related field
+
+Desired:
+Master’s or PhD degree in statistics, data science, decision science, computer science, quantitative analysis, information systems, operations research, business, engineering, financial engineering, economics, or other equivalent fields
+Strong foundation of probability, probability distributions, statistics and risk analysis
+Competent programming skills in a language especially in Python and familiarity with Git
+Demonstrated experience of Monte Carlo simulation methods and models
+Familiarity and experience with Bayesian statistics and inference
+Experience in quantitative risk analysis or Probabilistic Risk Assessment
+Ability to work independently and proactively and to take initiative to improve analytical methods or processes
+Experience with the elements of Model Lifecycle Management
+Experience using retrieving data from structured database using SQL
+Strong Excel and PowerPoint skills
+Strong data visualization skills and techniques for communicating risk-related data and modeling results in a clear and visually compelling manner
+Strong problem-solving, analytical, and organizational skills with attention to detail
+Ability to share knowledge, information and progress with the team effectively and efficiently
+Effectively copes with change, makes decisions and acts without having complete information and comfortably handles risk and uncertainty.
+Ability to research and apply knowledge, skills, and techniques to risk analysis
+Ability to manage conflicts in a positive, non-abrasive manner
+Ability to communicate with peers, leadership, and stakeholders in a clear and effective manner
+Highly motivated and self-driven
+Ability to collaborate with people with diverse background and skillsets
+ability to effectively manage and prioritize multiple and diverse tasks and adhere to tight deadlines
+Knowledge of the business and its environment, key issues, and trends"
+"indeed","https://indeed.com/company/RMDS-Lab/jobs/Data-Scientist-Grmd-Org-9a006399bb5541c1?fccid=bb09cf205f12348c&vjs=3","Data Scientist for GRMDS.org",NA,"California","We are looking for a Data Scientist to analyze large amounts of raw information to find patterns and insights that will help our company and our clients. We will rely on you to build data products to extract valuable business insights. In this role, you should be highly analytical with a knack for analysis, math and statistics. Critical thinking and problem-solving skills are essential for interpreting data. We want to see a passion for machine-learning and research. Your goal will be to help our company and our clients analyze trends to make better decisions.
+
+Responsibilities
+
+Identify valuable data sources and automate collection processes
+Undertake preprocessing of structured and unstructured data
+Analyze large amounts of information to discover trends and patterns
+Build predictive models and machine-learning algorithms
+Combine models through ensemble modeling
+Present information using data visualization techniques
+Propose solutions and strategies to business challenges
+Collaborate with engineering and product development teams
+
+Skills
+
+Proven experience as a Data Scientist or Data Analyst
+Experience in data mining
+Understanding of machine-learning and operations research
+Knowledge of R, SQL and Python; familiarity with Scala, Java, PhP or C++ is an asset
+Experience using business intelligence tools (e.g. Tableau) and data frameworks (e.g. Hadoop)
+Analytical mind and business acumen
+Strong math skills (e.g. statistics, algebra)
+Problem-solving aptitude
+Excellent communication and presentation skills
+BSc/BA in Computer Science, Engineering or relevant field; graduate degree in Data Science or other quantitative field is preferred
+Profile at GRMDS.org preferred
+
+Job Types: Full-time, Internship
+
+Pay: $56,490.00 - $118,432.00 per year
+
+Benefits:
+
+Dental insurance
+Health insurance
+Paid time off
+Vision insurance
+
+Schedule:
+
+8 hour shift
+Monday to Friday
+
+Supplemental Pay:
+
+Bonus pay
+
+Education:
+
+Bachelor's (Required)
+
+Experience:
+
+Python: 1 year (Required)
+SQL: 1 year (Preferred)
+
+Work Location:
+
+One location
+
+Work Remotely:
+
+Yes
+
+Work Location: One location"
+"indeed","https://indeed.com/rc/clk?jk=7e4d06c472f8dcee&fccid=66403b30a2c0d89c&vjs=3","Senior Data Scientist","Netflix","California","Los Gatos, California
+
+Data Science and Engineering
+Netflix is enjoyed by more than 200 million households globally, entertaining new audiences every day. Netflix’s cloud platforms and internal tools play a key role in making the Netflix experience great. We are one of the pioneers of leveraging a highly scalable cloud footprint to deliver delightful experiences to our members worldwide. The Infrastructure Data Science and Engineering team leads the analytic innovation that enables architecting secure, scalable, and efficient platforms. We partner with our internal engineering teams to empower them through intelligent analytic products and integrated models that enable smarter decision making.
+
+Our team currently has 4 pods, and a successful candidate would have the opportunity to work across any of these areas:
+
+Platform Innovation - focuses on large initiatives within the platform engineering org focused on human efficiency and reduced complexity enabling engineers and scientists to do their best and most innovative work. Our main partners in this space are the Productivity Engineering teams which provide the platforms to build, deploy, and run the jobs, services, and applications that enable the Netflix product (and internal products like studio and finance tools, and data products).
+Platform Scale - focuses on enabling our platform to scale efficiently to support new business areas as well as position ourselves to be able to reach 100s of millions of new members as the Netflix business grows around the world. We look for innovative ways to help the platform grow and scale for our needs.
+Security - focuses on keeping the Netflix service secure for our members as well as securing our corporate infrastructure for employees and contractors.
+Core DSE - is a software engineering heavy group which builds tooling for the Netflix Data community, enabling them to more effectively focus on business problems rather than boiler plate work needed to build, develop and deploy software at Netflix.
+
+We are looking for a Senior Data Scientist who can develop a deep understanding of our engineering infrastructure product space and implement reliable and novel data models, algorithms, and practices that increase the capabilities, efficiency, and impact of the Netflix infrastructure. As part of this team, you will innovate in the infrastructure space and deliver value to the business by optimizing practices at the platform layer.
+
+The ideal candidate will have a strong background in statistics, machine learning, data science or similar, sound software engineering skills, great and demonstrable data intuition, and share our passion for continuously improving the ways we use data to make the Netflix infrastructure better.
+Who you are:
+Passionate about intuitive data models and an expert in the area of statistics and/or machine learning
+Experienced in building data models that describe large scale data sets
+Fluent in multiple languages such as SQL, R, Python (or other similar languages)
+Strong Software Engineering chops
+Understand algorithmic trade-offs through years of experience and synthesis of past work or academic research
+Excel at taking vague requirements and crystallizing them into scalable data solutions
+Excited about operating independently, demonstrating excellence, and learning new technologies and frameworks
+Able to effectively communicate with experts from different backgrounds and build strong partnerships
+Comfortable presenting your insights and outcomes to all levels of the company and external collaborators or at conferences
+Some bonus attributes:
+A passion for Cloud Infrastructure, Productivity tooling, Application Security, and/or Information Security
+Deep statistical skills utilized in A/B testing and analyzing observational data
+Past technical leadership experience
+What you will do:
+Expertly handle structured and unstructured data
+Lead the design, analysis, and implementation of data models and algorithms that help shape infrastructure decisions
+Support cutting edge experimentation methodologies
+Develop subject-matter expertise in the infrastructure domain at Netflix
+Act as a thought partner to engineering teams; understand their challenges, and make opinionated recommendations that empower them with data to efficiently scale Netflix infrastructure and tools
+Perform data exploration to seed hypotheses and identify opportunities
+Maintain and rethink existing data solutions to service a wider variety of use cases
+Join a stunning team of data experts with diverse skill set, and contribute to Netflix Research by developing new methodologies that could enhance our decision-making process
+
+A few more things to know:
+Our culture is unique and we live by our values, so it's worth learning more about Netflix at jobs.netflix.com/culture. You will need to be comfortable working in the most agile of environments. Requirements will be vague. Iterations will be rapid. You will need to be nimble and take smart risks.
+
+APPLY NOW
+
+Share this listing:
+
+LINK COPIED"
+"indeed","https://indeed.com/rc/clk?jk=7c14a07f0b0a7736&fccid=938c68fc89db4b9d&vjs=3","Data Scientist","California State University","California","Position Summary
+
+The mission of San Diego State University’s Analytic Studies & Institutional Research (ASIR) is to broadly support Academic Affairs including academic colleges, Enrollment Services, Faculty Advancement & Student Success Resource Management, and Student Affairs with information to inform decision-making. To do so, ASIR leverages available technical resources and staff expertise to ensure data integrity, develop data tools, build partnerships, promote data literacy, conduct in-depth analyses and activate predictive modeling for operational and strategic needs that support campus decision-making. ASIR is also responsible for collecting, reviewing, and validating student data and faculty workload for the Enrollment Reporting System (ERS) and Academic Planning Data Base (APDB) required by the Chancellor’s Office.
+
+The ASIR Data Scientist will develop and maintain a learning/data analytics infrastructure for the campus, including novel machine learning innovations for the underlying data mining engine. The position will conduct research which is application driven around high priority initiatives identified by campus strategic leaders. The Data Scientist will apply expertise in statistical learning, predictive modeling, and computational prowess to develop and automate a learning analytics framework for ASIR predictive modeling tasks and applications. This position is also responsible for the dissemination of findings, including presenting results to the campus at applicable venues including Academic Deans Council, Admissions Advisory Group, SDSU Center for Teaching and Learning, and to analytics partners at the CSU Chancellor’s Office. It also includes building front-end visualizations and data tools for the wider campus audience. The ability to translate data into actionable information is essential. This position requires strong attention to detail, deep understanding of institutional data and processes, ability to work independently, awareness and application of higher education issues and SDSU academic policies specifically.
+
+Under the general supervision of the ASIR Student Success Director and faculty advisor, this position requires the ability to utilize statistical expertise to formulate research projects, work independently and as part of a team to translate and analyze complex institutional data into usable information for university decision-makers and to present findings as a technical and statistical expert. Other related duties as assigned. Very strong analytical, statistical, communication, and technical skills are essential.
+
+For more information regarding Analytic Studies & Institutional Research, click here.
+
+This is a full-time (1.0 time-base) benefits-eligible, permanent (probationary) position. This position is designated exempt under FLSA and is not eligible for overtime compensation. Standard SDSU work hours are Monday – Friday, 8:00 a.m. to 4:30 p.m., but may vary based on operational needs.
+
+
+
+
+Education and Experience
+
+Four years of progressively responsible administrative, technical, or professional analytical experience which demonstrates ability to conduct substantive surveys and studies of problems and issues in assigned areas and equivalent to graduation from a four-year college or university or rank of Associate Professor or higher in a four-year college or university and demonstrated experience in research or special study work may be substituted for the four years of experience.
+
+
+
+
+Preferred Qualifications
+
+Master’s in Statistics or related field
+Data mining, predictive modeling, and analytics expertise
+SQL, Python or other query language
+Knowledge of Tableau visualization software and/or reporting-dashboard technology
+Experience with educational data, student information data specifically
+Experience in institutional research
+
+Specialized Skills
+
+Advanced proficiency with statistical software such as R and SPSS
+Advanced experience with Excel and reporting/visualization software such as Tableau.
+Database query building and programming in SQL Server
+SQL Server Analysis Services (OLAP cubes)
+Strong analytical and presentation skills are also essential
+
+
+
+
+
+Compensation and Benefits
+
+Starting salary upon appointment not expected to exceed $5,500 per month. CSU Classification Salary Range: $5,325 - $9,635 per month. Salary placement is determined by the education, experience, and qualifications the candidate brings to the position, internal equity, and the hiring department’s fiscal resources.
+
+San Diego State University offers a rich benefits package that constitutes a major portion of total compensation. For more information regarding SDSU benefits, please click here.
+
+
+
+
+Supplemental Information
+
+Initial review of the required application materials, including cover letters and resumes, will begin on September 3, 2021. To receive full consideration, apply by September 2, 2021. The position will remain open until filled.
+
+The person holding this position is considered a ‘mandated reporter’ under the California Child Abuse and Neglect Reporting Act and is required to comply with the requirements set forth in CSU Executive Order 1083 as a condition of employment.
+
+San Diego State University is not a sponsoring agency for staff or management positions (e.g., H-1B visa). Applicants must currently be authorized to work in the United States on a full-time basis. Offers of employment are contingent upon the presentation of documents that demonstrate a person's identity and authorization to work in the United States, which are consistent with the provisions of the Immigration Reform and Control Act.
+
+A background check (including a criminal records check) must be completed satisfactorily before any candidate can be offered a position with the CSU. Failure to satisfactorily complete the background check may affect the application status of applicants or continued employment of current CSU employees who apply for the position.
+
+SDSU is a smoke-free campus. For more information, please click here.
+
+SDSU is an equal opportunity employer and does not discriminate against persons on the basis of race, religion, national origin, sexual orientation, gender, gender identity and expression, marital status, age, disability, pregnancy, medical condition, or covered veteran status.
+
+Applicants with disabilities and applicants who require assistance completing an application may contact Casie Martinez at cmartinez12@sdsu.edu or 619/273-3343."
+"indeed","https://indeed.com/rc/clk?jk=e3513a4be3e810e8&fccid=5c92f2e50cf01fad&vjs=3","IT Data Scientist","JPL/NASA","California","Job Details
+
+New ideas are all around us, but only a few will change the world. That’s our focus at JPL. We ask the biggest questions, then search the universe for answers—literally. We build upon ideas that have guided generations, then share our discoveries to inspire generations to come. Your mission—your opportunity—is to seek out the answers that bring us one step closer. If you’re driven to discover, create, and inspire something that lasts a lifetime and beyond, you’re ready for JPL.
+
+Located in Pasadena, California, JPL has a campus-like environment situated on 177 acres in the foothills of the San Gabriel Mountains and offers a work environment unlike any other: we inspire passion, foster innovation, build collaboration, and reward excellence.
+
+Are you passionate about using data to better the world? We believe that data can transform the way our employees work and how managers make decisions. We are looking for someone who loves making an institutional impact with data wrangling, statistical modeling, and crafting beautiful data visualizations to help make this happen! Come join us as we strive to use data to make JPL an amazing workplace for everyone.
+
+The IT Data Scientist will primarily reside in the Enterprise Business Information Services (EBIS) Division within a small team of IT Data Scientists. Under the direction of the lead IT Data Scientist and an EBIS manager, the selected candidate will perform data science for the Business Operations Directorate and other key institutional priorities. EBIS maintains stewardship over the ever-evolving Business IT portfolio supporting JPL's robust and complex business processes. EBIS also manages the full systems lifecycle across all major business processes, provides technical services and support, and strategically partners with JPL's communities. Current organizational initiatives include user interface / user experience design, data analytics, and embracing agile methodologies and tools.
+
+Additionally, the IT Data Scientist will also partner with Caltech's Audit Services and Institute Compliance (ASIC) organization and will provide the ASIC team with their data science expertise. The chosen candidate will design, implement, and maintain a program of data science within ASIC supporting and demonstrating the team's audit expertise.
+
+Responsibilities
+
+The role requires a meticulous data scientist who loves discovering trends where none were visible before. The successful candidate will be a self-starter who possesses a strong desire and experience performing descriptive, predictive, and prescriptive analytics. This will include creativity, resourcefulness, curiosity, and programming skills. Most importantly, the position must possess a strong passion to answer business questions working collaboratively with functional personnel, IT developers/analysts, and ASIC team members. ASIC management estimates a heavy emphasis on descriptive analytics when working with ASIC.
+
+The IT Data Scientist will use skills in data gathering, data “munging”, creative data mining, and interactive data visualization to drive decisions and products. Will give exciting presentations where the data tells a compelling story. The ability to communicate comfortably with all levels of staff and management with professionalism and self-awareness is a must.
+
+Work with business-domain partners and ASIC team to find opportunities where data science is part of business solutions
+
+Analyze a wide variety of disparate data sets (of all sizes) using current and emerging modeling, data mining, visualization, and predictive analytics techniques
+
+Regular use of creativity and innovation to address important issues
+
+Contributes as a key team member on teams across various disciplines and functions
+
+Provides direction and mentoring to others within the organization on data quality, data visualization, and analytics
+
+Required Qualifications
+
+Typically requires a Master’s degree in Data Science, Data Analytics, Computer Science, Mathematics, Statistics, or related discipline with a minimum of 1 year of related experience; Bachelor’s degree in similar disciplines with a minimum of 3 years of related experience
+
+Solid understanding in one or more of the following areas: data science, machine learning, statistics, analytics, programming, data mining, databases, data integration, and communications
+
+Coursework or practical experience with data mining, predictive modeling, and prescriptive analytics
+
+Knowledge of applicable industry and/or academic practices and standards in data science and analytics
+
+Strong analytical and problem solving skills
+
+Mathematics and statistics skills
+
+Practical and theoretical knowledge of data visualization principles
+
+Knowledge of extracting data using SQL
+
+Experience cleansing, transforming, and integrating real-world data using R or Python
+
+Experience effectively visualizing data using tools such as Tableau and communicating the data in a manner that diverse audiences can understand and utilize
+
+Effective presentation and storytelling skills
+
+Ability to create new prototypes with the creativity and thoroughness to ask and answer the deepest questions about the data and what secrets it holds
+
+Attention to detail with focus on accurately analyzing data and validating the results
+
+Ability to think creatively and to work well both as part of a team and as an individual contributor
+
+Ability to maintain confidentiality when dealing with critical data and/or subjects
+
+JPL is an Equal Opportunity Employer. All qualified applicants will receive consideration for employment without regard to sex, race, color, religion, national origin, citizenship, ancestry, age, marital status, physical or mental disability, medical condition, genetic information, pregnancy or perceived pregnancy, gender, gender identity, gender expression, sexual orientation, protected military or veteran status or any other characteristic or condition protected by Federal, state or local law.
+
+In addition, JPL is a VEVRAA Federal Contractor.
+
+EEO is the Law.
+
+EEO is the Law Supplement
+
+Pay Transparency Nondiscrimination Provision
+
+The Jet Propulsion Laboratory is a federal facility. Due to rules imposed by NASA, JPL will not accept applications from citizens of designated countries or those born in a designated country unless they are Legal Permanent Residents of the U.S or have other protected status under 8 U.S.C. 1324b(a)(3). The Designated Countries List is available here."
+"indeed","https://indeed.com/rc/clk?jk=fe8d978c0c547e26&fccid=43014b1412e0a7b6&vjs=3","University Grad Data Scientist","Pinterest","California","About Pinterest:
+
+Millions of people across the world come to Pinterest to find new ideas every day. It's where they get inspiration, dream about new possibilities and plan for what matters most. Our mission is to help those people find their inspiration and create a life they love. In your role, you'll be challenged to take on work that upholds this mission and pushes Pinterest forward. You'll grow as a person and leader in your field, all the while helping Pinners make their lives better in the positive corner of the internet.
+
+We're looking for university grad Data Scientists to help us connect Pinners to actionable content that improves the Pinner experience. You'll apply quantitative analysis, modeling, and data mining to improve the relevance of Pins across our Ads, Search, and Feeds products.
+
+What you'll do:
+
+Perform deep dive analysis to understand and optimize the key levers of our ads and search ecosystems
+Design core metrics that serve as the North Stars for team efforts and model trade offs across product areas
+Explore alternative experimentation techniques to help internal teams evaluate their ideas faster
+Apply statistics, modeling, and ML to improve the efficiency of systems and relevance algorithms across Search, Home Feed, and Related Pins
+Work with product managers and engineers to design data products and debug A/B experiments
+
+What we're looking for:
+
+MS or PhD in Statistics, Industrial Engineering, Computer Science, Math, Operations Research, Computational Biology, Computational Physics, or another related field
+Expertise in at least one scripting language, and proficiency in SQL/Hive
+Knowledgeable about the machine learning trade-offs and model evaluation
+Experience applying scientific methods to solve-real-world problems on web scale data is a plus
+
+#LI-KR1
+#datafilter
+
+
+Not Specified
+0"
+"indeed","https://indeed.com/pagead/clk?mo=r&ad=-6NYlbfkN0BoYl0jBLghHpaJBjcehw5r4JW_2qulEu_25yY9fasR_nIdB4SiY3aEOUck-mdkEC3rFQ7ApoddYkzlY1_JZd-p5tjijL_EkviRG8tOMPf7cJrKSWGl6zQLRnKH3E-RicZrfChXgybPOo1xmn-lF-70uD8wbLydMnbzMwqUU0n3Afkf_ecep88V7qg6IMh_p28oZwGtqOY6xBMlMNkvco3OsD92Eo-xoaaX1UhEHX8n-ukjdejpamH8iQ6eJxW46RV1KEFoB6lLyP6tyOj6hvpRVfKudz4w_JPVDFZy0m5ijSxX_xJ669MnN3dciscfjsexOgCIHL2bAZfTScymASpA9x1e86xS4-dH2OfpktF8GtEN4pzNXFC85aA_tpNInkWHvQ_QyPUXU1NmhBzsFq8gnWeOp092BdM=&p=0&fvj=0&vjs=3","Principal Data Scientist – Personalized Experiences","NIKE INC","Oregon","Become a Part of the NIKE, Inc. Team
+
+
+
+
+
+NIKE, Inc. does more than outfit the world’s best athletes. It is a place to explore potential, obliterate boundaries and push out the edges of what can be. The company looks for people who can grow, think, dream and create. Its culture thrives by embracing diversity and rewarding imagination. The brand seeks achievers, leaders and visionaries. At NIKE, Inc. it’s about each person bringing skills and passion to a challenging and constantly evolving game.
+
+
+Who are we looking for
+
+
+We are looking for a hands-on data science director for our Personalized Experiences Data Science team. This role is responsible for helping develop our algorithm roadmap for Nike’s personalization engines and serving as a technical mentor for our data scientists, engineers and product managers. Our team owns and develops state-of-the-art models to personalize the consumer journey for Nike members worldwide, including Nike App, Nike.com and SNKRS.
+
+
+What will you work on
+
+
+In this role, you will…
+
+
+
+Help create and execute on the algorithm roadmap for personalized experiences on Nike.com and Nike apps, which includes both product and editorial content recommendation as well as UX optimization.
+
+
+Partner with the engineering, machine learning platform, and product teams to deploy models and evaluate the A/B test results.
+
+
+Keep up with the latest research and disseminate the most relevant new ideas in e-commerce and recommendation.
+
+
+Mentor skilled applied scientists and engineers.
+
+
+Partner with other data science teams including those that work on search and marketing algorithms in order to have highly aligned technical roadmaps and reuse where possible.
+
+
+Who will you work with
+
+
+You will be a technical leader on the Personalized Experiences Data Science team, reporting to the Director of Personalized Experiences Data Science. This team works in partnership with the Data Engineering, Digital Product, Machine Learning Platform teams and is responsible for advancing Nike’s personalized experiences across Nike’s entire e-commerce business.
+
+
+
+
+
+
+Personalized Experiences Data Science is part of Nike’s Consumer Data Science team and Insights function. In addition to working with the personalization team, you will be a member of the broader data science team at Nike, and participate in our data science labs, study groups, and team activities, and attend conferences.
+
+
+
+
+
+
+What you bring
+
+
+
+Practiced in e-commerce and recommender systems, including familiarity with recent research published in at conferences such as SIGIR, SIGKDD and ACM RecSys.
+
+
+Adept in machine learning, particularly in ranking and deep learning models.
+
+
+Mastery in the architectures of large-scale recommendation engines.
+
+
+Experience with Python, and deep learning libraries such as TensorFlow or PyTorch.
+
+
+Experience forging partnerships with engineering, product, and analytics teams.
+
+
+A product and entrepreneurial mentality.
+
+
+Experience with Amazon AWS and SageMaker preferred.
+
+
+NIKE, Inc. is a growth company that looks for team members to grow with it. Nike offers a generous total rewards package, casual work environment, a diverse and inclusive culture, and an electric atmosphere for professional development. No matter the location, or the role, every Nike employee shares one galvanizing mission: To bring inspiration and innovation to every athlete* in the world.
+
+NIKE, Inc. is committed to employing a diverse workforce. Qualified applicants will receive consideration without regard to race, color, religion, sex, national origin, age, sexual orientation, gender identity, gender expression, veteran status, or disability."
+"indeed","https://indeed.com/pagead/clk?mo=r&ad=-6NYlbfkN0BoYl0jBLghHpaJBjcehw5r4JW_2qulEu_25yY9fasR_nIdB4SiY3aE4qnln5H2E4MPG8mDz1HWl9eStPegUtF79SLMLOBe66pJyu-kdwUE8CMVJ6K49BqsS8gcqB9j_MuaQXDCbQ7RzF_ikXmp_2db1HZKMNpbVEhuyEuBQi3ZgWOsiFU-6MlUT7Ns0nHKg4epxVN6bufcFGOmIsjuds5rYs6pUIhIsufVltpYY9frtJnKU00KmXIPWiJ_lDikmB3MCmux_bjRqkxRVkWYJNIIdK7jXmYIAhJHCEjQlaSjxct4WnecKMoylQokGYp8fps4P7omXd2vu1l9cVeKDEUHbKv8z_M0ndoOV_mMI5N6WfcZQK6oc0V9v5-KZ6Mw-rbyluTjVf4ev8xm7LJyB6OvnbVXhiKen78=&p=1&fvj=0&vjs=3","Senior Data Scientist, Communications Algorithms","NIKE INC","Oregon","Become a Part of the NIKE, Inc. Team
+
+
+
+
+
+NIKE, Inc. does more than outfit the world’s best athletes. It is a place to explore potential, obliterate boundaries and push out the edges of what can be. The company looks for people who can grow, think, dream and create. Its culture thrives by embracing diversity and rewarding imagination. The brand seeks achievers, leaders and visionaries. At NIKE, Inc. it’s about each person bringing skills and passion to a challenging and constantly evolving game.
+
+
+Who are we looking for
+
+
+We are looking for data scientists who are excited about delivering AI and ML modeling solutions that power marketing communications. This role will be responsible for delivering science capabilities (statistical modeling, machine learning including bandits, deep learning) across Nike’s marketing and messaging ecosystem! This includes implementing data science algorithms that ensure messages are relevant and timely for individual consumers that maximize Nike’s marketing and membership efforts. We are seeking a data scientist who can collaborate with engineering and product partners to deliver models that push the edges of data science!
+
+
+What will you work on
+
+
+In this role, you will…
+
+
+
+Developing an understanding of how Nike’s marketing efforts impact member behaviors across Nike’s digital ecosystem.
+
+
+Ideating, developing, and improving machine learning and statistical models to maximize marketing communication effectiveness.
+
+
+Prototyping and piloting audience capabilities related to the optimization (or “air traffic control”) of Nike’s communications.
+
+
+Evaluating the impact of available models and approaches and proposing solutions for improvement.
+
+
+Partnering with product and engineering teams in an embedded squad model to incorporate modeling capabilities into available marketing platforms and tools, such as Adobe.
+
+
+Collaborating with the broader data science community within Nike.
+
+Who you will work wtih
+
+
+You will be a member of the Communications Algorithms Data Science team, reporting to the Director of Communications Algorithms Data Science. Communications Data Science works in partnership with the Marketing Engineering, Digital Product, Machine Learning Platform teams, Marketing Science, and multiple Global and Geo Marketing and Membership teams. Communications Data Science is part of Nike’s Consumer Data Science team and Insights function. In addition, as a member of the broader data science team at Nike, you will participate in our data science labs, study groups, and team activities, and attend conferences.
+
+
+What you bring
+
+
+Experience in a Data Science role delivering modeling solutions in a business context.
+
+
+An understanding of targeted marketing strategies leveraging data science modeling techniques.
+
+
+Ability to understand, utilize, and innovate on state-of-the-art machine learning algorithms and/or statistical modeling.
+
+
+Bachelors Degree required.
+
+
+Experience with Python.
+
+
+NIKE, Inc. is a growth company that looks for team members to grow with it. Nike offers a generous total rewards package, casual work environment, a diverse and inclusive culture, and an electric atmosphere for professional development. No matter the location, or the role, every Nike employee shares one galvanizing mission: To bring inspiration and innovation to every athlete* in the world.
+
+NIKE, Inc. is committed to employing a diverse workforce. Qualified applicants will receive consideration without regard to race, color, religion, sex, national origin, age, sexual orientation, gender identity, gender expression, veteran status, or disability."
+"indeed","https://indeed.com/pagead/clk?mo=r&ad=-6NYlbfkN0BoYl0jBLghHpaJBjcehw5r4JW_2qulEu_25yY9fasR_nIdB4SiY3aEAEtOLwX-oDcRXlFG4nwGF76womfaAwrddBiOTZAAdtn1OkSAsFgidZVNwXGqSXnfktq2eCQc6yFBDDdfZbtV2E9Lj-WYsZKvuPW1CnWXRJzmQj6YtFUrAcQTVMwTXVvxrPMcEIXlCLswsaAtHshRz_9zhzN6ZSzleeknzbuIXCjdxtHg2j3aynoOGULdIFE4O2qyKmMkQ1jdp4eH9cFLZneJCjdYr3UqKjt7kOqlidbZgfvoSMn-uzzDa_o01vMSoWBq2MBlSHmBg_EJuNE-AfY6q1mncTkbkeoxLFo42Spng8tLw6dpeeIxfGftmMgdfCzS6izWFX1Oq-Sd64EPeVhR9aKFq_Az2NSDnotXpT8=&p=2&fvj=0&vjs=3","Senior Data Scientist, Audience Data Science","NIKE INC","Oregon","Become a Part of the NIKE, Inc. Team
+
+
+
+
+
+NIKE, Inc. does more than outfit the world’s best athletes. It is a place to explore potential, obliterate boundaries and push out the edges of what can be. The company looks for people who can grow, think, dream and create. Its culture thrives by embracing diversity and rewarding imagination. The brand seeks achievers, leaders and visionaries. At NIKE, Inc. it’s about each person bringing skills and passion to a challenging and constantly evolving game.
+
+
+Who are we looking for
+
+
+We are looking for data scientists who are excited about delivering AI and ML modeling solutions that power marketing communications. This role will be responsible for delivering science capabilities (statistical modeling, machine learning including bandits, deep learning) across Nike’s marketing and messaging ecosystem! This includes implementing data science algorithms that ensure messages are relevant and timely for individual consumers that maximize Nike’s marketing and membership efforts. We are seeking a data scientist who can collaborate with engineering and product partners to deliver models that push the edges of data science!
+
+
+What will you work on
+
+
+In this role, you will…
+
+
+
+Developing an understanding of how Nike’s marketing efforts impact member behaviors across Nike’s digital ecosystem.
+
+
+Ideating, developing, and improving machine learning and statistical models to maximize marketing communication effectiveness.
+
+
+Prototyping and piloting audience capabilities related to the optimization (or “air traffic control”) of Nike’s communications.
+
+
+Evaluating the impact of available models and approaches and proposing solutions for improvement.
+
+
+Partnering with product and engineering teams in an embedded squad model to incorporate modeling capabilities into available marketing platforms and tools, such as Adobe.
+
+
+Collaborating with the broader data science community within Nike.
+
+Who you will work wtih
+
+
+You will be a member of the Audience Data Science team, reporting to the Director of Audience Data Science. Audience Data Science works in partnership with the Marketing Engineering, Digital Product, Machine Learning Platform teams, Marketing Science, and multiple Global and Geo Marketing and Membership teams. Communications Data Science is part of Nike’s Consumer Data Science team and Insights function. In addition, as a member of the broader data science team at Nike, you will participate in our data science labs, study groups, and team activities, and attend conferences.
+
+
+What you bring
+
+
+Experience in a Data Science role delivering modeling solutions in a business context.
+
+
+An understanding of targeted marketing strategies leveraging data science modeling techniques.
+
+
+Ability to understand, utilize, and innovate on state-of-the-art machine learning algorithms and/or statistical modeling.
+
+
+Bachelors Degree required
+
+
+Experience with Python.
+
+
+NIKE, Inc. is a growth company that looks for team members to grow with it. Nike offers a generous total rewards package, casual work environment, a diverse and inclusive culture, and an electric atmosphere for professional development. No matter the location, or the role, every Nike employee shares one galvanizing mission: To bring inspiration and innovation to every athlete* in the world.
+
+NIKE, Inc. is committed to employing a diverse workforce. Qualified applicants will receive consideration without regard to race, color, religion, sex, national origin, age, sexual orientation, gender identity, gender expression, veteran status, or disability."
+"indeed","https://indeed.com/pagead/clk?mo=r&ad=-6NYlbfkN0CZUO70VSdYKA8PR3jfrSh5ljhqJhfDt0PzQCMubt8cRnTUTZt8TkWY5xA6VYfzsa3qvOEJl4FT1Io6YrSFu97BY7mnoy2YCeJ2t98L6A3noIWvpJUY8mHQMBhLORwGHvjcefzyv-mwcUh8c7elOL4kZyx4c67w2xSZ6V5tKn926uixovbf00lHIHW7wrfnm6F4zEk3W9Db2riKsG7OYpQijUVf_oGnXSopz-JaBi3RiZ390zIaTEafssut7YFY8B2F3uC-kSN9L2S9Hc6DaLG--2084M26C7X75CSOYvVf38rIrNkgzNM9dLTY7CmjD0pumvdko7cHDcNs4ud-b__bF8AEWHAhlXZNjVppG4hlmgVQFWoNvezgxUZjAvBSEW8nY3DfPG2IUpUs8xSEOL9h68QWXAdZtRPAtv1ISqMy5nSgYphkYHxBTKg5r6p4Jdc9J5_2DTRjD8d-1h2z937wDhEkt0JdssI8sJsrV_6VZgZxYmLKGUKkjpK2tcRXR-SvHRMdexm9oztwQTHQQJA2Kv2n3QX4V4eYkJy5oQM3uj5urRR3m7p9fwfAjg1f4wXB9HvS-LHqyiZ4hmOJJEGzHBT1dNyZzieTWxtQkhonHnlj66FOLkKVlIVWOqatObc=&p=3&fvj=0&vjs=3","Machine Learning Data Research Scientist","Leidos","Oregon","Description
+
+Job Description:
+
+Looking for an opportunity to make an impact?
+
+At Leidos, we deliver innovative solutions through the efforts of our diverse and talented people who are dedicated to our customers’ success. We empower our teams, contribute to our communities, and operate sustainable. Everything we do is built on a commitment to do the right thing for our customers, our people, and our community. Our Mission, Vision, and Values guide the way we do business. Your greatest work is ahead!
+
+The Leidos Research Support Team supporting the National Energy Technology Laboratory (NETL) is seeking a Machine Learning Data Research Scientist to join our Team in Albany, OR as part of our Workforce Development Program. This opportunity will allow side by side execution of research with world-class scientists and engineers using state of the art equipment to contribute to new areas of basic and applied research.
+
+
+The employee will leverage their data science capabilities to participate in studies relating to offshore research that focus on developing tools and managing data that provide critical insights into understanding subsurface hazards, risk assessment, and informing infrastructure integrity. This work will involve a multidisciplinary team participation alongside other data scientists, engineers, geologists and computer scientists to support the priorities of the DOE Fossil Energy and Carbon Management mission space.
+
+TERM OF COMMITMENT: This research position is intended to be a term position, with varying levels of commitment that are not expected to last longer than 2 years. You will be informed prior to applying what length of commitment is anticipated. Also, those who successfully fill a term position, may be invited to apply for an additional term. Nothing in this paragraph is intended to create an employment contract. Employment will remain at will.
+
+If this sounds like the kind of environment where you can thrive, keep reading!
+
+Primary Responsibilities Include:
+
+Applying artificial intelligence/machine learning methods to analyze geological and geophysical data.
+Building and modifying software tools using Python, creating stand-alone scripts, writing new applications.
+Collaborating with geologists and other science researchers to assist in accomplishing project-related tasks.
+Building relationships with internal and external clients.
+Creating and delivering oral and poster presentations of results.
+
+Required Qualifications:
+
+Master’s degree or currently enrolled in a master’s program leading to a degree in data science, computer science, math, geography, geo-statistics, geospatial science, environmental science, petroleum engineering or similar field with less than 2 years of prior relevant experience.
+Robust coding experience including Python and familiarity with tensor flow.
+Demonstrable skills in the application of various machine learning methods.
+Willingness and interest in learning geological information related to data (i.e. offshore subsurface topics and spatial data).
+
+Preferred Qualifications:
+
+Familiarity with software development, UI/data libraries, source code repositories, and ArcGIS
+Familiarity with geologic systems and geohazards
+
+Pay Range:"
+"indeed","https://indeed.com/pagead/clk?mo=r&ad=-6NYlbfkN0CZUO70VSdYKA8PR3jfrSh5ljhqJhfDt0PzQCMubt8cRnTUTZt8TkWY5xA6VYfzsa2-gJuN8KD2xiRAIl5G03tLicZra5J-H1oHkL4f8zFNAsOjvOr4e4FoOcEzQZ-b0Jm9Xn04cnZ8EDSF_eRNjoJBrmMMKTlX78xlhoHUbE798dufMHx_7y0yUXLAEk7t1phIiTD257G21abaM8CEQBxNmM7cyCz06IjQYBlSyL-t81g0fVpGI7jYNQiNK0TZv4AnM8TLhcdmLdziN9vle4DG3z8Ep8byOxoan4G2YMfX5P3QvAUbssDStKtvSpYPgHRgk7bQ-GjNvfmBJII9oX2q7gLuadcRXcZ10TNAEsqjgF-rzwaUXxGufq8ta7pOu6EMOiB7jEqFUggA1IdmNm2NfD_4EclEsUcgGaf1iuq7TpukSiTsmsLLKmEkzP5fjZtUJL72JrBwGNLUQmP5ZCGEcIKceoI7TmuScmFSzB0TvQM6hY6iGF7gOwEEr9PBeHNQaz7msG9ug_ROE6XYo0JPXGHQBLUi7nngxJmHR93o7iSo9ShpAaL_501C3GUE-T_KuvfJx1jw8nxgZ_pmKGMcWXbN8jQJT22iZ46vIBy5pQ==&p=4&fvj=0&vjs=3","Machine Learning Geo-Scientist","Leidos","Oregon","Description
+
+Job Description:
+
+Looking for an opportunity to make an impact?
+
+At Leidos, we deliver innovative solutions through the efforts of our diverse and talented people who are dedicated to our customers’ success. We empower our teams, contribute to our communities, and operate sustainable. Everything we do is built on a commitment to do the right thing for our customers, our people, and our community. Our Mission, Vision, and Values guide the way we do business. Your greatest work is ahead!
+
+The Leidos Research Support Team supporting the National Energy Technology Laboratory (NETL) is seeking a Machine Learning Geo-Scientist to join our Team in Albany, Pittsburgh, PA or Morgantown, WV. This opportunity will allow side by side execution of research with world-class scientists and engineers using state of the art equipment to contribute to new areas of basic and applied research.
+
+
+The employee will participate in studies relating to model development, workflow, and artificial intelligence/machine learning (AI/ML) algorithm design related to geospatial energy data. Additionally, the employee will be developing, managing, and integrating a variety of experimental and spatial and non-spatial datasets, including data visualization. This work will involve a multidisciplinary team participation alongside other data scientists, engineers, geologists, and computer scientists to help develop next-generation tools to understand offshore subsurface properties, hazards, oil platform infrastructure, and the priorities of the DOE Fossil Energy and Carbon Management mission space.
+
+NETL Locations: Albany, OR; Pittsburgh, PA or Morgantown, WV
+
+If this sounds like the kind of environment where you can thrive, keep reading!
+
+Primary Responsibilities:
+
+Apply artificial intelligence/machine learning (AI/ML) methods to augment geospatial analysis and algorithm development
+Design a variety of supervised and unsupervised AI/ML algorithms that incorporate big, disparate, multivariate data
+Correctly and efficiently interpret AI/ML algorithm results
+Apply statistical and geostatistical analysis for a variety of energy related topics
+Develop, query, manage, and maintain contextual and spatial databases, and structure/restructure existing databases for a range of experimental and spatial uses
+Utilize Python (version 3+) to acquire, process, and analyze spatial and non-spatial multivariate data, as well as develop data analysis and visualization tools
+Collaborate with multidisciplinary group of science researchers to accomplish project tasks
+Build relationships with internal and external clients
+Create and deliver oral, poster presentations of results
+Effectively communicate scientific results through peer-review journal manuscripts and technical reports
+
+Required Qualifications
+
+Master’s degree in applied computer science, machine learning, math, spatial statistics, geography, geo-statistics, geospatial science, computational geology or similar field
+Proficiency in Python for advancing coding needs, including using Python to automate AI/ML algorithms and build data visualization tools
+Evidence of innovation in statistical methods and algorithm development as applied to geospatial statistical problems
+Demonstrable skills in the application of statistical analyses, AI/ML algorithms, and other forms of multivariate analysis
+Understanding of and experience in spatial and/or subsurface topics
+Experience using ArcGIS Server and database software management systems like Microsoft Access, SQL Server, and PostgreSQL
+Experience with GIS (ArcGIS suite), spatial mapping, and spatial analysis
+
+Preferred Qualifications
+
+Advanced degree and/or certifications in data science, machine learning, applied math, computer science, spatial statistics, geology, geography, geo-statistics, geospatial science, or similar field
+Background in geospatial statistics and applications to energy and environmental systems
+Familiarity with subsurface data, including well logs and seismic, and interpretation software (Petra, Petrel, etc.)
+Familiarity with producing training datasets for image recognition and extraction from text-based resources
+Familiarity with LabelIMG, You Only Look Once (YOLO), and tensor flow
+Experience in data labeling approaches to refine and build on current classification capabilities and support AI/ML big data analysis
+Evidence of substantive participation in the geospatial and/or subsurface geologic scientific community
+
+Pay Range:"
+"indeed","https://indeed.com/pagead/clk?mo=r&ad=-6NYlbfkN0BoYl0jBLghHpaJBjcehw5r4JW_2qulEu_25yY9fasR_nIdB4SiY3aEqSKagFA58Odo_HkQwuVAuUULZlA-SxWOuqg0-meuZ4IGq3MSiSb4-hnmsFdXluLoBXxZNj_3fOklGhGplfSzOFfJjGxbRSa_kZuLQAGDygoVJCiv6BuUSIk6bGPlaY89N4Py5zEWPAvqBBpIRn-CDMnFFB9XgGF7TG2Qddd1xlk_doHNSUoMkytfZvhMVFuuuTuha2TfCH958n8FVsPSMZoWvGjb3dhI-1dDN_GO9XBBFoRTo7J1RkR0ELWFqstlT7-aVG-xEQ6rwGoQywZXaDKxSZP36Dpmh5QSiJ2ruI5fEGprwBob8bpFkbon6bxOGHx-tlPbNUYHw63F9-8OAIC90ACWbPwPE7-zsIG21RI=&p=5&fvj=0&vjs=3","SENIOR DATA SCIENTIST (GLOBAL COMMERCIAL ANALYTICS- S&IP OPTIMIZATION)","NIKE INC","Oregon","Become a Part of the NIKE, Inc. Team
+
+
+
+
+
+NIKE, Inc. does more than outfit the world’s best athletes. It is a place to explore potential, obliterate boundaries and push out the edges of what can be. The company looks for people who can grow, think, dream and create. Its culture thrives by embracing diversity and rewarding imagination. The brand seeks achievers, leaders and visionaries. At NIKE, Inc. it’s about each person bringing skills and passion to a challenging and constantly evolving game.
+
+
+NIKE, Inc. does more than outfit the world's best athletes. It is a place to explore potential, obliterate boundaries and push out the edges of what can be. The company looks for people who can grow, think, dream and create. Its culture thrives by embracing diversity and rewarding imagination. The brand seeks achievers, leaders and visionaries. At Nike, it’s about each person bringing skills and passion to a challenging and constantly evolving game.
+
+
+Analytics is a competitive differentiator for Nike and is fundamentally changing how the company serves athletes and consumers around the world! The Nike Commercial Analytics team builds analytic-based solutions to manage marketplace and optimize the supply chain. Using big data, advanced analytics and state-of-the-art technology, the team strives to ensure that Nike gets the right product to the right place at the right time for the consumers.
+
+
+WHO WE ARE LOOKING FOR
+
+
+We are looking for a Senior Data Scientist to join the Advanced Analytics team within Commercial Analytics. This role will be part of a multi-functional agile squad responsible for building predictive and prescriptive analytic solutions to support Nike’s ‘Supply Chain of the Future’ strategy.
+
+
+The candidate needs to be a dependable teammate with strong hands-on analytics experience in business analytics, supply chain modeling, and optimization. You know how to rise above the numbers and explain the essential insights to users at all levels. You distill business complexity and translate requirements into testable hypotheses and usable prototypes. While you are well versed in a plethora of operations research techniques, you can identify the approach best for the task at hand based on the business requirements, your knowledge of the data and the technique’s assumptions, interpretability, and robustness. You have a proven track record demonstrating measurable business impact from analytic models. You are intellectually curious, comfortable with ambiguity, continually learning, and always finding opportunities to share knowledge with others.
+
+
+WHAT YOU WILL WORK ON
+
+
+If this is you, you will be part of our Supply and Multi Node Inventory Optimization (S&MN) squad that delivers data science / operations research products to support Nike’s critical supply and inventory planning (S&IP) decisions, including integrated multi-node fulfillment, multi echelon inventory planning, and performance management. Specifically, you will:
+
+
+
+Develop new analytical models and improve existing approaches based on operations research techniques and big data solutions to determine optimal level of inventory, capacity, and supply plan.
+
+
+Assess business requirements and constraints to make trade-off recommendations between speed, reliability, and optimality of alternative solution approaches.
+
+
+Identify and apply appropriate methods to acquire, explore, cleanse, and fuse data from different sources.
+
+
+Be a key contributor to building, evaluating, deploying, monitoring, and updating analytical products.
+
+
+Facilitate the planning, scheduling, and value measurement of the work to meet timeline targets and success criteria.
+
+
+Support the adoption of analytic products through effective storytelling and collaboration with key partners.
+
+
+Share knowledge with others on the team; continue to adapt or develop new methods and learn new software packages as available in the literature and recent publications.
+
+
+WHO YOU WILL WORK WITH
+
+
+You will work with the Director of Data Science while partner on daily basis with the fellow data scientists, data analysts, engineers, and product owner on your squad. You will collaborate across our broader organization with business teams in Demand and Supply Management, as well as other data, analytics, and technology functions at Nike.
+
+
+WHAT YOU BRING
+
+
+
+Advanced quantitative degree (preferably Operations Research, Management Science, or Industrial and Systems Engineering) and at least 5 years of relevant industry experience or Bachelor’s degree with 7+ years of relevant experience.
+
+
+Demonstrated understanding of market demand and supply interactions. Working knowledge of supply chain management, supply planning, inventory management, e-commerce, and logistics.
+
+
+Proficient in optimization tools (such as AIMMS, CPLEX, Gurobi, AnyLogic, and Google OR Tools) and programming languages (particularly Python and SQL).
+
+
+Experience in building simulation, optimization, and what-if scenario planning tools and familiarity with mainstream packages relevant to managing all stages of Data Science/Analytics lifecycle.
+
+
+Familiarity with the wide range of data science/analytics software tools (e.g., Jupyter Notebook, SQL consoles, Hadoop, Spark) and cloud computing platforms (e.g., Amazon Web Services, Microsoft Azure, Google Cloud Platform).
+
+
+Familiarity with the Agile development process and ability to prepare a project plan, communicate the plan to the team, and break the work down to trackable tasks.
+
+
+Proven track record of working cross functionally and critically evaluate complex business information from multiple perspectives, including questioning assumptions and validity.
+
+
+Excellent written and verbal communication skills, including ability to develop and deliver presentation.
+
+
+NIKE, Inc. is a growth company that looks for team members to grow with it. Nike offers a generous total rewards package, casual work environment, a diverse and inclusive culture, and an electric atmosphere for professional development. No matter the location, or the role, every Nike employee shares one galvanizing mission: To bring inspiration and innovation to every athlete* in the world.
+
+
+NIKE, Inc. is committed to employing a diverse workforce. Qualified applicants will receive consideration without regard to race, color, religion, sex, national origin, age, sexual orientation, gender identity, gender expression, veteran status, or disability.
+
+
+NIKE, Inc. is a growth company that looks for team members to grow with it. Nike offers a generous total rewards package, casual work environment, a diverse and inclusive culture, and an electric atmosphere for professional development. No matter the location, or the role, every Nike employee shares one galvanizing mission: To bring inspiration and innovation to every athlete* in the world.
+
+NIKE, Inc. is committed to employing a diverse workforce. Qualified applicants will receive consideration without regard to race, color, religion, sex, national origin, age, sexual orientation, gender identity, gender expression, veteran status, or disability."
+"indeed","https://indeed.com/rc/clk?jk=e792ec7938f86ea8&fccid=2c62e4de04b8f952&vjs=3","Data Scientist","Nike","Oregon","Become a Part of the NIKE, Inc. Team
+
+NIKE, Inc. does more than outfit the world’s best athletes. It is a place to explore potential, obliterate boundaries and push out the edges of what can be. The company looks for people who can grow, think, dream and create. Its culture thrives by embracing diversity and rewarding imagination. The brand seeks achievers, leaders and visionaries. At NIKE, Inc. it’s about each person bringing skills and passion to a challenging and constantly evolving game.
+
+Nike Analytics encompasses multiple teams across the enterprise. As a Nike Data Science Engineer you will be responsible for assessing and analyzing data, building predictive models and delivering valuable insights to key stakeholders across the business. We want to make every Nike decision better because of data! Data Scientists will have the opportunity to work on one of the teams described below.
+
+Commercial Analytics:
+
+Global Sourcing & Manufacturing Analytics:
+
+Global Souring & Manufacturing teams dream up new ways to make better-performing products faster and more efficiently. This world-class team challenges assumptions about how our products are made and leads the company in pursuing ambitious sustainability goals — all while producing Nike’s rich mix of product. Manufacturing and Engineering works closely with design teams, categories, manufacturing partners, material suppliers and logistics providers across more than 40 countries on six continents. They navigate complex geopolitics with multiple supply chains and diverse ecosystems while remaining focused on manufacturing, materials, sustainability and product quality.
+
+Demand & Supply Management Analytics:
+
+Consumer demand is Nike demand. We'll get the right product into the hands of the consumer faster through end-to-end demand and supply management fueled by consistent data and advanced analytics. We'll drive marketplace health and mutual profitability by delivering insights to help our business partners manage supply and inventory investments and drive to a better forecast of demand in the marketplace.
+
+Global Operations & Logistics Analytics:
+
+Nike’s Operations team ensures that every year over one billion pieces of footwear, apparel and equipment arrive at the right destination on time across the globe. The complex process involves 60+ distribution nodes, thousands of accounts, and over 100,000 retail doors. The team constantly pushes to become faster, more efficient, more reliable, and more flexible, while minimizing its environmental impact, to support changing consumer needs.
+
+Pursuing an advanced degree in a quantitative field (e.g. Master’s or PhD studies in Analytics, Engineering, Economics, Finance, Computer Science, Statistics, etc.) with an expected graduation of December 2021 or Spring/Summer 2022
+
+Strong technical and analytical skillset required: experience with Microsoft BI, Tableau, SAS, Stata, R, Python, SQL, or Alteryx required; familiarity with Excel and PowerPoint preferred
+
+Core mathematical ability to understand, utilize and innovate on state-of-the art machine learning algorithms and/or statistical modeling
+
+Ability to project plan, lead, execute and deliver compelling and meaningful user research in a face-paced environment, balancing rigor and speed
+
+Prior experience synthesizing and packaging complex analyses and delivering results to non-technical audiences including senior leadership teams
+
+Proven ability to use strategic tools and frameworks to analyze complex strategic problems, develop clear recommendations and present findings
+
+Proven ability to sift through data, identify critical information, develop hypotheses, perform rigorous analyses, and make recommendations to broader audiences
+
+Demonstrated ability to use data to influence decision making. Strong project management experience managing multiple project streams and complexity
+
+Excellent written and verbal communication skills, including superior presentation skills
+
+Strong interpersonal skills and open to learning new tools/techniques
+
+Passionate about Sport, Nike products and the consumer/retail industry
+
+Preferred qualifications:
+
+2+ years of experience in a role developing predictive or explanatory models and/or experimentation processes
+
+Experience with neural nets and deep architectures preferred
+
+Experience with moderate to large-scale data sets (>100GB) preferred
+
+Previous experience in working in a product management capacity for data science product
+
+Expertise in at least one production-quality programming languages (e.g. java, python, scala, C++)
+
+Please submit your resume as a PDF!
+
+#NikeUniversityRelations
+
+We will ensure that individuals with disabilities are provided reasonable accommodation to participate in the job application or interview process, to perform essential job functions, and to receive other benefits and privileges of employment. Please contact us to request accommodation.
+
+NIKE, Inc. is a growth company that looks for team members to grow with it. Nike offers a generous total rewards package, casual work environment, a diverse and inclusive culture, and an electric atmosphere for professional development. No matter the location, or the role, every Nike employee shares one galvanizing mission: To bring inspiration and innovation to every athlete* in the world.
+
+NIKE, Inc. is committed to employing a diverse workforce. Qualified applicants will receive consideration without regard to race, color, religion, sex, national origin, age, sexual orientation, gender identity, gender expression, veteran status, or disability."
+"indeed","https://indeed.com/rc/clk?jk=55e907988b05c106&fccid=76fc457107850718&vjs=3","Data Scientist II",NA,"Oregon","Location:
+
+Hillsboro, Oregon, United States
+
+Job ID:
+
+R0004463
+
+Date Posted:
+
+2021-10-05-07:00
+
+Company Name:
+
+Hitachi High-Tech America, Inc.
+
+Profession (Job Category):
+
+Data Analytics/Business Intelligence
+
+Job Schedule:
+
+Full time
+
+Remote:
+
+No
+
+Job Description:
+
+The role of a Data Scientist II, Engineering (DSIIE) is to analyze data, to report analysis results and to develop data analysis system in order to provide competitive plasma etch equipment utilized in advanced semiconductor industry. The DSIIE analyzes diverse data relating to the equipment, generates actionable insights and solutions, and develops monitoring and analysis system. The position will use Excel, JMP, Python and other specific software tools on its analysis and development works.
+
+Equal Opportunity Employer (EOE)-Females/Minorities/Protected Veterans/Individuals with Disabilities
+
+If you require reasonable accommodation in completing this application, interviewing, completing any pre-employment testing, or otherwise participating in the employee selection process, please direct your inquiries to HTA-AccommodationRequests@hitachi-hightech.com"
+"indeed","https://indeed.com/rc/clk?jk=1ecadfb4ac1d4be9&fccid=09eeffb1b3f0389f&vjs=3","Data Scientist",NA,"Oregon","Purpose
+
+The Data Scientist uses data to find patterns, trends, and causal relationships as aids for projecting probable future conditions and events. These findings must then be effectively communicated to decision-makers to aid in critical decisions about organizational strategy and tactics. This work requires a deep understanding of principles in Statistics/Mathematics, Finance/Economics, and Computer Science paired with the ability to listen intently and present skillfully. The goal - give end-users the power to confidently make data-driven decisions.
+
+George Fox University, a Christ-centered community, prepares students spiritually, academically, and professionally to think with clarity, act with integrity, and serve with passion. Professors teach all truth as God's truth, integrating all fields of learning around the person and work of Jesus Christ, bringing the divine revelations through sense, reason, and intuition to the confirming test of Scripture. As a Christ-centered community, George Fox University is an institution that values diversity as an essential dimension of God's design for human communities. In seeking to become a more inclusive community, we especially encourage applications from individuals who can help us achieve our diversity goals.
+
+
+
+
+
+Duties and Responsibilities
+
+Understand University strategy and objectives and identify opportunities to deliver decision-aids and data products [visualizations, models and their outputs, alerts, etc.]
+Extract, cleanse, and verify data utilized in the creation of features for modeling and reporting by multiple constituencies, and monitoring these products after release for drift
+Extend University data with third-party sourced data where necessary using APIs or other methods
+Apply advanced methods of modeling and data-mining to systematically identify patterns, trends, and causal relationships from data
+Develop simulations based on relevant data and findings to support ""What If"" Analysis
+Assist with the analysis of Accounting and Financial data sourced from a General Ledger and financial statements and disclosures, both internal and external
+Address more difficult, sophisticated, or novel requests for analysis, such as causative models, graph analysis, and complex event processing and communicate results effectively
+Utilize skills to effectively cross or aid in the closure of data-chasms where they exist
+Support the development of data capabilities through-out the institution, such as assisting in the selection of potential tools, creating best practices for their use or machine learning generally, help in benchmarking external analytics service providers, and providing validation services to internal conclusions drawn from data.
+
+Required Qualifications
+
+Bachelor's Degree in field related to quantitative analysis such as Mathematics, Statistics, Economics, Analytics and at least 2-years of Analytics experience and a track-record of results
+Demonstrated technical skills including SQL, Python and data science libraries evidenced by experience working with complex data sets and managing data workflows
+Able to effectively communicate with all departments and levels of associates through both verbal and written methods
+Ability to work independently on complex projects
+Possess critical thinking skills, using logic to identify strengths and weaknesses of alternative solutions and troubleshoot issues, suggest improvements, implement changes, and deliver value
+Past experience with Tableau, Financial Analysis, Masters coursework, or in Higher Education is a plus
+
+For Your Personal Well-Being We Offer:
+
+A beautiful and peaceful campus environment with areas to walk and coffee shops and restaurants close by
+A strong Christian vision and mission-led organization with opportunities for your growth and contributions
+Wonderful Christian peers and a vibrant student population
+Free Fitness Center membership
+Free parking
+Rich employee benefits
+Flexible work location - in office and remote if desired
+
+We invite you to Be Known at Oregon's Nationally Recognized Christian University!
+
+George Fox has been transforming student lives for over 125 years. Each day we look to broaden our future for generations to come.
+
+We have alumni from 52 countries and all 50 states.
+
+We invite you to become a steward of our dreams using your God-given gifts. Our Purpose: To educate and inspire students to pursue God's calling.
+
+**This position is subject to close at any time, regardless of the date on the posting
+
+**Relocation assistance available**"
+"indeed","https://indeed.com/rc/clk?jk=1aad01f0e82bc445&fccid=9754a3d997f611ce&vjs=3","Staff Data Scientist","Portland General Electric","Oregon","This is an exciting time to join Portland General Electric. As Oregon’s largest electric utility, Portland General Electric is leading an energy transformation that will harness the power of clean and renewable resources. Our vision for a clean energy future relies on three interrelated and overarching strategies: de-carbonize through investing in clean and reliable energy; modernize through a smarter more resilient grid; and empower our customers in their energy technology choices.
+
+We’re searching for innovative, customer and results-obsessed leaders to help power our mission and lead the way in championing the world’s clean energy future!
+
+Associate Data Scientist
+
+The Data Strategy & Management (DSM) bears critical responsibility on behalf of Portland General Electric (PGE) to create value for customers, regulators, and business operations through the collection, organization, and interpretation of data from PGE’s expansive data portfolio. The mission of our team is to enable data driven decisions across the company and external stakeholders by ensuring secure, reliable and cataloged data access from our data lake and delivering insights utilizing advanced AI/ML approaches to support achieving PGE’s goal to provide energy that is safe, clean, reliable, affordable and secure.
+
+We are looking for an Associate Data Scientist to join our team and drive our mission together. This individual will collaborate with the business partners to answer their business questions by using advanced data analysis techniques. They will work closely with the Information Architect, Data Architect, Data Engineer, and Business SME’s to design and develop ML solutions to cater business values and end-user experience. Through their work, they will lay foundation of best practices and framework that other scientists can follow.
+
+
+
+The ideal candidate is proficient at manipulating and analyzing large datasets over multiple domains, and skilled at using various machine learning and statistical techniques to create solutions realizing clear business values. They must also be experienced at productionizing ML solutions. They must be comfortable at designing programmatic solutions from ambiguity, and able to convey their idea clearly to stakeholders. They should be great communicators and presenters even to high-level executives. Last but not the least, they should share the same passion to make the world a great place to live by providing clean and reliable energy to people.
+
+Career Level Summary
+
+Performs first-tier professional-level assignments that require theoretical knowledge and application of principles and concepts. Typically requires a related college or university degree or the equivalent work experience. Solves recurring problems by applying advanced knowledge. Operates independently but also receives ongoing guidance and direction from others
+
+Key Responsibilities
+
+Data Collection - With direction from senior colleagues, assists in identifying what data is available and relevant, including internal and external data sources; supports data collection, integration and retention requirements based on the input received; ensures information used follows PGE compliance, access management and control policies and meets PGE qualification and assurance requirements.
+Develop cost-benefit models to justify the data purchase/collation.
+Collaborate with Stakeholders - Works with peers and business stakeholders to identify the business requirements and expected outcomes. With peer and business stakeholder support, models and frames meaningful and impactful business scenarios for critical business processes and/or decisions.
+Analyze Data - Assists in developing data and analytics products to improve how business is conducted and increases throughput through operational efficiencies. Employs appropriate algorithms to discover patterns; uses statistical and data mining packages and dedicated frameworks. Shares data quality findings with data stewards and partners with data stewards on data quality definition and standards; includes experimental design approaches to validate findings by comparing appropriate samples. Assists in developing approaches for validation.
+Educate - Follow the overall data science standards, guidelines, best practices and approved modeling techniques. Suggests improvements as necessary.
+
+Education / Experience / Certifications
+
+Requires a Master of Science (MSc) degree in mathematics, statistics or computer science or related field, such as physics, economics, or operations research.
+Typically, entry level or academic experience or preparation to three years of practical experience in a business setting.
+Prototyping experience and extensive data analysis experience required. Knowledge of cloud platforms preferred.
+
+#LI-CU
+
+Join us today and power your potential!
+
+
+To be considered for this position, please complete the following employment application by the posting close date. A cover letter may be needed with your application to be considered for this position.
+
+PGE believes in rewarding strong performance. We provide a total compensation package that is designed to reward your contributions to the company, and, at the same time, support your well-being and professional development, both now and into the future.
+
+PGE is committed to diversity and inclusion in the workplace and is an equal opportunity employer. PGE will not discriminate against any employee or applicant for employment based on race, color, national origin, gender, gender identity, sexual orientation, age, religion, disability, protected veteran status, or other characteristics protected by law.
+
+Assisting with storms or other Company emergencies is a part of all positions at Portland General Electric.
+Talent Acquisition Contact:
+Staffing@pgn.com
+
+The posting closes at midnight (Pacific Time) on the closing date below:"
+"indeed","https://indeed.com/pagead/clk?mo=r&ad=-6NYlbfkN0DwTFf1i8tHxx5w6n6Gg6g51G1v2moTctKTWRheSvOoBGoYbE61eXaIhzxrzFWJUEuf772Fg5hrLV5y4dXmuSg-f_BlSQlG_Gsv85k_Ze0vzea2NN6p4W0Y8r_HLvAZD2COMN9Ufga_SZkkQb8Vpm7OGtVbgnaZagh690omV_EB6uEU23w2wd2ehV6qgWZI25bHgdJWlcy0wiUjmDzqn8FwRjFSSFcX8SR3tEnbe30azO2_a3Lo6sBnp-u9yV3qr39mdh4kSCgSXYjaW7AIta2FuC-GKmuPrBoENFNS-8yNsQaTMeMzQ87Pw0Pyey0E2Vx9ECBSMqNL9NoFkPhC5i-_G7MQ2XKxv-rwT4JkDD9DvX5CuZs2-GxVlzHQeLS8A-zJUVnCg7lJZXSSZITcvWXDJuXn9X1yW8pcgk1c3KWtCBvXx4EwNVDpMxj-0AsyBdNvdBrbRV8Dm5EAi_99LI6hvhzqFkxGFUaxedoIkzLipV0ukK0uRUF_PfPZszMJsEJs0i5CbvraLstdiarg_K0341y5pV9WoGjuIJe5JJbB1mp5yVEhJebSshWpsM_i04tnz6-2C_L_jL7uxcmP0mREWOFZTfQz4SVzc8R1fiR_llqWGqebUfiKk2NWvhQddlUycd83UOyRwHmZJ7AUjC_tx05V-ByhKYQwvcz0WE1apA==&p=10&fvj=0&vjs=3","Data Scientist","VanderHouwen","Oregon","Job ID:52768
+
+Data Scientist
+Our client is looking for a Data Scientist to collaborate with our team on current projects and contribute to the architecture, design, and development of their AIML powered Passwordless Continuous Authentication. Your primary focus will be on applying data mining techniques, doing statistical analysis, and building high-quality prediction systems integrated with our products.?
+This position may require participation in customer meetings to discuss the software requirements, and present solution architectures and designs to our customers. Therefore, strong verbal and written communication skills, as well as good presentation skills, are required for this position.
+
+Responsibilities Include:
+Calculate and automate scoring using machine learning techniques.
+Build recommendation systems.
+Improve and extend the features used by the existing data classifier.
+Develop and test AIML algorithms.
+Build a system for automated fraud detection.
+Selecting features, building and optimizing classifiers using machine learning techniques.
+Data mining using state-of-the-art methods.
+Extending the companys data with third party sources of information when needed.
+Enhancing data collection procedures to include information that is relevant for building analytic systems.
+Processing, cleansing, and verifying the integrity of data used for analysis.
+Doing ad-hoc analysis and presenting results in a clear manner.
+Creating automated anomaly detection systems and constant tracking of its performance
+
+Skills & Experience Were Looking For:
+2+ years of hands-on experience in data science, data analytics, or a related quantitative field.
+MS degree in a quantitative discipline (applied mathematics, statistics, computer science, operations research, or related fields).
+Strong knowledge of Python programming language (extensive experience working with Numpy and Pandas and additional experience in one or more of scikit-learn, PyTorch, or Tensorflow) and ability to write neat and well-documented code.
+Proficiency in using query languages such as SQL.
+Solid knowledge of machine learning techniques (Clustering, Neural Networks, decision trees, Naive Bayes, SVM, etc) and their advantages/drawbacks.
+Strong mathematical skills and working knowledge of applied statistics (regression, distributions, statistical tests, time series, etc.) and their applications.
+Comfortable working with git version controlling and command-line interface.
+Excellent verbal and written communication skills.
+
+Nice to have:
+Knowledge of semi-supervised learning methods.
+Knowledge of operations research.
+Software development experience in Python.
+Strong knowledge of cybersecurity.
+
+
+Benefits
+Benefits are available to eligible VanderHouwen contractors and include coverage for medical, dental, vision, life insurance, short and long term disability, and matching 401k.
+
+About VanderHouwen
+VanderHouwen is an award-winning, Women-Owned, WBENC certified professional staffing firm. Founded in 1987, VanderHouwen has been successfully placing experienced professionals throughout the Pacific Northwest and nationwide. Our recruitment teams are highly specialized in either Technology and IT, Engineering, or Accounting and Finance career markets. Our recruiters value building meaningful, professional relationships with each candidate as well as developing honed knowledge of companies' staffing needs and workplaces. Partner with us to land your next exciting career.
+
+VanderHouwen is an Equal Opportunity Employer and participates in E-Verify. VanderHouwen does not discriminate on the basis of race, color, religion, sex, national origin, age, disability, or any other characteristic protected by applicable local, state or federal civil rights laws."
+"indeed","https://indeed.com/rc/clk?jk=3e48e8563b9aba85&fccid=0cfed2063a65ccdb&vjs=3","Clinical Data Scientist (Remote)",NA,"Oregon","At Carta Healthcare, we believe in a multidisciplinary approach to solving problems. Our mission is to automate and simplify the work that burns out clinical staff, so they can focus on patient care. Our AI Enabled Technology offers a complete solution (people, process and technology) to support the Healthcare Registry Data Market. We design products that transform the way hospitals use data to deliver care. We make analyzing data fast, easy, and useful for everyone. We give clinicians time back to focus on research and care that improve patient lives by reducing paperwork. Carta Healthcare is a remote organization with headquarters in San Francisco and Portland, Oregon. To learn more about our AI Enabled Solutions and more about our company, please visit www.carta.healthcare
+
+We are looking for a Data Scientist responsible for working with and improving our automation, natural language processing, and machine learning tools. Your primary focus will be building tools to extract actionable clinical insights from unstructured data sources. This will include expanding the capabilities of Carta's NLP pipeline, building new algorithms, and orchestrating the training, evaluation, and deployment of these algorithms to live data.
+
+Responsibilities:
+
+Interpret messy structured and unstructured clinical data to produce actionable insights
+Work with parallelized and modular data ingest and machine learning techniques
+Improve the performance of Carta's automation and machine learning pipelines
+Work with clinical experts to generate de-identified datasets for evaluating our ML algorithms
+Orchestrate the training, deployment, and evaluation of ML pipelines across multiple customer deployments.
+Collaborate with other team members and stakeholders
+
+What you'll need:
+
+PhD in Biomedical Informatics, Statistics, Computer Science or related field
+Strong understanding of the core principles of statistical/machine learning
+Experience working with clinical data
+Experience with Natural Language Processing tools (e.g. Spacy)
+Python expertise (4+ years experience)
+Proficient understanding of code versioning tools (i.e. git)
+Familiarity with Jupyter notebooks or other data science tools
+Strong data visualization skills (Tableau, matplotlib, etc.)
+Experience with the FHIR standard for medical data
+Postgres or SQL expertise
+A hands-on, engaged approach to solving problems
+Excellent communication skills and experience in collaborative environments
+The desire to be continually learning about emerging technologies/industry trends
+Job is remote but candidates must be US-based
+
+Why we love Carta Healthcare, and why you will too!
+
+Industry leading products
+Work hard, and have fun doing it
+Work alongside some of the most talented and dedicated teammates
+Mission driven
+Competitive benefits package including great healthcare benefits and a 401K"
+"indeed","https://indeed.com/rc/clk?jk=63c61c21f6826cc8&fccid=84c8ed4c8205d753&vjs=3","Data Scientist - Lumedic","Providence","Oregon","Description:
+
+Providence St. Joseph Health is calling a Data Scientist - Lumedic to our locations in WA, OR, or CA based remotely.
+
+We are seeking a Data Scientist to perform research and development of advanced analytics solutions in healthcare. We are a data-driven company focused on appropriately and ethically using healthcare and claims data to improve the revenue cycle. As a member of our growing data science team, you will work with subject matter experts to uncover important insights and build intelligence models to better the patient and provider experiences. This role will primarily focus on performing exploratory data analysis, engineering features using domain knowledge, and building relevant machine learning workflows to achieve those goals.
+
+In this position you will:
+
+Work with Lumedic's internal and external teams to conceptualize, define, and assess analytic products.
+Help define techniques and metrics to positively impact financial and operational outcome Key Performance Indicators (KPIs).
+Integrate with external and internal data sources (relational databases, NoSQL data stores, data warehouses, APIs, etc.) to bring relevant data to the Lumedic network.
+Work with large healthcare and financial datasets to generate applicable data extracts, analytical insights, and statistical analysis.
+Design, build, and evaluate various types of machine learning models.
+Participate in the full machine learning lifecycle to deliver applicable and performance models on an ongoing basis.
+Organize, validate and take ownership of all assigned requirements and deliverables.
+Contribute to and enable a positive work environment which highly encourages creative input and constructive criticism.
+Develop strong collaborative working relationships with our teams and our key stakeholders.
+Summarize and present complex analytical concepts to non-technical audiences.
+
+Qualifications:
+
+Required qualifications for this position include:
+
+Bachelor's Degree in Math, Applied Math, Statistics, Physics, Computer Science, or related field or equivalent educ/experience
+3 years complex analysist of large datasets in a professional setting
+3 years professional experience in statistical modeling
+1 year professional experience in machine learning model development and evaluation
+
+Preferred qualifications for this position include:
+
+Master's Degree in Math, Applied Math, Statistics, Physics, Computer Science, or related field or equivalent educ/experience
+Ph.D. in Math, Applied Math, Statistics, Physics, Computer Science, or related field or equivalent educ/experience
+3 years Professional experience with full machine learning life cycle
+3 years Professional experience in machine learning model development and evaluation
+Experience in Python and relevant data science packages
+Experience working on cloud computing services, preferably Microsoft Azure Experience with Epic, Cerner, Meditech or similar Electronic Health Record (EHR) systems
+
+About the department you will serve.
+
+Lumedic is a Seattle-based healthcare technology company transforming revenue cycle management processes for modern payers and providers. From eligibility to pre-authorization to billing, Lumedic offers an end-to-end platform and
+
+intelligent network built on blockchain technology that embraces patient, payer, and provider interactions to drive more efficient operations and make smarter data-driven decisions.
+
+Lumedic is an equal opportunity employer and we encourage diversity in the workplace regardless of race, gender, religion, age, sexual orientation, gender identity, disability, or veteran status. Our goals for Lumedic are ambitious, and we’re continually in search of motivated, committed, and energetic people to join our mission.
+
+We offer comprehensive, best-in-class benefits to our caregivers. For more information, visit
+
+https://www.providenceiscalling.jobs/rewards-benefits/
+
+Our Mission
+
+As expressions of God’s healing love, witnessed through the ministry of Jesus, we are steadfast in serving all, especially those who are poor and vulnerable.
+
+About Us
+
+Providence is a comprehensive not-for-profit network of hospitals, care centers, health plans, physicians, clinics, home health care and services continuing a more than 100-year tradition of serving the poor and vulnerable. Providence is proud to be an Equal Opportunity Employer. Providence does not discriminate on the basis of race, color, gender, disability, veteran, military status, religion, age, creed, national origin, sexual identity or expression, sexual orientation, marital status, genetic information, or any other basis prohibited by local, state, or federal law.
+
+Schedule: Full-time
+
+Shift: Day
+
+Job Category: Analytics/Business Intelligence
+
+Location: Washington-Seattle
+
+Other Location(s): Oregon-Portland, California-Torrance, California, Washington, Oregon
+
+Req ID: 305954"
+"indeed","https://indeed.com/rc/clk?jk=a232520c5883bad1&fccid=a419cf85609f7c58&vjs=3","Data Scientist / Data Engineer",NA,"Oregon","Cascade Data Labs is a boutique consulting agency (operating as part of Kin + Carta) with end-to-end experience helping Fortune 500 companies form and execute their analytics strategy and infrastructure. We believe strongly that the difference between analytics success and failure comes down to practitioner-level understanding of the ""details"" presented across a variety of disciplines: data collection, organization, and engineering in a rapidly evolving technological landscape; analytical inference on multi-dimensional data sets; and the communication of findings to business stakeholders in visually compelling ways. As such, we seek a new breed of data professionals that can cut across these disciplines as project requirements dictate, blurring the lines between data analyst, scientist, and engineer, with the ability to work across a multitude of projects and contribute across various aspects of data product . While our culture promotes continual development and multidisciplinary growth, over time employees may gravitate towards a specific specialism and thrive in building a deep expertise in their domain of interest.
+
+Ideal candidates will have strong quantitative backgrounds and analytical discipline. While they will have some demonstrated ability to write code, they will not have learned programming languages for the sake of building their resume, but rather as a means to express their intellectual curiosity and analytical voice. Cascade Data Labs will provide a platform and training to help them reach their full potential.
+
+Core Responsibilities
+Analyze a collection of raw data sets to create meaningful impact to large enterprise clients while maintaining a high degree of scientific rigor and discipline.
+Engineer data pipelines and products to help stakeholders make and execute data driven decisions.
+Communicate analytical findings in an intuitive and visually compelling way.
+Potential Responsibilities (depending on aptitude, project, and seniority)
+Creating highly visual and interactive dashboards via Tableau, PowerBI, or custom web applications
+Conducting deep dive analysis and designing KPIs to help guide business decisions and measure success
+Engineering data infrastructure, software libraries, and APIs supporting BI and ML data pipelines
+Architecting cloud data platform components enabling the above
+Building and tracking project timelines, dependences, and risks
+Gathering stakeholder requirements and conducting technical due diligence toward designing pragmatic data-driven business solutions
+Minimum Qualifications
+
+We want all new hires to succeed in their roles at Kin + Carta. That's why we've outlined the job requirements below. To be considered for this role, it's important that you meet all Minimum Qualifications. If you do not meet all of the Preferred Qualifications, we still encourage you to apply.
+
+Minimum of 2 years professional experience in data science, analytics, and/or engineering
+Bachelors or Masters degree in quantitative studies including Engineering, Mathematics, Statistics, Computer Science or computation-intensive Sciences and Humanities. Recent graduates should include GPAs in their resumes from degrees obtained in the last 5 years.
+Proficiency (can execute data ingestion to insight) in programmatic languages such as SQL, Python, R
+Preferred Qualifications
+Proficiency in visualization/reporting tools such as Tableau and PowerBI or programmatic visualization library such as R ggplot2, Python matplotlib/seaborn/bokeh, Javascript D3.
+Proficiency scripting in UNIX environment
+Proficiency in big data environments and tools such as Spark, Hive, Impala, Pig, etc.
+Proficiency with cloud architecture components (AWS, Azure, Google)
+Proficiency with data pipeline software such as Airflow, Luigi, or Prefect
+Ability to turn raw data and ambiguous business questions into distilled findings and recommendations for action
+Experience with statistical and machine learning libraries along with the ability to apply them appropriately to business problems
+Proficiency in front and back-end web application development stacks and frameworks (Javascript, HTML, CSS, React/Vue/AngularJS) including API design (REST/GraphQL) and library development
+Experience leading and managing technical data/analytics/machine learning projects
+
+Job Type: Full-time
+
+COVID-19 considerations:
+Employees are all working remotely at this time. Applicants must be able to relocate to the Portland area once the time is safe to do so.
+
+About Kin + Carta
+
+Kin + Carta exists to make the world work better by delivering transformative digital growth for our clients. As a digital transformation firm, we apply creativity, data, and technology to help clients invent, market, and operate new digital products and services that turn prospects into customers, and customers into advocates. Kin + Carta seamlessly integrates the strategic consulting, software engineering, and marketing technology needed to help businesses 'Make It Happen'.
+
+Consultants at Kin + Carta have the opportunity to: engage with the most cutting-edge emerging technologies, solve difficult problems for some of the world's biggest companies, and work within a breadth of industries.
+
+Kin + Carta is headquartered in Chicago and London with offices across four continents. Our culture and shared ways of working unite us globally, but it's our diverse specialisms, our connections, and our courage that makes our firm a recognized best place to work.
+
+We welcome our Kin to show up as their full selves every day. Because this is so important to us, Kin + Carta is proud to be an equal opportunity employer. To read further about our commitment to Inclusion, Diversity, Equity, and Awareness, check out our IDEA page on our website.
+
+If you need accommodations at any point in the application or interview process, please let us know."
+"indeed","https://indeed.com/rc/clk?jk=294bdf3c33989987&fccid=4384f66deb7fbe3e&vjs=3","Jr. Data Scientist & Research Assistant (Contract/Temp)","Kinship","Oregon","WHO WE ARE
+
+Kinship is here to help everyone pet parent like a pro. Why? Because our pets make us better humans, and we owe them the best possible care. As the premier partner to a new generation of pet parents, we use our data, products, and services to help people be the best pet parents they can be. And we unite changemakers in pet care to break down barriers, open new doors, share insights, and advance our collective knowledge. All so we can reimagine the pet parenting experience, up people's confidence, and help the world find better ways to care.
+
+Kinship is a coalition that includes:
+
+Wisdom Panel™, the world's most accurate pet DNA test.
+Whistle™, an award-winning leader in smart monitors for pet health.
+The Wildest™, one destination that helps people ace it for their animals.
+GoodFriend by Kinship, a platform that connects pet parents and care providers.
+Adopt-a-Pet.com, a site that helps share homeless pets with millions of adopters.
+Pet Insight Project, a pioneer in interpreting health data to improve pets' lives.
+Vet Insight™, a turnkey service that offers access to expert pet health advice.
+PetStory, a pet care service, website, and app supporting pet parents in Russia.
+FluffyGo, a mobile-first platform designed for science-minded pet parents in China.
+
+Together, these teams and more work to set new standards in pet care. And, as a part of Mars Petcare, they work to create a better world for pets. Learn more at www.kinship.co.
+
+OUR TEAM
+
+Pet Insight is a team of data scientists, technologists, and vets that has partnered with Whistle Labs, Banfield Pet Hospital, and pet-owner citizen scientists to conduct the largest population health study in pet care. We focus on research and development, building state-of-the-art technologies (see FilterNet https://www.mdpi.com/1424-8220/20/9/2498) and leveraging our unique data to create solutions that improve the lives of pets.
+
+HOW YOU'LL HELP EVERYONE PET PARENT LIKE A PRO
+
+Data support, to help validate our clinical Hypotheses that Expand Commercial Value across Kinship and Mars Petcare entities: Support clinical hypotheses validation with sound best practices in data, support experiments and micro-tests with our data and implement data analysis either independently or in partnership with Pet Insight Sr Data Science team or outside contractors and/or universities; for the purpose of assessing the effectiveness of innovative ideas that can help grow the business in alignment with corporate strategy.
+Algorithm Development: Support algorithm development with our Sr. Data Scientists and outside contractors. Have the opportunity to independently work as well as learn from experts in the industry to develop new ways of understanding pets.
+Support Growth of Precision-Care Services: As a part of the newly founded Data & Knowledge Services team, you will work closely with the Wisdom genetics R&D team to develop new pet care health solutions that the create relationships between genetic data, that help pet owners understand a pet's health risks, and accelerometer data, that helps pet owners monitor a pet's wellness and prevent disease.
+Support Growth of Data-as-a-Service Partnerships: Pet Insight Health-AI as a Service is a groundbreaking approach to using Pet Insight's data science to answer complex questions for key stakeholders in the Continuum of Care that provide pet care. You will help us use our data to support our strategic partners in pet insurance, nutraceuticals, pharmaceuticals, diagnostics, and genetics. Provide data support services to grow these strategic partnerships.
+
+THE PRO WE'RE LOOKING FOR
+
+As Kinship people, we have three pillars that set out how we aim to be-in our everyday work, and in how we approach each other. We call these our Cultural Pillars. In all of the roles that we hire for, we look for people who are Optimistic, Purposefully Inquisitive, and Open to All. And for this role, you'll need these skills to knock it out of the dog park:
+
+LEADERSHIP COMPETENCIES:
+
+You Have Courage: a willingness to bring forth a new idea, engaging others across Kinship to support you, and taking risks and action will full accountability
+You Learn at Pace: a consistent and fast work ethic to meet growth goals, and the ability to evolve and pivot quickly from what you've learned
+You Value Difference: a genuine belief in inclusion and diversity is in your DNA, and it shows up in your work, and how you work.
+
+TECHNICAL SKILLS:
+
+Technical degree (BS/MS/PhD in Engineering, Computer Science, Math, Physics, or other quantitative discipline).
+Proficient with Python tools (pandas, numpy, scikit-learn, jupyter notebooks, etc.)
+Familiarity with AWS and cloud infrastructure
+Able to research, develop, and help deploy new models.
+Experience in statistical modeling, hypothesis testing, and experimental design.
+Experience writing and maintaining production level code.
+
+If you also had these experiences, you'd knock it out of the dog park:
+
+Electronic medical records (EMRs).
+Human or animal health background
+Bayesian statistical approaches
+Survey development and data collection best practices
+
+JOIN OUR PROS!
+
+Unique opportunities for a customizable career within pet care
+A super collaborative, flat work environment with direct access to our senior leadership team
+Work from the hottest cities across the world
+Dog-friendly workplaces
+Medical, dental, vision, 401k match, and pet benefits for you and your family
+Unlimited paid time off
+Flexible work opportunities
+Parental leave for the birth or adoption of your new human child (and fur baby)
+Discounts on pet products, services, nutrition and veterinary wellness plans
+Welcome kits with pet merch & Kinship swag
+An extensive onboarding program with a chance to meet all of our leaders across Kinship"
