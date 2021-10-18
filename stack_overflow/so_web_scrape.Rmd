@@ -131,8 +131,8 @@ df_skill <- df %>% chop(c(skill))
 
 df_type <- df %>% chop(c(type,skill))
 
-
 skills %>% group_by(description) %>% summarize(count = n()) %>% arrange(desc(count))
+all_skills_df %>% filter(type == "Soft Skill") %>% group_by(skill) %>% summarize(count = n()) %>% arrange(desc(count))
 
 ```
 
