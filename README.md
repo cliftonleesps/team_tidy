@@ -55,7 +55,9 @@ From the analysis of the skills obtained, we can see that for each of the job so
 
 ## Most Important Skills Across Sources
 
-We were able to extract and identify 8739 skills (934 unique) pertinant to Data Science jobs from the different sources. Of the 8739 skills, 22% were classified as "Soft Skills", and the remainder were classified as "Hard Skills".
+We were able to extract and identify 8739 skills (934 unique) pertinant to Data Science jobs from the different sources. Of the 8739 skills, 22% were classified as "Soft Skills", and most of the remainder were classified as "Hard Skills". 
+
+![Hard vs Soft](https://github.com/cliftonleesps/team_tidy/blob/main/images/hard_vs_soft.png)
 
 While there weren't as many soft skills as hard skills present in the data, certain soft skills proved invaluable, making it to the top 25 of all skills extracted across all job sources.
 
