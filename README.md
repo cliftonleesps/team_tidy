@@ -88,6 +88,23 @@ As we saw before, the most important soft skills are centered around things like
 
 ![Top 10 Soft Data Science Skills](https://github.com/cliftonleesps/team_tidy/blob/main/images/soft_skills.png)
 
+# Conclusion:
+
+We identified the critical areas to focus on in order to become successful data scientists:
+
+Hard Skills 
+* Some form of programming: Python /  SQL / R
+* Statistics / Statistical Modeling
+
+Soft Skills
+* Communications
+* Research
+
+Through working as a team, we also identified that collaboration and teamwork is also critical in order to create a successful deliverable.
+
+
+# Additional Analysis
+
 ## Distribution of Hard and Soft Skills Across Sources
 
 We wanted to see if any one source tended to have more job postings with a higher proportion of "hard skills". Based on the below boxplot, we can see that all sources have roughly the same level of hard skills proportion. It is worth mentioning that Stack Overflow seems to have a slightly higher median than the other groups, but it also has a significantly smaller range.
