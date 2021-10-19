@@ -42,20 +42,17 @@ After scraping our identified sources, we created a script skills_extraction.R w
 
 We then inserted each of the source outputs into a normalized SQL database for persistent storage.
 
-In order to fulfill the requirement of determining the most desirable skills for Data Science jobs, we settled on a basic, two table database layout. The job table is the parent table and has a one to many relationship to the skills table. Querying for the most frequent skills per job was simple from this design.
-
-
-![SQL ER](https://github.com/cliftonleesps/team_tidy/blob/main/images/er_diagram.png)
-
-
-
 # Findings:  
 
 ## Distribution of Collected Jobs
+From our analysis of over 227 jobs from three sources (Indeed, Stack Overflow, Linkedin)
+![Distribution by Source](https://github.com/cliftonleesps/team_tidy/blob/main/images/jobs_source.png)
+From the analysis of the results, we can see that for each of the job sources, there are way more hard skills required than soft skills. Also, each of the job sources showed that some sort of certifications is also required.
+![Distribution by Source by Type](https://github.com/cliftonleesps/team_tidy/blob/main/images/jobs_source_type.png)
 
 ## Most Important Skills Across Sources
 
-From our analysis of over 150 jobs from three sources (Indeed, Stack Overflow, Linkedin), we were able to extract and identify 8739 skills (934 unique) pertinant to Data Science jobs. Of the 8739 skills, 22% were classified as "Soft Skills", and the remainder were classified as "Hard Skills".
+We were able to extract and identify 8739 skills (934 unique) pertinant to Data Science jobs from the different sources. Of the 8739 skills, 22% were classified as "Soft Skills", and the remainder were classified as "Hard Skills".
 
 While there weren't as many soft skills as hard skills present in the data, certain soft skills proved invaluable, making it to the top 25 of all skills extracted across all job sources.
 
@@ -83,6 +80,8 @@ We wanted to see if any one source tended to have more job postings with a highe
 
 ![Source Proportion](https://github.com/cliftonleesps/team_tidy/blob/main/images/source_proportion.png)
 
+## Statistical Testing
+
 We can use a statistical test to answer the question, "Does Stack Overflow's distribution of hard_proportion in jobs have a statistically signficant difference than the jobs of other sources?
 
 Using a two tailed T test, we confirm that (despite visuals from the above boxplot), there is no significant difference between Stack Overflow and the other sources.
@@ -96,5 +95,46 @@ Using a two tailed T test, we confirm that (despite visuals from the above boxpl
 > * sample estimates:
 > * mean of x mean of y
 > * 0.8475232 0.8107858
+
+Further statistical analysis was conducted to know if there are significant difference between the proportion of hard and soft skills across all job sources: 
+**Hypothesis Test:**  
+```{r statistics-by-type}
+hard_soft_prop <- data_source %>% count(type) %>% top_n(2) %>% mutate(prop = round((p = n/sum(n)),3))
+hard_soft_prop                                    
+```
+Null Hypothesis, $H_{0}$: There is no difference in the proportion of hard and soft skills.$\mu_{hard} - \mu_{soft} = 0$  
+Alternative Hypothesis, $H_{1}$: The proportion of hard skills is greater than proportion of soft skills.$\mu_{hard} - \mu_{soft} \geq 0$  
+
+
+*Check conditions:*  
+Sampling Independence: The sample is gotten from random Indeed, Stack Overflow, and LinkedIn job postings.  
+Normality: Success - failure condition: np, n(1-p) > 10;  
+```{r check-conditions}
+prop_hard <- hard_soft_prop$prop[1] # proportion of hard skills
+prop_soft <- hard_soft_prop$prop[2] # proportion of soft skills
+n_hard <- hard_soft_prop$n[1] # number of hard skills
+n_soft <- hard_soft_prop$n[2] # number of soft skills
+
+#Check success - failure conditions
+# Hard Skills
+paste0("Hard Skills: np = ", n_hard*(prop_hard), " > 10, and n(1-p) = ",n_hard*(1 - prop_hard), " > 10")
+# Soft Skills
+paste0("Soft Skills: np = ", n_soft*(prop_soft), " > 10, and n(1-p) = ",n_soft*(1 - prop_soft), " > 10")
+```
+The Independence and success-failure condition are both satisfied. Therefore, a normal model can be assumed for this data.  
+
+
+```{r hypothesis-test}
+mu <- 0
+alpha <- 0.05 # level of significance
+df <- n_hard + n_soft - 2 # degree of freedom
+diff_prop <- prop_hard - prop_soft # difference in proportion of hard and soft skills
+SE <- sqrt(prop_hard*(1 - prop_hard)/n_hard + prop_soft*(1-prop_soft)/n_soft) # standard error for difference in proportions
+Test_statistic <- (diff_prop - mu)/SE # Test statistic
+p_value <- round(pt(Test_statistic, df, lower.tail = FALSE), 9) # p_value for one tail test
+paste0("Since the p value is ", p_value, " which is less than ", alpha,
+       ", we reject the null hypothesis at 0.05 level of significance.")
+```
+**Conclusion: ** Therefore, there is no sufficient statistical evidence that the proportion of hard skills sought for in data science job postings is equal to the proportion of soft skills sought for in data science job postings. i.e. The proportion of hard skills is greater than the proportion of soft skills.
 
 
