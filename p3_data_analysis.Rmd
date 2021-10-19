@@ -34,7 +34,8 @@ hard_vs_soft
 ```{r}
 hard_vs_soft %>% ggplot(aes(x = type, y = n)) + 
   geom_bar(stat = "identity", fill = "brown", width = 0.2) + 
-  ylab("Number of Jobs") + labs(title = "Hard vs Soft Skills")+ theme_bw() 
+  ylab("Number of Jobs") + labs(title = "Hard vs Soft Skills")+
+  geom_text(aes(label=n), vjust=-0.3, size=3.5) +theme_bw() 
 ```
 
 ```{r}
@@ -74,20 +75,34 @@ soft_skill$n <- as.numeric(soft_skill$n)
 head(soft_skill, n =10)
 ```
 ```{r}
+soft_skill %>% top_n(10) %>% ggplot(aes(reorder(description, n), n)) + 
+  geom_col(fill = "brown") + coord_flip() + xlab("") + labs(title = "Top 10 Data Science Soft Skills") +
+  theme_bw()
+```
+
+```{r}
 #dbGetQuery(db_connection, "SELECT * FROM job")
 ```
 
 ```{r}
 data_source <- dbGetQuery(db_connection, "SELECT j.job_title, j.state, j.original_source, s.description, s.type 
-           FROM job as j JOIN skill as s
+           FROM job as j LEFT JOIN skill as s
            ON j.job_id = s.job_id")
 head(data_source, n=10)
 ```
 ```{r}
-data_source %>% count(original_source) %>% top_n(2) %>% mutate(prop = round((p = n/sum(n)),3))
+source_type <- dbGetQuery(db_connection, "SELECT j.original_source, s.type, COUNT(*) AS n  
+           FROM job as j LEFT JOIN skill as s ON j.job_id = s.job_id
+           GROUP BY j.original_source, s.type")
+source_type$n <- as.numeric(source_type$n)
+source_type
+#head(data_source, n=10)
 ```
-```{r}
-#data_source %>% filter(original_source == "stack overflow")
+```{r barchart-of-skills}
+source_type %>% ggplot(aes(x = original_source, y = n, fill = type)) + 
+  geom_bar(stat = "identity", width = 0.6, position = position_dodge()) + 
+  ylab("Number of skills") + xlab("") + labs(title = "Distribution of skills by source and skill type") +
+  geom_text(aes(label=n), vjust=-0.3, position = position_dodge(0.6), size=3.5) + theme_bw()
 ```
 
 
@@ -144,7 +159,7 @@ source_indeed
 ```
 
 ```{r}
-source_indeed %>% ggplot(aes(x = type, y = prop)) + 
+indeed_plot <- source_indeed %>% ggplot(aes(x = type, y = prop)) + 
   geom_bar(stat = "identity", fill = "brown", width = 0.2) + 
   ylab("Proportion") + labs(title = "Indeed - Hard vs Soft Skills")+ theme_bw()
 ```
@@ -156,10 +171,47 @@ source_stack
 ```
 
 ```{r}
-source_stack %>% ggplot(aes(x = type, y = prop)) + 
+stack_plot <- source_stack %>% ggplot(aes(x = type, y = prop)) + 
   geom_bar(stat = "identity", fill = "brown", width = 0.2) + 
   ylab("Proportion") + labs(title = "Stack - Hard vs Soft Skills")+ theme_bw()
 ```
+
+```{r linkedin}
+source_linkedin <- data_source %>% filter(original_source == "Linkedin") %>% count(type) %>% top_n(2) %>% 
+  mutate(prop = round((p = n/sum(n)),3))
+source_linkedin  
+```
+```{r}
+# Job Source distribution
+job_source <- dbGetQuery(db_connection, "SELECT original_source, COUNT(*) AS n 
+                             FROM job GROUP BY original_source ORDER BY n DESC")
+job_source$n <- as.numeric(job_source$n)
+#head(soft_skill, n =10)
+job_source
+```
+```{r}
+job_source %>% ggplot(aes(x = original_source, y = n)) + 
+  geom_bar(stat = "identity", fill = "brown", width = 0.2) + xlab("") + 
+  ylab("Number of Jobs") + labs(title = "Distribution of Jobs by source")+ 
+  geom_text(aes(label=n), vjust=-0.3, size=3.5) + theme_bw()
+```
+```{r}
+job_state <- dbGetQuery(db_connection, "SELECT state, COUNT(*) AS n 
+                             FROM job GROUP BY state ORDER BY n DESC")
+#job_source$n <- as.numeric(job_source$n)
+#head(soft_skill, n =10)
+job_state
+```
+```{r}
+hardsoft <- dbGetQuery(db_connection, "SELECT type, COUNT(*) AS n FROM skill GROUP BY type")
+hard_vs_soft$n <- as.numeric(hard_vs_soft$n)
+hard_vs_soft
+```
+
+
+
+
+
 
 
 
