@@ -44,7 +44,8 @@ We then inserted each of the source outputs into a normalized SQL database for p
 
 In order to fulfill the requirement of determining the most desirable skills for Data Science jobs, we settled on a basic, two table database layout. The job table is the parent table and has a one to many relationship to the skills table. Querying for the most frequent skills per job was simple from this design.
 
-![ER Diagram](https://github.com/cliftonleesps/team_tidy/blob/main/images/er_diagram.png)
+
+<img src="https://github.com/cliftonleesps/team_tidy/blob/main/images/er_diagram.png" width="700" height="500" />
 
 # Findings:  
 
@@ -59,7 +60,8 @@ From the analysis of the skills obtained, we can see that for each of the job so
 
 Of all jobs extracted, there were 22 unique states. The majority of the jobs are from New York, Texas, and California, which is not surprising considering the size of active job markets in these areas.
 
-![Dist by state](https://github.com/cliftonleesps/team_tidy/blob/main/images/state_distribution.png)
+
+<img src="https://github.com/cliftonleesps/team_tidy/blob/main/images/state_distribution.png" width="700" height="500" />
 
 
 ## Most Important Skills Across Sources
@@ -109,7 +111,10 @@ Through working as a team, we also identified that collaboration and teamwork is
 
 We wanted to see if any one source tended to have more job postings with a higher proportion of "hard skills". Based on the below boxplot, we can see that all sources have roughly the same level of hard skills proportion. It is worth mentioning that Stack Overflow seems to have a slightly higher median than the other groups, but it also has a significantly smaller range.
 
-![Source Proportion](https://github.com/cliftonleesps/team_tidy/blob/main/images/source_proportion.png)
+
+<img src="https://github.com/cliftonleesps/team_tidy/blob/main/images/source_proportion.png" width="700" height="500" />
+
+
 
 ## Statistical Testing
 
