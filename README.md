@@ -46,8 +46,11 @@ We then inserted each of the source outputs into a normalized SQL database for p
 
 ## Distribution of Collected Jobs
 From our analysis of over 227 jobs from three sources (Indeed, Stack Overflow, Linkedin)
+
 ![Distribution by Source](https://github.com/cliftonleesps/team_tidy/blob/main/images/jobs_source.png)
+
 From the analysis of the results, we can see that for each of the job sources, there are way more hard skills required than soft skills. Also, each of the job sources showed that some sort of certifications is also required.
+
 ![Distribution by Source by Type](https://github.com/cliftonleesps/team_tidy/blob/main/images/jobs_source_type.png)
 
 ## Most Important Skills Across Sources
@@ -102,8 +105,8 @@ Further statistical analysis was conducted to know if there are significant diff
 hard_soft_prop <- data_source %>% count(type) %>% top_n(2) %>% mutate(prop = round((p = n/sum(n)),3))
 hard_soft_prop                                    
 ```
-Null Hypothesis, $H_{0}$: There is no difference in the proportion of hard and soft skills.$\mu_{hard} - \mu_{soft} = 0$  
-Alternative Hypothesis, $H_{1}$: The proportion of hard skills is greater than proportion of soft skills.$\mu_{hard} - \mu_{soft} \geq 0$  
+Null Hypothesis: There is no difference in the proportion of hard and soft skills.  
+Alternative Hypothesis: The proportion of hard skills is greater than proportion of soft skills.  
 
 
 *Check conditions:*  
