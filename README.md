@@ -72,7 +72,22 @@ As we saw before, the most important soft skills are centered around things like
 
 ## Distribution of Hard and Soft Skills Across Sources
 
-Across all sources and jobs, we discovered that 
+We wanted to see if any one source tended to have more job postings with a higher proportion of "hard skills". Based on the below boxplot, we can see that all sources have roughly the same level of hard skills proportion. It is worth mentioning that Stack Overflow seems to have a slightly higher median than the other groups, but it also has a significantly smaller range.
 
 ![Source Proportion](https://github.com/cliftonleesps/team_tidy/blob/main/images/source_proportion.png)
+
+We can use a statistical test to answer the question, "Does Stack Overflow's distribution of hard_proportion in jobs have a statistically signficant difference than the jobs of other sources?
+
+Using a two tailed T test, we confirm that (despite visuals from the above boxplot), there is no significant difference between Stack Overflow and the other sources.
+
+> Two Sample t-test
+> data:  so_props and other_props
+> t = 1.3536, df = 161, p-value = 0.1778
+> alternative hypothesis: true difference in means is not equal to 0
+> 95 percent confidence interval:
+>  -0.0168604  0.0903353
+> sample estimates:
+> mean of x mean of y
+> 0.8475232 0.8107858
+
 
