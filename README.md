@@ -80,14 +80,14 @@ We can use a statistical test to answer the question, "Does Stack Overflow's dis
 
 Using a two tailed T test, we confirm that (despite visuals from the above boxplot), there is no significant difference between Stack Overflow and the other sources.
 
-> Two Sample t-test
-> data:  so_props and other_props
-> t = 1.3536, df = 161, p-value = 0.1778
-> alternative hypothesis: true difference in means is not equal to 0
-> 95 percent confidence interval:
->  -0.0168604  0.0903353
-> sample estimates:
-> mean of x mean of y
-> 0.8475232 0.8107858
+> * Two Sample t-test\n
+> * data:  so_props and other_props\n
+> * t = 1.3536, df = 161, p-value = 0.1778
+> * alternative hypothesis: true difference in means is not equal to 0
+> * 95 percent confidence interval:
+> *  -0.0168604  0.0903353
+> * sample estimates:
+> * mean of x mean of y
+> * 0.8475232 0.8107858
 
 
