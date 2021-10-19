@@ -70,5 +70,7 @@ As we saw before, the most important soft skills are centered around things like
 
 ## Distribution of Hard and Soft Skills Across Sources
 
+Across all sources and jobs, we discovered that 
+
 ![Source Proportion](https://github.com/cliftonleesps/team_tidy/blob/main/images/source_proportion.png)
 
