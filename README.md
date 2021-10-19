@@ -42,6 +42,10 @@ After scraping our identified sources, we created a script skills_extraction.R w
 
 We then inserted each of the source outputs into a normalized SQL database for persistent storage.
 
+![SQL ER](https://github.com/cliftonleesps/team_tidy/blob/main/images/soft_skills.png)
+
+
+
 # Findings:  
 
 ## Distribution of Collected Jobs
