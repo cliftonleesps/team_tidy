@@ -102,7 +102,9 @@ Using a two tailed T test, we confirm that (despite visuals from the above boxpl
 > * 0.8475232 0.8107858
 
 Further statistical analysis was conducted to know if there are significant difference between the proportion of hard and soft skills across all job sources: 
+
 **Hypothesis Test:**  
+
 ```{r statistics-by-type}
 hard_soft_prop <- data_source %>% count(type) %>% top_n(2) %>% mutate(prop = round((p = n/sum(n)),3))
 hard_soft_prop                                    
