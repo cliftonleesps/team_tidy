@@ -4,6 +4,7 @@ install.packages("ggpubr")
 
 library(ggpubr)
 library(tidyverse)
+library(stringr)
 
 # Connection to a DB
 library(DBI)
@@ -19,9 +20,15 @@ db_connection <- dbConnect(RMariaDB::MariaDB(),
                            password = Sys.getenv("TEAMTIDY_DB_PASS"),
                            dbname = 'data_science_jobs')
 
+# Write queries to select
+# - join of job and skill tables
+# - job table
+
 get_data_query <- "select j.*, s.description, s.type from job j join skill s on j.job_id = s.job_id"
 
 get_jobs <- "select * from job"
+
+# get data from SQL
 
 data <- dbGetQuery(db_connection,get_data_query)
 
@@ -30,7 +37,7 @@ job_data <- dbGetQuery(db_connection,get_jobs)
 
 # analysis of state distribution
 
-unique(job_data$state)
+# States are not normalized, we can normalize by using fct_collapse
 
 NY <- c("New-York","New York, NY")
 OR <- c("Oregon")
@@ -52,9 +59,11 @@ job_data_normal <- job_data %>%
                                    TN = TN)
   )
 
-unique(job_data_normal$states_collapsed)
 
-library(stringr)
+# We now have a column called state_collapsed where every entry is gauranteed
+# to have a "state id" in the string ("New York, NY", "Los Angeles, CA")
+
+# Use regex to extract state_id
 
 extract_state <- function(state_string){
   str_extract(state_string, "[A-Z]{2}")
@@ -66,6 +75,8 @@ job_data_normal <- job_data_normal %>%
     state_id = unlist(lapply(job_data_normal$states_collapsed,extract_state))
   )
 
+# generate bar chart for state distribution
+
 job_data_normal %>%
   ggplot() + 
   geom_bar(aes(x=reorder(state_id,state_id,function(x)-length(x)))) +
@@ -74,12 +85,21 @@ job_data_normal %>%
 
 # Analysis of skills section
 
+# Here we want to test whether or not there is a statistical difference in 
+# the proportion of hard vs soft skills betwee Stack Overflow, and all
+# other sources
+
+# first we create a dataframe comprised of the count of hard and soft skills
+# by job_id
+
 skill_counts <- data %>%
   group_by(job_id) %>%
   count(type)
 
 skill_counts <- ungroup(skill_counts)
 
+# we then write a function that takes in the skill_counts dataframe from above
+# and, given an id, computes the proportion of hard skills for a job (0-1)
 
 get_proportion <- function(id){
   filtered <- skill_counts %>%
@@ -95,14 +115,14 @@ get_proportion <- function(id){
   return(hard/total)
 }
 
+# use function to append proportion back to the original job dataframe
+
 job_ids <- unique(data$job_id)
 
 job_proportions <- job_ids %>%
   lapply(get_proportion)
 
 job_proportions <- unlist(job_proportions)
-
-
 
 jobs_df <- as_tibble(job_ids)
 colnames(jobs_df) <- c("job_id")
@@ -114,12 +134,15 @@ jobs_df <- jobs_df %>%
 
 final_jobs <- bind_cols(job_data, jobs_df)
 
-final_jobs$hard_proportion
+# create boxplot of hard_proportion distribution between sources
 
 final_jobs %>%
   ggplot() + 
   geom_boxplot(aes(x=hard_proportion, y=original_source))
 
+# run statistical tests
+
+# get a vector of the hard proportions for every stack overflow job
 
 so_props <- final_jobs %>%
   filter(
@@ -128,6 +151,8 @@ so_props <- final_jobs %>%
   select(hard_proportion) %>%
   .$hard_proportion
 
+# get a vector of the hard proportions for every other job_source
+
 other_props <- final_jobs %>%
   filter(
     original_source != "stack overflow"
@@ -135,6 +160,7 @@ other_props <- final_jobs %>%
   select(hard_proportion) %>%
   .$hard_proportion
 
+# run a two tailed test using ggpubr::t.test()
 
 res <- t.test(so_props, other_props, var.equal = TRUE)
 res

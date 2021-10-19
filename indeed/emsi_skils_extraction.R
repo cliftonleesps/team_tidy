@@ -3,6 +3,8 @@ library(jsonlite)
 library(tidyverse)
 library(stringr)
 
+# This API has a monthly limit of 50 job_posting extractions.
+
 client_id_7 <- "b4gabbxyfmnp0bus"
 secret_7 <- "QQODWzzv"
 scope_7 <- "emsi_open"
@@ -32,12 +34,7 @@ client_id <- '9doiv2cmqlaf9r0f'
 secret <- 'KTefV00m'
 scope <-'emsi_open'
 
-# authentication
-# All endpoints require an OAuth bearer token. 
-# Tokens are granted through the Emsi Auth API at
-# https://auth.emsicloud.com/connect/token and are valid for 1 hour. 
-#For access to the Skills API, you must request an OAuth bearer 
-#token with the scope emsi_open.
+# create function to call the API and retrieve an access token
 
 get_token <- function(client_id, secret, scope){
   url <- "https://auth.emsicloud.com/connect/token"
@@ -60,13 +57,16 @@ get_token <- function(client_id, secret, scope){
   return(access_token)
 }
 
+# retrieve the access token
+
 access_token <- get_token(client_id_7,secret_7,scope_7)
 
 # get indeed data
 
 data <- read_csv("utah_nj.csv")
 
-# test out the skills pasrer!
+# create function that sends a job description to the EMSI API and returns a 
+# dataframe containing two columns: skill, type
 
 get_skills <- function(job_description, confidence_string, access_token){
   url <- "https://emsiservices.com/skills/versions/latest/extract"
@@ -103,6 +103,9 @@ get_skills <- function(job_description, confidence_string, access_token){
   
   return(skill_df)
 }
+
+# create functions that take job posting meta-data and reappend them back to
+# the results of get_skills()
 
 create_skills_df <- function(original_source, job_url, job_title, company_name, state, description, confidence_threshold, access_token){
   base_df <- tibble(
@@ -175,6 +178,8 @@ get_dataset_skills <- function(data_frame, confidence_threshold, access_token){
   
   return(base_df)
 }
+
+# Use the above code to generate datasets used in import
 
 cali_oregon_emsi <- get_dataset_skills(data, "0.4",access_token)
 

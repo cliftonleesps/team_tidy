@@ -8,12 +8,12 @@ library(rvest)
 library(RSelenium)
 
 
+# create function that takes a state string and returns an set of indeed jobs
+# from that state
 
 get_base_page <- function(state_string){
   job_string <- str_c("Data-Scientist-jobs-in-",state_string)
   url <- stringr::str_interp("https://indeed.com/${job_string}")
-  #sel_driver$navigate(url)
-  #page <- sel_driver$getPageSource()[[1]]
   
   page <- xml2::read_html(url)
   
@@ -28,8 +28,12 @@ get_jobs <- function(html_page) {
   jobs <- html_page %>% 
     rvest::html_element('div[id="mosaic-zone-jobcards"]') %>% 
     rvest::html_elements('a[id]')
+  
+  return(jobs)
 }
 
+# create function that takes a job list page and returns the "next" button. We
+# will reference this later after exhausting all jobcards on the current page
 
 get_page_url <- function(html_page){
   page_scroller <- html_page %>%
@@ -42,6 +46,9 @@ get_page_url <- function(html_page){
   )
 }
 
+# There is limited data on indeed job cards. Each job card includes in the HTML
+# a url to the "full" job page. We will create functions now that extracts these
+# urls for later crawling
 
 get_href_list <- function(jobs_list) {
   href_list <- list()
@@ -54,7 +61,8 @@ get_href_list <- function(jobs_list) {
   return(href_list)
 }
 
-
+# create a function that takes a list of job pages, and extracts parsed data
+# from those pages including job_url, job_title, company_name, job_description
 
 pull_page_results <- function(job_href_list, state_string) {
   original_source_list = list()
@@ -93,6 +101,10 @@ pull_page_results <- function(job_href_list, state_string) {
 }
 
 
+# create wrapper function that combines the above. Takes a base_page (the
+# original page after the state search) and depth. It will extract all jobs from
+# a page, and continue to traverse other pages for the amount 
+# specified by depth
 
 traverse_job_search <- function(base_page, state_string, depth){
   original_source_list = list()
@@ -140,29 +152,7 @@ get_state_jobs <- function(state_string, depth){
 }
 
 
-california_jobs <- get_state_jobs("California",1)
-oregon_jobs <- get_state_jobs("Oregon",1)
-
-conv_state_results_to_dataframe <- function(state_results){
-  state_df <- as_tibble(unlist(state_results[1]))
-  colnames(state_df) = c("original_source")
-  
-  state_df <- state_df %>%
-    mutate(
-      job_url = unlist(state_results[2]),
-      job_title = unlist(state_results[3]),
-      company_name = unlist(state_results[4]),
-      state = unlist(state_results[5]),
-      description = unlist(state_results[6])
-    )
-  
-  return(state_df)
-}
-
-cali_df <- conv_state_results_to_dataframe(california_jobs)
-
-oregon_df <- conv_state_results_to_dataframe(oregon_jobs)
-
+# final wrapper function that enables the input of a state list
 
 get_multiple_state_jobs <- function(state_list, depth) {
   base_df <- tibble(
@@ -186,6 +176,9 @@ get_multiple_state_jobs <- function(state_list, depth) {
   return(base_df)
 }
 
+
+# generate data using above functions
+
 state_list <- c("Utah",
                 "New-Jersey")
 
@@ -194,3 +187,26 @@ utah_nj_df <- get_multiple_state_jobs(state_list, 1)
 
 write.csv(utah_nj_df, file = "utah_nj.csv",
           row.names = FALSE)
+
+california_jobs <- get_state_jobs("California",1)
+oregon_jobs <- get_state_jobs("Oregon",1)
+
+conv_state_results_to_dataframe <- function(state_results){
+  state_df <- as_tibble(unlist(state_results[1]))
+  colnames(state_df) = c("original_source")
+  
+  state_df <- state_df %>%
+    mutate(
+      job_url = unlist(state_results[2]),
+      job_title = unlist(state_results[3]),
+      company_name = unlist(state_results[4]),
+      state = unlist(state_results[5]),
+      description = unlist(state_results[6])
+    )
+  
+  return(state_df)
+}
+
+cali_df <- conv_state_results_to_dataframe(california_jobs)
+
+oregon_df <- conv_state_results_to_dataframe(oregon_jobs)
