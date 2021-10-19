@@ -45,7 +45,7 @@ We then inserted each of the source outputs into a normalized SQL database for p
 # Findings:  
 
 ## Distribution of Collected Jobs
-From our analysis of over 227 jobs from three sources (Indeed, Stack Overflow, Linkedin)
+From our analysis, there are about 227 jobs from three sources (Indeed, Stack Overflow, Linkedin)
 
 ![Distribution by Source](https://github.com/cliftonleesps/team_tidy/blob/main/images/jobs_source.png)
 
@@ -138,6 +138,6 @@ p_value <- round(pt(Test_statistic, df, lower.tail = FALSE), 9) # p_value for on
 paste0("Since the p value is ", p_value, " which is less than ", alpha,
        ", we reject the null hypothesis at 0.05 level of significance.")
 ```
-**Conclusion: ** Therefore, there is no sufficient statistical evidence that the proportion of hard skills sought for in data science job postings is equal to the proportion of soft skills sought for in data science job postings. i.e. The proportion of hard skills is greater than the proportion of soft skills.
+*Conclusion:* Therefore, there is no sufficient statistical evidence that the proportion of hard skills sought for in data science job postings is equal to the proportion of soft skills sought for in data science job postings. i.e. The proportion of hard skills is greater than the proportion of soft skills.
 
 
