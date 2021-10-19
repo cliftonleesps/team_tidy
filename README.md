@@ -44,8 +44,31 @@ We then inserted each of the source outputs into a normalized SQL database for p
 
 # Findings:  
 
-![Top 30 Data Science Skills](https://github.com/cliftonleesps/team_tidy/blob/main/images/all_skills.png)
-![To 10 Hard Data Science Skills](https://github.com/cliftonleesps/team_tidy/blob/main/images/hard_skills.png)
+## Most Important Skills Across Sources
+
+From our analysis of over 150 jobs from three sources (Indeed, Stack Overflow, Linkedin), we were able to extract and identify 8739 skills (934 unique) pertinant to Data Science jobs. Of the 8739 skills, 22% were classified as "Soft Skills", and the remainder were classified as "Hard Skills".
+
+While there weren't as many soft skills as hard skills present in the data, certain soft skills proved invaluable, making it to the top 25 of all skills extracted across all job sources.
+
+![All Skills](/images/all_skills.png)
+
+## Most Important Hard Skills Skills Across Sources
+
+In terms of Hard Skills, we were not surprised with the final results. Included in the top ten are skills related to:
+* coding and data manipulation (python, R, SQL)
+* math and statistics (statistical modeling, machine learning, statistics)
+
+![Hard Skills](/images/hard_skills.png)
+
+## Most Important Soft Skills Skills Across Sources
+
+As we saw before, the most important soft skills are centered around things like:
+* Team Work, working with others (communication, operations, leadership)
+* Problem Solving (innovation, problem solving, creativity)
+
 ![Top 10 Soft Data Science Skills](https://github.com/cliftonleesps/team_tidy/blob/main/images/soft_skills.png)
+
+## Distribution of Hard and Soft Skills Across Sources
+
 ![Source Proportion](https://github.com/cliftonleesps/team_tidy/blob/main/images/source_proportion.png)
 
