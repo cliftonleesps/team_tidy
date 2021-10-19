@@ -59,7 +59,7 @@ We were able to extract and identify 8739 skills (934 unique) pertinant to Data 
 
 ![Hard vs Soft](https://github.com/cliftonleesps/team_tidy/blob/main/images/hard_vs_soft.png)
 
-While there weren't as many soft skills as hard skills present in the data, certain soft skills like Research, Innovation, Communication, and Curiosity proved invaluable, making it to the top 30 of all skills extracted across all job sources.
+While there weren't as many soft skills as hard skills present in the data, certain soft skills like Research, Innovation, Communication, Operations, Leadership, and Curiosity proved invaluable, making it to the top 30 of all skills extracted across all job sources.
 
 ![All Skills](/images/all_skills.png)
 
