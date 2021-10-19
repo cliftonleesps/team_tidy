@@ -44,6 +44,8 @@ We then inserted each of the source outputs into a normalized SQL database for p
 
 # Findings:  
 
+## Distribution of Collected Jobs
+
 ## Most Important Skills Across Sources
 
 From our analysis of over 150 jobs from three sources (Indeed, Stack Overflow, Linkedin), we were able to extract and identify 8739 skills (934 unique) pertinant to Data Science jobs. Of the 8739 skills, 22% were classified as "Soft Skills", and the remainder were classified as "Hard Skills".
