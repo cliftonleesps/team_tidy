@@ -53,6 +53,11 @@ From the analysis of the skills obtained, we can see that for each of the job so
 
 ![Distribution by Source by Type](https://github.com/cliftonleesps/team_tidy/blob/main/images/jobs_source_type.png)
 
+Of all jobs extracted, there were 22 unique states. The majority of the jobs are from New York, Texas, and California, which is not surprising considering the size of active job markets in these areas.
+
+![Dist by state](https://github.com/cliftonleesps/team_tidy/blob/main/images/state_distribution.png)
+
+
 ## Most Important Skills Across Sources
 
 We were able to extract and identify 8739 skills (934 unique) pertinant to Data Science jobs from the different sources. Of the 8739 skills, 1620 were classified as "Soft Skills", while 7119 were classified as "Hard Skills". 
