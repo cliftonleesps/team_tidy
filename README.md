@@ -49,7 +49,7 @@ From our analysis, there are about 227 jobs from three sources (Indeed, Stack Ov
 
 ![Distribution by Source](https://github.com/cliftonleesps/team_tidy/blob/main/images/jobs_source.png)
 
-From the analysis of the results, we can see that for each of the job sources, there are way more hard skills required than soft skills. Also, each of the job sources showed that some sort of certifications is also required.
+From the analysis of the skills obtained, we can see that for each of the job sources, there are way more hard skills required than soft skills. Also, each of the job sources showed that some sort of certifications is also required.
 
 ![Distribution by Source by Type](https://github.com/cliftonleesps/team_tidy/blob/main/images/jobs_source_type.png)
 
