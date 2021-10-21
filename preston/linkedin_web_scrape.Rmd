@@ -281,30 +281,12 @@ all_skills_df %>%
 
 # Insert
 ```{r}
-library(DBI)
-library(here)
-source(here("scripts", "skills_extraction.R"))
-source(here("scripts", "insert_esmi.R"))
-
-batches <- c(
-  as_tibble(read.csv("all_skills_df_batch_1.csv"), header = TRUE),
-  as_tibble(read.csv("all_skills_df_batch_2.csv"), header = TRUE),
-  as_tibble(read.csv("all_skills_df_batch_3.csv"), header = TRUE),
-  as_tibble(read.csv("all_skills_df_batch_4.csv"), header = TRUE),
-  as_tibble(read.csv("all_skills_df_batch_5.csv"), header = TRUE),
-  as_tibble(read.csv("all_skills_df_batch_6.csv"), header = TRUE),
-  as_tibble(read.csv("all_skills_df_batch_7.csv"), header = TRUE),
-  as_tibble(read.csv("all_skills_df_batch_8.csv"), header = TRUE),
-  as_tibble(read.csv("all_skills_df_batch_9.csv"), header = TRUE),
-  as_tibble(read.csv("all_skills_df_batch_10.csv"), header = TRUE)
-)
-
-max <- length(batches)
-
 host <- "TEAMTIDY_DB_HOST"
 user <- "TEAMTIDY_DB_USER"
 password <- "TEAMTIDY_DB_PASS"
 dbname <- "data_science_jobs"
+
+
 
 db_connection <- dbConnect(RMariaDB::MariaDB(),
                            host = Sys.getenv(host),
@@ -312,8 +294,5 @@ db_connection <- dbConnect(RMariaDB::MariaDB(),
                            password = Sys.getenv(password),
                            dbname = dbname)
 
-
-
-insert_esmi_data(batches[1], db_connection)
-#insert_esmi_data(all_skills_df, db_connection)
+insert_esmi_data(all_skills_df, db_connection)
 ```
